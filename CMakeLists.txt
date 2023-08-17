@@ -15,4 +15,4 @@ target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SO
 target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/include/>)
 target_include_directories(${PROJECT_NAME} INTERFACE $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(${PROJECT_NAME} raylib raygui)
+target_link_libraries(${PROJECT_NAME} raylib)
