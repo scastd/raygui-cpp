@@ -50,4 +50,46 @@ int Globals::Style::GuiGetStyle(GuiControl control, int property) {
     return ::GuiGetStyle(control, property);
 }
 
+void Globals::Style::GuiLoadStyle(const char *fileName) {
+    ::GuiLoadStyle(fileName);
+}
+
+void Globals::Style::GuiLoadStyleDefault() {
+    ::GuiLoadStyleDefault();
+}
+
+void Globals::Tooltip::GuiEnableTooltip() {
+    ::GuiEnableTooltip();
+}
+
+void Globals::Tooltip::GuiDisableTooltip() {
+    ::GuiDisableTooltip();
+}
+
+void Globals::Tooltip::GuiSetTooltip(const char *tooltip) {
+    ::GuiSetTooltip(tooltip);
+}
+
+const char *Globals::Icon::GuiIconText(int iconId, const char *text) {
+    return ::GuiIconText(iconId, text);
+}
+
+#if !defined(RAYGUI_NO_ICONS)
+void Globals::Icon::GuiSetIconScale(int scale) {
+    ::GuiSetIconScale(scale);
+}
+
+unsigned int *Globals::Icon::GuiGetIcons() {
+    return ::GuiGetIcons();
+}
+
+char **Globals::Icon::GuiLoadIcons(const char *fileName, bool loadIconsName) {
+    return ::GuiLoadIcons(fileName, loadIconsName);
+}
+
+void Globals::Icon::GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, Color color) {
+    ::GuiDrawIcon(iconId, posX, posY, pixelSize, color);
+}
+#endif
+
 RAYGUI_CPP_END_NAMESPACE

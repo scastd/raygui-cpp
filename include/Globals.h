@@ -34,6 +34,32 @@ public:
         static void GuiSetStyle(GuiControl control, int property, int value);
 
         static int GuiGetStyle(GuiControl control, int property);
+
+        static void GuiLoadStyle(const char *fileName);
+
+        static void GuiLoadStyleDefault();
+    };
+
+    class Tooltip {
+        static void GuiEnableTooltip();
+
+        static void GuiDisableTooltip();
+
+        static void GuiSetTooltip(const char *tooltip);
+    };
+
+    class Icon {
+        static const char *GuiIconText(int iconId, const char *text);
+
+#if !defined(RAYGUI_NO_ICONS)
+        static void GuiSetIconScale(int scale);
+
+        static unsigned int *GuiGetIcons();
+
+        static char **GuiLoadIcons(const char *fileName, bool loadIconsName);
+
+        static void GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, Color color);
+#endif
     };
 };
 
