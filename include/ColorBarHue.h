@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_COLOR_BAR_HUE_H
+#define RAYGUI_CPP_COLOR_BAR_HUE_H
+
+class ColorBarHue {};
+
+#endif // RAYGUI_CPP_COLOR_BAR_HUE_H

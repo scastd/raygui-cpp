@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_COLOR_PICKER_H
+#define RAYGUI_CPP_COLOR_PICKER_H
+
+class ColorPicker {};
+
+#endif // RAYGUI_CPP_COLOR_PICKER_H

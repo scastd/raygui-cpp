@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_TEXT_INPUT_BOX_H
+#define RAYGUI_CPP_TEXT_INPUT_BOX_H
+
+class TextInputBox {};
+
+#endif // RAYGUI_CPP_TEXT_INPUT_BOX_H
