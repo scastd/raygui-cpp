@@ -32,8 +32,8 @@ void WindowBox::SetTitle(const char *newTitle) {
     this->title = newTitle;
 }
 
-void WindowBox::Draw() const {
-    ::GuiWindowBox(bounds, title);
+bool WindowBox::Draw() const {
+    return ::GuiWindowBox(bounds, title);
 }
 
 RAYGUI_CPP_END_NAMESPACE

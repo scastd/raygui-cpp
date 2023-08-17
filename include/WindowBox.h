@@ -21,7 +21,7 @@ public:
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
 
-    void Draw() const;
+    RAYGUI_NODISCARD bool Draw() const;
 
 private:
     Rectangle bounds;
