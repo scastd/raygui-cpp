@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_PROGRESS_BAR_H
+#define RAYGUI_CPP_PROGRESS_BAR_H
+
+class ProgressBar {};
+
+#endif // RAYGUI_CPP_PROGRESS_BAR_H

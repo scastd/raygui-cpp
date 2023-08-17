@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_DROPDOWN_BOX_H
+#define RAYGUI_CPP_DROPDOWN_BOX_H
+
+class DropdownBox {};
+
+#endif // RAYGUI_CPP_DROPDOWN_BOX_H

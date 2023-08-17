@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_LABEL_BUTTON_H
+#define RAYGUI_CPP_LABEL_BUTTON_H
+
+class LabelButton {};
+
+#endif // RAYGUI_CPP_LABEL_BUTTON_H
