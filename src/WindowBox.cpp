@@ -32,7 +32,7 @@ void WindowBox::SetTitle(const char *newTitle) {
     this->title = newTitle;
 }
 
-bool WindowBox::Draw() const {
+bool WindowBox::Show() const {
     return ::GuiWindowBox(bounds, title);
 }
 
