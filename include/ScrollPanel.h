@@ -1,0 +1,6 @@
+#ifndef RAYGUI_CPP_SCROLL_PANEL_H
+#define RAYGUI_CPP_SCROLL_PANEL_H
+
+class ScrollPanel {};
+
+#endif // RAYGUI_CPP_SCROLL_PANEL_H
