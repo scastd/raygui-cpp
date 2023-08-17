@@ -6,7 +6,35 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class TabBar {};
+class TabBar {
+public:
+    TabBar();
+    TabBar(const Rectangle &bounds, const char **text, int count, int *active);
+    TabBar(float x, float y, float width, float height, const char **text, int count, int *active);
+    TabBar(const Vector2 &position, const Vector2 &size, const char **text, int count, int *active);
+
+    ~TabBar();
+
+    RAYGUI_NODISCARD Rectangle GetBounds() const;
+    void SetBounds(Rectangle newBounds);
+
+    RAYGUI_NODISCARD const char **GetText() const;
+    void SetText(const char **newText);
+
+    RAYGUI_NODISCARD int GetCount() const;
+    void SetCount(int newCount);
+
+    RAYGUI_NODISCARD int *GetActive() const;
+    void SetActive(int *newActive);
+
+    RAYGUI_NODISCARD int Show() const;
+
+private:
+    Rectangle bounds;
+    const char **text;
+    int count;
+    int *active;
+};
 
 RAYGUI_CPP_END_NAMESPACE
 
