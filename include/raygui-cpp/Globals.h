@@ -25,12 +25,14 @@ public:
     static int GuiGetState();
 
     class Font {
+    public:
         static void GuiSetFont(::Font font);
 
         static ::Font GuiGetFont();
     };
 
     class Style {
+    public:
         static void GuiSetStyle(::GuiControl control, int property, int value);
 
         static int GuiGetStyle(::GuiControl control, int property);
@@ -41,6 +43,7 @@ public:
     };
 
     class Tooltip {
+    public:
         static void GuiEnableTooltip();
 
         static void GuiDisableTooltip();
@@ -49,6 +52,7 @@ public:
     };
 
     class Icon {
+    public:
         static const char *GuiIconText(int iconId, const char *text);
 
 #if !defined(RAYGUI_NO_ICONS)
