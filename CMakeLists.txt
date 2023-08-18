@@ -81,6 +81,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/Toggle.h
         include/raygui-cpp/ValueBox.h
         include/raygui-cpp/WindowBox.h
+        include/raygui-cpp.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
