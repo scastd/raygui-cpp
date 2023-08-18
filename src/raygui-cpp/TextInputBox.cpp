@@ -6,7 +6,7 @@ TextInputBox::TextInputBox()
     : bounds({ 0, 0, 0, 0 }), title(""), message(""), buttons(""), text(""), textMaxSize(0), secretViewActive(nullptr) {
 }
 
-TextInputBox::TextInputBox(Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
+TextInputBox::TextInputBox(::Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
                            int textMaxSize, int *secretViewActive)
     : bounds(bounds), title(title), message(message), buttons(buttons), text(text), textMaxSize(textMaxSize),
       secretViewActive(secretViewActive) {}
@@ -16,8 +16,8 @@ TextInputBox::TextInputBox(float x, float y, float width, float height, const ch
     : bounds({ x, y, width, height }), title(title), message(message), buttons(buttons), text(text),
       textMaxSize(textMaxSize), secretViewActive(secretViewActive) {}
 
-TextInputBox::TextInputBox(Vector2 position, Vector2 size, const char *title, const char *message, const char *buttons,
-                           char *text, int textMaxSize, int *secretViewActive) : bounds({ position.x, position.y, size.x, size.y }),
+TextInputBox::TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message,
+                           const char *buttons, char *text, int textMaxSize, int *secretViewActive) : bounds({ position.x, position.y, size.x, size.y }),
                                                                                 title(title), message(message),
                                                                                 buttons(buttons), text(text),
                                                                                 textMaxSize(textMaxSize),
@@ -31,11 +31,11 @@ TextInputBox::~TextInputBox() {
     delete secretViewActive;
 }
 
-Rectangle TextInputBox::GetBounds() const {
+::Rectangle TextInputBox::GetBounds() const {
     return bounds;
 }
 
-void TextInputBox::SetBounds(Rectangle newBounds) {
+void TextInputBox::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

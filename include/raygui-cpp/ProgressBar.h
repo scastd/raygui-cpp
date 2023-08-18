@@ -9,14 +9,16 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ProgressBar {
 public:
     ProgressBar();
-    ProgressBar(Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
+    ProgressBar(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
+                float maxValue);
     ProgressBar(float x, float y, float width, float height, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
-    ProgressBar(Vector2 position, Vector2 size, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
+    ProgressBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
+                float minValue, float maxValue);
 
     ~ProgressBar();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetTextLeft() const;
     void SetTextLeft(const char *newTextLeft);
@@ -36,7 +38,7 @@ public:
     RAYGUI_NODISCARD float Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *textLeft;
     const char *textRight;
     float value;

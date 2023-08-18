@@ -31,9 +31,9 @@ public:
     };
 
     class Style {
-        static void GuiSetStyle(GuiControl control, int property, int value);
+        static void GuiSetStyle(::GuiControl control, int property, int value);
 
-        static int GuiGetStyle(GuiControl control, int property);
+        static int GuiGetStyle(::GuiControl control, int property);
 
         static void GuiLoadStyle(const char *fileName);
 
@@ -58,7 +58,7 @@ public:
 
         static char **GuiLoadIcons(const char *fileName, bool loadIconsName);
 
-        static void GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, Color color);
+        static void GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, ::Color color);
 #endif
     };
 };

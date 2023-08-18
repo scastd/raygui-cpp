@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class MessageBox {
 public:
     MessageBox();
-    MessageBox(Rectangle bounds, const char *title, const char *message, const char *buttons);
+    MessageBox(::Rectangle bounds, const char *title, const char *message, const char *buttons);
     MessageBox(float x, float y, float width, float height, const char *title, const char *message, const char *buttons);
-    MessageBox(Vector2 position, Vector2 size, const char *title, const char *message, const char *buttons);
+    MessageBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons);
 
     ~MessageBox();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -30,7 +30,7 @@ public:
     RAYGUI_NODISCARD int Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *title;
     const char *message;
     const char *buttons;

@@ -4,13 +4,13 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 DropdownBox::DropdownBox() : bounds({ 0, 0, 0, 0 }), text(""), active(nullptr), editMode(false) {}
 
-DropdownBox::DropdownBox(Rectangle bounds, const char *text, int *active, bool editMode)
+DropdownBox::DropdownBox(::Rectangle bounds, const char *text, int *active, bool editMode)
     : bounds(bounds), text(text), active(active), editMode(editMode) {}
 
 DropdownBox::DropdownBox(float x, float y, float width, float height, const char *text, int *active, bool editMode)
     : bounds({ x, y, width, height }), text(text), active(active), editMode(editMode) {}
 
-DropdownBox::DropdownBox(Vector2 position, Vector2 size, const char *text, int *active, bool editMode)
+DropdownBox::DropdownBox(::Vector2 position, ::Vector2 size, const char *text, int *active, bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active), editMode(editMode) {}
 
 DropdownBox::~DropdownBox() {
@@ -18,11 +18,11 @@ DropdownBox::~DropdownBox() {
     delete active;
 }
 
-Rectangle DropdownBox::GetBounds() const {
+::Rectangle DropdownBox::GetBounds() const {
     return bounds;
 }
 
-void DropdownBox::SetBounds(Rectangle newBounds) {
+void DropdownBox::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

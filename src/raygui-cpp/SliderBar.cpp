@@ -4,7 +4,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 SliderBar::SliderBar() : bounds({0, 0, 0, 0}), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
 
-SliderBar::SliderBar(Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
+SliderBar::SliderBar(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
                      float maxValue) : bounds(bounds), textLeft(textLeft), textRight(textRight), value(value),
                                         minValue(minValue), maxValue(maxValue) {}
 
@@ -13,7 +13,7 @@ SliderBar::SliderBar(float x, float y, float width, float height, const char *te
                                                                      textRight(textRight), value(value),
                                                                      minValue(minValue), maxValue(maxValue) {}
 
-SliderBar::SliderBar(Vector2 position, Vector2 size, const char *textLeft, const char *textRight, float value,
+SliderBar::SliderBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
                      float minValue, float maxValue) : bounds({position.x, position.y, size.x, size.y}),
                                                        textLeft(textLeft), textRight(textRight), value(value),
                                                        minValue(minValue), maxValue(maxValue) {}
@@ -23,11 +23,11 @@ SliderBar::~SliderBar() {
     delete textRight;
 }
 
-Rectangle SliderBar::GetBounds() const {
+::Rectangle SliderBar::GetBounds() const {
     return bounds;
 }
 
-void SliderBar::SetBounds(Rectangle newBounds) {
+void SliderBar::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

@@ -9,17 +9,17 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class TextInputBox {
 public:
     TextInputBox();
-    TextInputBox(Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
+    TextInputBox(::Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
                  int textMaxSize, int *secretViewActive);
     TextInputBox(float x, float y, float width, float height, const char *title, const char *message,
                  const char *buttons, char *text, int textMaxSize, int *secretViewActive);
-    TextInputBox(Vector2 position, Vector2 size, const char *title, const char *message, const char *buttons,
+    TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons,
                  char *text, int textMaxSize, int *secretViewActive);
 
     ~TextInputBox();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -42,7 +42,7 @@ public:
     RAYGUI_NODISCARD int Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *title;
     const char *message;
     const char *buttons;

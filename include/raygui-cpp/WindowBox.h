@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class WindowBox {
 public:
     WindowBox();
-    WindowBox(Rectangle bounds, const char *title);
+    WindowBox(::Rectangle bounds, const char *title);
     WindowBox(float x, float y, float width, float height, const char *title);
-    WindowBox(Vector2 position, Vector2 size, const char *title);
+    WindowBox(::Vector2 position, ::Vector2 size, const char *title);
 
     ~WindowBox();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -24,7 +24,7 @@ public:
     RAYGUI_NODISCARD bool Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *title;
 };
 

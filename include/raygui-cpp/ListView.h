@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ListView {
 public:
     ListView();
-    ListView(Rectangle bounds, const char *text, int *scrollIndex, int active);
+    ListView(::Rectangle bounds, const char *text, int *scrollIndex, int active);
     ListView(float x, float y, float width, float height, const char *text, int *scrollIndex, int active);
-    ListView(Vector2 position, Vector2 size, const char *text, int *scrollIndex, int active);
+    ListView(::Vector2 position, ::Vector2 size, const char *text, int *scrollIndex, int active);
 
     ~ListView();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -30,7 +30,7 @@ public:
     RAYGUI_NODISCARD int Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
     int *scrollIndex;
     int active;

@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class StatusBar {
 public:
     StatusBar();
-    StatusBar(Rectangle bounds, const char *text);
+    StatusBar(::Rectangle bounds, const char *text);
     StatusBar(float x, float y, float width, float height, const char *text);
-    StatusBar(Vector2 position, Vector2 size, const char *text);
+    StatusBar(::Vector2 position, ::Vector2 size, const char *text);
 
     ~StatusBar();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,7 +24,7 @@ public:
     void Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
 };
 

@@ -9,31 +9,33 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ScrollPanel {
 public:
     ScrollPanel();
-    ScrollPanel(const Rectangle &bounds, const char *text, const Rectangle &content, Vector2 *scroll);
-    ScrollPanel(float x, float y, float width, float height, const char *text, const Rectangle &content, Vector2 *scroll);
-    ScrollPanel(const Vector2 &position, const Vector2 &size, const char *text, const Rectangle &content, Vector2 *scroll);
+    ScrollPanel(const ::Rectangle &bounds, const char *text, const ::Rectangle &content, ::Vector2 *scroll);
+    ScrollPanel(float x, float y, float width, float height, const char *text, const ::Rectangle &content,
+                ::Vector2 *scroll);
+    ScrollPanel(const ::Vector2 &position, const ::Vector2 &size, const char *text, const ::Rectangle &content,
+                ::Vector2 *scroll);
 
     ~ScrollPanel();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD Rectangle GetContent() const;
-    void SetContent(Rectangle newContent);
+    RAYGUI_NODISCARD ::Rectangle GetContent() const;
+    void SetContent(::Rectangle newContent);
 
-    RAYGUI_NODISCARD Vector2 *GetScroll() const;
-    void SetScroll(Vector2 *newScroll);
+    RAYGUI_NODISCARD ::Vector2 *GetScroll() const;
+    void SetScroll(::Vector2 *newScroll);
 
-    RAYGUI_NODISCARD Rectangle Show() const;
+    RAYGUI_NODISCARD ::Rectangle Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
-    Rectangle content;
-    Vector2 *scroll;
+    ::Rectangle content;
+    ::Vector2 *scroll;
 };
 
 RAYGUI_CPP_END_NAMESPACE

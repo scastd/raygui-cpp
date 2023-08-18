@@ -9,16 +9,16 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Spinner {
 public:
     Spinner();
-    Spinner(const Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
+    Spinner(const ::Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
     Spinner(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
             bool editMode);
-    Spinner(const Vector2 &position, const Vector2 &size, const char *text, int *value, int minValue, int maxValue,
+    Spinner(const ::Vector2 &position, const ::Vector2 &size, const char *text, int *value, int minValue, int maxValue,
             bool editMode);
 
     ~Spinner();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(const Rectangle &newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(const ::Rectangle &newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -38,7 +38,7 @@ public:
     RAYGUI_NODISCARD bool Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
     int *value;
     int minValue;

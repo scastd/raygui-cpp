@@ -4,13 +4,13 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 ListView::ListView() : bounds({ 0, 0, 0, 0 }), text(""), scrollIndex(nullptr), active(0) {}
 
-ListView::ListView(Rectangle bounds, const char *text, int *scrollIndex, int active)
+ListView::ListView(::Rectangle bounds, const char *text, int *scrollIndex, int active)
     : bounds(bounds), text(text), scrollIndex(scrollIndex), active(active) {}
 
 ListView::ListView(float x, float y, float width, float height, const char *text, int *scrollIndex, int active)
     : bounds({ x, y, width, height }), text(text), scrollIndex(scrollIndex), active(active) {}
 
-ListView::ListView(Vector2 position, Vector2 size, const char *text, int *scrollIndex, int active)
+ListView::ListView(::Vector2 position, ::Vector2 size, const char *text, int *scrollIndex, int active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), scrollIndex(scrollIndex), active(active) {}
 
 ListView::~ListView() {
@@ -18,11 +18,11 @@ ListView::~ListView() {
     delete scrollIndex;
 }
 
-Rectangle ListView::GetBounds() const {
+::Rectangle ListView::GetBounds() const {
     return bounds;
 }
 
-void ListView::SetBounds(Rectangle newBounds) {
+void ListView::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

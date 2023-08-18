@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ColorBarHue {
 public:
     ColorBarHue();
-    ColorBarHue(Rectangle bounds, const char *text, float value);
+    ColorBarHue(::Rectangle bounds, const char *text, float value);
     ColorBarHue(float x, float y, float width, float height, const char *text, float value);
-    ColorBarHue(Vector2 position, Vector2 size, const char *text, float value);
+    ColorBarHue(::Vector2 position, ::Vector2 size, const char *text, float value);
 
     ~ColorBarHue();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -27,7 +27,7 @@ public:
     RAYGUI_NODISCARD float Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
     float value;
 };

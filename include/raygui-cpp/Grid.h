@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Grid {
 public:
     Grid();
-    Grid(Rectangle bounds, const char *text, float spacing, int subdivisions);
+    Grid(::Rectangle bounds, const char *text, float spacing, int subdivisions);
     Grid(float x, float y, float width, float height, const char *text, float spacing, int subdivisions);
-    Grid(Vector2 position, Vector2 size, const char *text, float spacing, int subdivisions);
+    Grid(::Vector2 position, ::Vector2 size, const char *text, float spacing, int subdivisions);
 
     ~Grid();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -27,10 +27,10 @@ public:
     RAYGUI_NODISCARD int GetSubdivisions() const;
     void SetSubdivisions(int newSubdivisions);
 
-    RAYGUI_NODISCARD Vector2 Show() const;
+    RAYGUI_NODISCARD ::Vector2 Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
     float spacing;
     int subdivisions;

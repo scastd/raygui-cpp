@@ -9,16 +9,16 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ValueBox {
 public:
     ValueBox();
-    ValueBox(const Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
+    ValueBox(const ::Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
     ValueBox(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
              bool editMode);
-    ValueBox(const Vector2 &position, const Vector2 &size, const char *text, int *value, int minValue, int maxValue,
+    ValueBox(const ::Vector2 &position, const ::Vector2 &size, const char *text, int *value, int minValue, int maxValue,
              bool editMode);
 
     ~ValueBox();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(const Rectangle &newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(const ::Rectangle &newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -38,7 +38,7 @@ public:
     RAYGUI_NODISCARD bool Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
     int *value;
     int minValue;

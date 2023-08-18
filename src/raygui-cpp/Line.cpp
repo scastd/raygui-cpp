@@ -4,23 +4,23 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 Line::Line() : bounds({ 0, 0, 0, 0 }), text(nullptr) {}
 
-Line::Line(const Rectangle &bounds, const char *text) : bounds(bounds), text(text) {}
+Line::Line(const ::Rectangle &bounds, const char *text) : bounds(bounds), text(text) {}
 
 Line::Line(float x, float y, float width, float height, const char *text)
     : bounds({ x, y, width, height }), text(text) {}
 
-Line::Line(const Vector2 &position, const Vector2 &size, const char *text)
+Line::Line(const ::Vector2 &position, const ::Vector2 &size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
 Line::~Line() {
     delete text;
 }
 
-Rectangle Line::GetBounds() const {
+::Rectangle Line::GetBounds() const {
     return bounds;
 }
 
-void Line::SetBounds(Rectangle newBounds) {
+void Line::SetBounds(::Rectangle newBounds) {
     bounds = newBounds;
 }
 

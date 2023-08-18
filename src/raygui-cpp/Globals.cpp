@@ -42,11 +42,11 @@ void Globals::Font::GuiSetFont(const ::Font &font) {
     return ::GuiGetFont();
 }
 
-void Globals::Style::GuiSetStyle(GuiControl control, int property, int value) {
+void Globals::Style::GuiSetStyle(::GuiControl control, int property, int value) {
     ::GuiSetStyle(control, property, value);
 }
 
-int Globals::Style::GuiGetStyle(GuiControl control, int property) {
+int Globals::Style::GuiGetStyle(::GuiControl control, int property) {
     return ::GuiGetStyle(control, property);
 }
 
@@ -87,7 +87,7 @@ char **Globals::Icon::GuiLoadIcons(const char *fileName, bool loadIconsName) {
     return ::GuiLoadIcons(fileName, loadIconsName);
 }
 
-void Globals::Icon::GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, Color color) {
+void Globals::Icon::GuiDrawIcon(int iconId, int posX, int posY, int pixelSize, ::Color color) {
     ::GuiDrawIcon(iconId, posX, posY, pixelSize, color);
 }
 #endif

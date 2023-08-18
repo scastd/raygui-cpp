@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class TextBox {
 public:
     TextBox();
-    TextBox(Rectangle bounds, char *text, int textSize, bool editMode);
+    TextBox(::Rectangle bounds, char *text, int textSize, bool editMode);
     TextBox(float x, float y, float width, float height, char *text, int textSize, bool editMode);
-    TextBox(Vector2 position, Vector2 size, char *text, int textSize, bool editMode);
+    TextBox(::Vector2 position, ::Vector2 size, char *text, int textSize, bool editMode);
 
     ~TextBox();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(char *newText);
@@ -29,7 +29,7 @@ public:
 
     RAYGUI_NODISCARD bool Show() const;
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     char *text;
     int textSize;
     bool editMode;

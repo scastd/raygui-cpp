@@ -4,7 +4,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 Slider::Slider() : bounds({0, 0, 0, 0}), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
 
-Slider::Slider(Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
+Slider::Slider(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
                float maxValue) : bounds(bounds), textLeft(textLeft), textRight(textRight), value(value),
                                   minValue(minValue), maxValue(maxValue) {}
 
@@ -13,8 +13,8 @@ Slider::Slider(float x, float y, float width, float height, const char *textLeft
                                                   textRight(textRight), value(value), minValue(minValue),
                                                   maxValue(maxValue) {}
 
-Slider::Slider(Vector2 position, Vector2 size, const char *textLeft, const char *textRight, float value, float minValue,
-               float maxValue) : bounds({position.x, position.y, size.x, size.y}), textLeft(textLeft),
+Slider::Slider(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
+               float minValue, float maxValue) : bounds({position.x, position.y, size.x, size.y}), textLeft(textLeft),
                                   textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 Slider::~Slider() {
@@ -22,11 +22,11 @@ Slider::~Slider() {
     delete textRight;
 }
 
-Rectangle Slider::GetBounds() const {
+::Rectangle Slider::GetBounds() const {
     return bounds;
 }
 
-void Slider::SetBounds(Rectangle newBounds) {
+void Slider::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

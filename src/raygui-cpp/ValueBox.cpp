@@ -4,7 +4,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 ValueBox::ValueBox() : bounds({ 0, 0, 0, 0 }), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
 
-ValueBox::ValueBox(const Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
+ValueBox::ValueBox(const ::Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
     : bounds(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
 
 ValueBox::ValueBox(float x, float y, float width, float height, const char *text, int *value, int minValue,
@@ -12,7 +12,7 @@ ValueBox::ValueBox(float x, float y, float width, float height, const char *text
     : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
       editMode(editMode) {}
 
-ValueBox::ValueBox(const Vector2 &position, const Vector2 &size, const char *text, int *value, int minValue,
+ValueBox::ValueBox(const ::Vector2 &position, const ::Vector2 &size, const char *text, int *value, int minValue,
                    int maxValue, bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
         maxValue(maxValue), editMode(editMode) {}
@@ -22,11 +22,11 @@ ValueBox::~ValueBox() {
     delete value;
 }
 
-Rectangle ValueBox::GetBounds() const {
+::Rectangle ValueBox::GetBounds() const {
     return bounds;
 }
 
-void ValueBox::SetBounds(const Rectangle &newBounds) {
+void ValueBox::SetBounds(const ::Rectangle &newBounds) {
     this->bounds = newBounds;
 }
 

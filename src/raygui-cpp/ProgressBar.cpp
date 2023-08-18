@@ -5,7 +5,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 ProgressBar::ProgressBar()
     : bounds({ 0, 0, 0, 0 }), textLeft(nullptr), textRight(nullptr), value(0), minValue(0), maxValue(0) {}
 
-ProgressBar::ProgressBar(Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
+ProgressBar::ProgressBar(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
                          float maxValue)
     : bounds(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
@@ -14,7 +14,7 @@ ProgressBar::ProgressBar(float x, float y, float width, float height, const char
     : bounds({ x, y, width, height }), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
       maxValue(maxValue) {}
 
-ProgressBar::ProgressBar(Vector2 position, Vector2 size, const char *textLeft, const char *textRight, float value,
+ProgressBar::ProgressBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
                          float minValue, float maxValue)
     : bounds({ position.x, position.y, size.x, size.y }), textLeft(textLeft), textRight(textRight), value(value),
       minValue(minValue), maxValue(maxValue) {}
@@ -24,11 +24,11 @@ ProgressBar::~ProgressBar() {
     delete textRight;
 }
 
-Rectangle ProgressBar::GetBounds() const {
+::Rectangle ProgressBar::GetBounds() const {
     return bounds;
 }
 
-void ProgressBar::SetBounds(Rectangle newBounds) {
+void ProgressBar::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

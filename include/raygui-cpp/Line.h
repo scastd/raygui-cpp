@@ -9,14 +9,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Line {
 public:
     Line();
-    Line(const Rectangle &bounds, const char *text);
+    Line(const ::Rectangle &bounds, const char *text);
     Line(float x, float y, float width, float height, const char *text);
-    Line(const Vector2 &position, const Vector2 &size, const char *text);
+    Line(const ::Vector2 &position, const ::Vector2 &size, const char *text);
 
     ~Line();
 
-    RAYGUI_NODISCARD Rectangle GetBounds() const;
-    void SetBounds(Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
+    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,7 +24,7 @@ public:
     void Show() const;
 
 private:
-    Rectangle bounds;
+    ::Rectangle bounds;
     const char *text;
 };
 
