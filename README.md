@@ -28,37 +28,37 @@ target_link_libraries(<your_target> raygui_cpp)
 
 ## Implementation todo list
 
-- [ ] Button
-- [ ] CheckBox
+- [x] Button
+- [x] CheckBox
 - [ ] ColorBarAlpha
 - [ ] ColorBarHue
 - [ ] ColorPanel
 - [ ] ColorPicker
-- [ ] ComboBox
-- [ ] DropdownBox
-- [ ] DummyRec
+- [x] ComboBox
+- [x] DropdownBox
+- [x] DummyRec
 - [x] Globals
-- [ ] Grid
+- [x] Grid
 - [x] GroupBox
-- [ ] Label
-- [ ] LabelButton
+- [x] Label
+- [x] LabelButton
 - [x] Line
 - [ ] ListView
 - [ ] ListViewEx
 - [ ] MessageBox
 - [x] Panel
-- [ ] ProgressBar
+- [x] ProgressBar
 - [x] ScrollPanel
-- [ ] Slider
-- [ ] SliderBar
-- [ ] Spinner
-- [ ] StatusBar
+- [x] Slider
+- [x] SliderBar
+- [x] Spinner
+- [x] StatusBar
 - [x] TabBar
-- [ ] TextBox
+- [x] TextBox
 - [ ] TextInputBox
-- [ ] Toggle
-- [ ] ToggleGroup
-- [ ] ValueBox
+- [x] Toggle
+- [x] ToggleGroup
+- [x] ValueBox
 - [x] WindowBox
 
 ## More info
