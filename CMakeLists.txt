@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(raygui_cpp
         LANGUAGES C CXX
-        VERSION 0.0.1
+        VERSION 0.1.0
         DESCRIPTION "C++ wrapper for raygui")
 
 # Add dependencies
@@ -9,38 +9,38 @@ set(RAYGUI_CPP_SOURCE_FILES
         # C files
         dependencies/raylib/src/raygui.c
         # C++ files
-        src/Button.cpp
-        src/CheckBox.cpp
-        src/ColorBarAlpha.cpp
-        src/ColorBarHue.cpp
-        src/ColorPanel.cpp
-        src/ColorPicker.cpp
-        src/ComboBox.cpp
-        src/DropdownBox.cpp
-        src/DummyRec.cpp
-        src/Globals.cpp
-        src/Grid.cpp
-        src/GroupBox.cpp
-        src/LabelButton.cpp
-        src/Label.cpp
-        src/Line.cpp
-        src/ListView.cpp
-        src/ListViewEx.cpp
-        src/MessageBox.cpp
-        src/Panel.cpp
-        src/ProgressBar.cpp
-        src/ScrollPanel.cpp
-        src/SliderBar.cpp
-        src/Slider.cpp
-        src/Spinner.cpp
-        src/StatusBar.cpp
-        src/TabBar.cpp
-        src/TextBox.cpp
-        src/TextInputBox.cpp
-        src/Toggle.cpp
-        src/ToggleGroup.cpp
-        src/ValueBox.cpp
-        src/WindowBox.cpp
+        src/raygui-cpp/Button.cpp
+        src/raygui-cpp/CheckBox.cpp
+        src/raygui-cpp/ColorBarAlpha.cpp
+        src/raygui-cpp/ColorBarHue.cpp
+        src/raygui-cpp/ColorPanel.cpp
+        src/raygui-cpp/ColorPicker.cpp
+        src/raygui-cpp/ComboBox.cpp
+        src/raygui-cpp/DropdownBox.cpp
+        src/raygui-cpp/DummyRec.cpp
+        src/raygui-cpp/Globals.cpp
+        src/raygui-cpp/Grid.cpp
+        src/raygui-cpp/GroupBox.cpp
+        src/raygui-cpp/LabelButton.cpp
+        src/raygui-cpp/Label.cpp
+        src/raygui-cpp/Line.cpp
+        src/raygui-cpp/ListView.cpp
+        src/raygui-cpp/ListViewEx.cpp
+        src/raygui-cpp/MessageBox.cpp
+        src/raygui-cpp/Panel.cpp
+        src/raygui-cpp/ProgressBar.cpp
+        src/raygui-cpp/ScrollPanel.cpp
+        src/raygui-cpp/SliderBar.cpp
+        src/raygui-cpp/Slider.cpp
+        src/raygui-cpp/Spinner.cpp
+        src/raygui-cpp/StatusBar.cpp
+        src/raygui-cpp/TabBar.cpp
+        src/raygui-cpp/TextBox.cpp
+        src/raygui-cpp/TextInputBox.cpp
+        src/raygui-cpp/Toggle.cpp
+        src/raygui-cpp/ToggleGroup.cpp
+        src/raygui-cpp/ValueBox.cpp
+        src/raygui-cpp/WindowBox.cpp
 )
 
 set(RAYGUI_CPP_HEADER_FILES
@@ -48,39 +48,39 @@ set(RAYGUI_CPP_HEADER_FILES
         dependencies/raylib/src/raylib.h
         dependencies/raylib/src/raygui.h
         # C++ files
-        include/Button.h
-        include/CheckBox.h
-        include/ColorBarAlpha.h
-        include/ColorBarHue.h
-        include/ColorPanel.h
-        include/ColorPicker.h
-        include/ComboBox.h
-        include/Directives.h
-        include/DropdownBox.h
-        include/DummyRec.h
-        include/Globals.h
-        include/Grid.h
-        include/GroupBox.h
-        include/LabelButton.h
-        include/Label.h
-        include/Line.h
-        include/ListViewEx.h
-        include/ListView.h
-        include/MessageBox.h
-        include/Panel.h
-        include/ProgressBar.h
-        include/ScrollPanel.h
-        include/SliderBar.h
-        include/Slider.h
-        include/Spinner.h
-        include/StatusBar.h
-        include/TabBar.h
-        include/TextBox.h
-        include/TextInputBox.h
-        include/ToggleGroup.h
-        include/Toggle.h
-        include/ValueBox.h
-        include/WindowBox.h
+        include/raygui-cpp/Button.h
+        include/raygui-cpp/CheckBox.h
+        include/raygui-cpp/ColorBarAlpha.h
+        include/raygui-cpp/ColorBarHue.h
+        include/raygui-cpp/ColorPanel.h
+        include/raygui-cpp/ColorPicker.h
+        include/raygui-cpp/ComboBox.h
+        include/raygui-cpp/Directives.h
+        include/raygui-cpp/DropdownBox.h
+        include/raygui-cpp/DummyRec.h
+        include/raygui-cpp/Globals.h
+        include/raygui-cpp/Grid.h
+        include/raygui-cpp/GroupBox.h
+        include/raygui-cpp/LabelButton.h
+        include/raygui-cpp/Label.h
+        include/raygui-cpp/Line.h
+        include/raygui-cpp/ListViewEx.h
+        include/raygui-cpp/ListView.h
+        include/raygui-cpp/MessageBox.h
+        include/raygui-cpp/Panel.h
+        include/raygui-cpp/ProgressBar.h
+        include/raygui-cpp/ScrollPanel.h
+        include/raygui-cpp/SliderBar.h
+        include/raygui-cpp/Slider.h
+        include/raygui-cpp/Spinner.h
+        include/raygui-cpp/StatusBar.h
+        include/raygui-cpp/TabBar.h
+        include/raygui-cpp/TextBox.h
+        include/raygui-cpp/TextInputBox.h
+        include/raygui-cpp/ToggleGroup.h
+        include/raygui-cpp/Toggle.h
+        include/raygui-cpp/ValueBox.h
+        include/raygui-cpp/WindowBox.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
