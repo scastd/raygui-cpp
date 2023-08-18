@@ -18,8 +18,8 @@ void Globals::GuiUnlock() {
     ::GuiUnlock();
 }
 
-void Globals::GuiIsLocked() {
-    ::GuiIsLocked();
+bool Globals::GuiIsLocked() {
+    return ::GuiIsLocked();
 }
 
 void Globals::GuiFade(float alpha) {

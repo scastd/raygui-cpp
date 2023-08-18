@@ -26,6 +26,41 @@ add_subdirectory(<path_to_raygui_cpp_folder>)
 target_link_libraries(<your_target> raygui_cpp)
 ```
 
+## Implementation todo list
+
+- [ ] Button
+- [ ] CheckBox
+- [ ] ColorBarAlpha
+- [ ] ColorBarHue
+- [ ] ColorPanel
+- [ ] ColorPicker
+- [ ] ComboBox
+- [ ] DropdownBox
+- [ ] DummyRec
+- [x] Globals
+- [ ] Grid
+- [x] GroupBox
+- [ ] Label
+- [ ] LabelButton
+- [x] Line
+- [ ] ListView
+- [ ] ListViewEx
+- [ ] MessageBox
+- [x] Panel
+- [ ] ProgressBar
+- [x] ScrollPanel
+- [ ] Slider
+- [ ] SliderBar
+- [ ] Spinner
+- [ ] StatusBar
+- [x] TabBar
+- [ ] TextBox
+- [ ] TextInputBox
+- [ ] Toggle
+- [ ] ToggleGroup
+- [ ] ValueBox
+- [x] WindowBox
+
 ## More info
 
 For more information about raygui, visit the [official raygui repository](https://github.com/raysan5/raygui).

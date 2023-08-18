@@ -16,7 +16,7 @@ public:
 
     static void GuiUnlock();
 
-    static void GuiIsLocked();
+    static bool GuiIsLocked();
 
     static void GuiFade(float alpha);
 
