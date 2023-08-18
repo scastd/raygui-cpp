@@ -83,7 +83,15 @@ set(RAYGUI_CPP_HEADER_FILES
         include/WindowBox.h
 )
 
-add_library(raygui_cpp SHARED ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
+option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
+
+if (BUILD_SHARED_LIBS)
+    message(STATUS "Building raygui_cpp as shared library")
+    add_library(raygui_cpp SHARED ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
+else ()
+    message(STATUS "Building raygui_cpp as static library")
+    add_library(raygui_cpp STATIC ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
+endif ()
 
 target_include_directories(raygui_cpp
         PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
