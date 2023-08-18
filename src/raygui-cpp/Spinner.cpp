@@ -4,7 +4,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 Spinner::Spinner() : bounds({ 0, 0, 0, 0 }), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
 
-Spinner::Spinner(const ::Rectangle &bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
+Spinner::Spinner(::Rectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
     : bounds(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
 
 Spinner::Spinner(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
@@ -12,8 +12,7 @@ Spinner::Spinner(float x, float y, float width, float height, const char *text, 
     : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
       editMode(editMode) {}
 
-Spinner::Spinner(const ::Vector2 &position, const ::Vector2 &size, const char *text, int *value, int minValue,
-                 int maxValue, bool editMode)
+Spinner::Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue, bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
       maxValue(maxValue), editMode(editMode) {}
 
@@ -26,7 +25,7 @@ Spinner::~Spinner() {
     return bounds;
 }
 
-void Spinner::SetBounds(const ::Rectangle &newBounds) {
+void Spinner::SetBounds(::Rectangle newBounds) {
     this->bounds = newBounds;
 }
 

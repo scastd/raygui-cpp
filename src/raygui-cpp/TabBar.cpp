@@ -4,12 +4,12 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 TabBar::TabBar() : bounds({ 0, 0, 0, 0 }), text(nullptr), count(0), active(nullptr) {}
 
-TabBar::TabBar(const ::Rectangle &bounds, const char **text, int count, int *active)
+TabBar::TabBar(::Rectangle bounds, const char **text, int count, int *active)
     : bounds(bounds), text(text), count(count), active(active) {}
 
 TabBar::TabBar(float x, float y, float width, float height, const char **text, int count, int *active) : bounds({ x, y, width, height }), text(text), count(count), active(active) {}
 
-TabBar::TabBar(const ::Vector2 &position, const ::Vector2 &size, const char **text, int count, int *active)
+TabBar::TabBar(::Vector2 position, ::Vector2 size, const char **text, int count, int *active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), count(count), active(active) {}
 
 TabBar::~TabBar() {

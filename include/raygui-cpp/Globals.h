@@ -25,7 +25,7 @@ public:
     static int GuiGetState();
 
     class Font {
-        static void GuiSetFont(const ::Font &font);
+        static void GuiSetFont(::Font font);
 
         static ::Font GuiGetFont();
     };

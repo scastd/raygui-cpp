@@ -4,15 +4,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 ScrollPanel::ScrollPanel() : bounds({ 0, 0, 0, 0 }), text(""), content({ 0, 0, 0, 0 }), scroll(new ::Vector2()) {}
 
-ScrollPanel::ScrollPanel(const ::Rectangle &bounds, const char *text, const ::Rectangle &content, ::Vector2 *scroll)
+ScrollPanel::ScrollPanel(::Rectangle bounds, const char *text, ::Rectangle content, ::Vector2 *scroll)
     : bounds(bounds), text(text), content(content), scroll(scroll) {}
 
-ScrollPanel::ScrollPanel(float x, float y, float width, float height, const char *text, const ::Rectangle &content,
+ScrollPanel::ScrollPanel(float x, float y, float width, float height, const char *text, ::Rectangle content,
                          ::Vector2 *scroll)
     : bounds({ x, y, width, height }), text(text), content(content), scroll(scroll) {}
 
-ScrollPanel::ScrollPanel(const ::Vector2 &position, const ::Vector2 &size, const char *text, const ::Rectangle &content,
-                         ::Vector2 *scroll)
+ScrollPanel::ScrollPanel(::Vector2 position, ::Vector2 size, const char *text, ::Rectangle content, ::Vector2 *scroll)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), content(content), scroll(scroll) {}
 
 ScrollPanel::~ScrollPanel() {

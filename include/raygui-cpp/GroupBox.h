@@ -9,9 +9,9 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class GroupBox {
 public:
     GroupBox();
-    GroupBox(const ::Rectangle &bounds, const char *text);
+    GroupBox(::Rectangle bounds, const char *text);
     GroupBox(float x, float y, float width, float height, const char *text);
-    GroupBox(const ::Vector2 &position, const ::Vector2 &size, const char *text);
+    GroupBox(::Vector2 position, ::Vector2 size, const char *text);
 
     ~GroupBox();
 

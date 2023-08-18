@@ -4,12 +4,12 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 
 GroupBox::GroupBox() : bounds({ 0, 0, 0, 0 }), text("") {}
 
-GroupBox::GroupBox(const ::Rectangle &bounds, const char *text) : bounds(bounds), text(text) {}
+GroupBox::GroupBox(::Rectangle bounds, const char *text) : bounds(bounds), text(text) {}
 
 GroupBox::GroupBox(float x, float y, float width, float height, const char *text)
     : bounds({ x, y, width, height }), text(text) {}
 
-GroupBox::GroupBox(const ::Vector2 &position, const ::Vector2 &size, const char *text)
+GroupBox::GroupBox(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
 GroupBox::~GroupBox() {

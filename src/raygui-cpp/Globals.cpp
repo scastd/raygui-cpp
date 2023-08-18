@@ -34,7 +34,7 @@ int Globals::GuiGetState() {
     return ::GuiGetState();
 }
 
-void Globals::Font::GuiSetFont(const ::Font &font) {
+void Globals::Font::GuiSetFont(::Font font) {
     ::GuiSetFont(font);
 }
 

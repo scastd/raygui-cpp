@@ -9,9 +9,9 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Line {
 public:
     Line();
-    Line(const ::Rectangle &bounds, const char *text);
+    Line(::Rectangle bounds, const char *text);
     Line(float x, float y, float width, float height, const char *text);
-    Line(const ::Vector2 &position, const ::Vector2 &size, const char *text);
+    Line(::Vector2 position, ::Vector2 size, const char *text);
 
     ~Line();
 

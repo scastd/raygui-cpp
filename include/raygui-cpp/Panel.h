@@ -9,9 +9,9 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Panel {
 public:
     Panel();
-    Panel(const ::Rectangle &bounds, const char *text);
+    Panel(::Rectangle bounds, const char *text);
     Panel(float x, float y, float width, float height, const char *text);
-    Panel(const ::Vector2 &position, const ::Vector2 &size, const char *text);
+    Panel(::Vector2 position, ::Vector2 size, const char *text);
 
     ~Panel();
 
