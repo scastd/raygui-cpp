@@ -14,10 +14,6 @@ TextBox::TextBox(::Vector2 position, ::Vector2 size, char *text, int textSize, b
     : bounds({ position.x, position.y, size.x, size.y }), text(text), textSize(textSize),
       editMode(editMode) {}
 
-TextBox::~TextBox() {
-    delete text;
-}
-
 ::Rectangle TextBox::GetBounds() const {
     return bounds;
 }

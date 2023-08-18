@@ -13,7 +13,7 @@ public:
     ColorBarHue(float x, float y, float width, float height, const char *text, float value);
     ColorBarHue(::Vector2 position, ::Vector2 size, const char *text, float value);
 
-    ~ColorBarHue();
+    ~ColorBarHue() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

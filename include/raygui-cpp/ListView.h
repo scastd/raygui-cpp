@@ -13,7 +13,7 @@ public:
     ListView(float x, float y, float width, float height, const char *text, int *scrollIndex, int active);
     ListView(::Vector2 position, ::Vector2 size, const char *text, int *scrollIndex, int active);
 
-    ~ListView();
+    ~ListView() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

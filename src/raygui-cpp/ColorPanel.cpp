@@ -13,10 +13,6 @@ ColorPanel::ColorPanel(float x, float y, float width, float height, const char *
 ColorPanel::ColorPanel(::Vector2 position, ::Vector2 size, const char *text, ::Color color)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), color(color) {}
 
-ColorPanel::~ColorPanel() {
-    delete text;
-}
-
 ::Rectangle ColorPanel::GetBounds() const {
     return bounds;
 }

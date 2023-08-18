@@ -13,7 +13,7 @@ public:
     TabBar(float x, float y, float width, float height, const char **text, int count, int *active);
     TabBar(::Vector2 position, ::Vector2 size, const char **text, int count, int *active);
 
-    ~TabBar();
+    ~TabBar() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

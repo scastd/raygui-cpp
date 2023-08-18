@@ -13,7 +13,7 @@ public:
     DropdownBox(float x, float y, float width, float height, const char *text, int *active, bool editMode);
     DropdownBox(::Vector2 position, ::Vector2 size, const char *text, int *active, bool editMode);
 
-    ~DropdownBox();
+    ~DropdownBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

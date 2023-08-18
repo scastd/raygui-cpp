@@ -13,7 +13,7 @@ private:
     ToggleGroup(float x, float y, float width, float height, const char *text, int active);
     ToggleGroup(::Vector2 position, ::Vector2 size, const char *text, int active);
 
-    ~ToggleGroup();
+    ~ToggleGroup() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

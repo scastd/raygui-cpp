@@ -12,10 +12,6 @@ Toggle::Toggle(float x, float y, float width, float height, const char *text, bo
 Toggle::Toggle(::Vector2 position, ::Vector2 size, const char *text, bool active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active) {}
 
-Toggle::~Toggle() {
-    delete text;
-}
-
 ::Rectangle Toggle::GetBounds() const {
     return bounds;
 }

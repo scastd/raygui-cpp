@@ -12,10 +12,6 @@ CheckBox::CheckBox(float x, float y, float width, float height, const char *text
 CheckBox::CheckBox(::Vector2 position, ::Vector2 size, const char *text, bool checked)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), checked(checked) {}
 
-CheckBox::~CheckBox() {
-    delete text;
-}
-
 ::Rectangle CheckBox::GetBounds() const {
     return bounds;
 }

@@ -13,7 +13,7 @@ public:
     ColorPanel(float x, float y, float width, float height, const char *text, ::Color color);
     ColorPanel(::Vector2 position, ::Vector2 size, const char *text, ::Color color);
 
-    ~ColorPanel();
+    ~ColorPanel() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

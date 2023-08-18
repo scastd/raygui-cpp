@@ -12,10 +12,6 @@ DummyRec::DummyRec(float x, float y, float width, float height, const char *text
 DummyRec::DummyRec(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-DummyRec::~DummyRec() {
-    delete text;
-}
-
 ::Rectangle DummyRec::GetBounds() const {
     return bounds;
 }

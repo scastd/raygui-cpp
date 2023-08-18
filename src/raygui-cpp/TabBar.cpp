@@ -12,11 +12,6 @@ TabBar::TabBar(float x, float y, float width, float height, const char **text, i
 TabBar::TabBar(::Vector2 position, ::Vector2 size, const char **text, int count, int *active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), count(count), active(active) {}
 
-TabBar::~TabBar() {
-    delete text;
-    delete active;
-}
-
 ::Rectangle TabBar::GetBounds() const {
     return bounds;
 }

@@ -15,7 +15,7 @@ public:
     ListViewEx(::Vector2 position, ::Vector2 size, const char **text, int count, int *focus, int *scrollIndex,
                int active);
 
-    ~ListViewEx();
+    ~ListViewEx() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

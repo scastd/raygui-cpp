@@ -13,7 +13,7 @@ public:
     WindowBox(float x, float y, float width, float height, const char *title);
     WindowBox(::Vector2 position, ::Vector2 size, const char *title);
 
-    ~WindowBox();
+    ~WindowBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

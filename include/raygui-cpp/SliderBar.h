@@ -15,7 +15,7 @@ public:
     SliderBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
               float minValue, float maxValue);
 
-    ~SliderBar();
+    ~SliderBar() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

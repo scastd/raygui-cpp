@@ -13,7 +13,7 @@ public:
     CheckBox(float x, float y, float width, float height, const char *text, bool checked);
     CheckBox(::Vector2 position, ::Vector2 size, const char *text, bool checked);
 
-    ~CheckBox();
+    ~CheckBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

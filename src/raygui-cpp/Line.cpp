@@ -12,10 +12,6 @@ Line::Line(float x, float y, float width, float height, const char *text)
 Line::Line(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-Line::~Line() {
-    delete text;
-}
-
 ::Rectangle Line::GetBounds() const {
     return bounds;
 }

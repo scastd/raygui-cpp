@@ -19,11 +19,6 @@ ProgressBar::ProgressBar(::Vector2 position, ::Vector2 size, const char *textLef
     : bounds({ position.x, position.y, size.x, size.y }), textLeft(textLeft), textRight(textRight), value(value),
       minValue(minValue), maxValue(maxValue) {}
 
-ProgressBar::~ProgressBar() {
-    delete textLeft;
-    delete textRight;
-}
-
 ::Rectangle ProgressBar::GetBounds() const {
     return bounds;
 }

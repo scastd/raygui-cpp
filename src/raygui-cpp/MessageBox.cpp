@@ -14,12 +14,6 @@ MessageBox::MessageBox(float x, float y, float width, float height, const char *
 MessageBox::MessageBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons)
     : bounds({ position.x, position.y, size.x, size.y }), title(title), message(message), buttons(buttons) {}
 
-MessageBox::~MessageBox() {
-    delete title;
-    delete message;
-    delete buttons;
-}
-
 ::Rectangle MessageBox::GetBounds() const {
     return bounds;
 }

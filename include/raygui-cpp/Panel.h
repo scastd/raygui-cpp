@@ -13,7 +13,7 @@ public:
     Panel(float x, float y, float width, float height, const char *text);
     Panel(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~Panel();
+    ~Panel() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

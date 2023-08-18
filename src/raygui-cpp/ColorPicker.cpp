@@ -13,10 +13,6 @@ ColorPicker::ColorPicker(float x, float y, float width, float height, const char
 ColorPicker::ColorPicker(::Vector2 position, ::Vector2 size, const char *text, ::Color color)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), color(color) {}
 
-ColorPicker::~ColorPicker() {
-    delete text;
-}
-
 ::Rectangle ColorPicker::GetBounds() const {
     return bounds;
 }

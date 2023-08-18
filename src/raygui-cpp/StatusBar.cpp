@@ -11,10 +11,6 @@ StatusBar::StatusBar(float x, float y, float width, float height, const char *te
 StatusBar::StatusBar(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-StatusBar::~StatusBar() {
-    delete text;
-}
-
 ::Rectangle StatusBar::GetBounds() const {
     return bounds;
 }

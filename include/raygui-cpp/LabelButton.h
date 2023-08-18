@@ -13,6 +13,8 @@ public:
     LabelButton(float x, float y, float width, float height, const char *text);
     LabelButton(::Vector2 position, ::Vector2 size, const char *text);
 
+    ~LabelButton() = default;
+
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);
 

@@ -11,10 +11,6 @@ Label::Label(float x, float y, float width, float height, const char *text) : bo
 Label::Label(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-Label::~Label() {
-    delete text;
-}
-
 ::Rectangle Label::GetBounds() const {
     return bounds;
 }

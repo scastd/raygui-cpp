@@ -23,14 +23,6 @@ TextInputBox::TextInputBox(::Vector2 position, ::Vector2 size, const char *title
                                                                                 textMaxSize(textMaxSize),
                                                                                 secretViewActive(secretViewActive) {}
 
-TextInputBox::~TextInputBox() {
-    delete title;
-    delete message;
-    delete buttons;
-    delete text;
-    delete secretViewActive;
-}
-
 ::Rectangle TextInputBox::GetBounds() const {
     return bounds;
 }

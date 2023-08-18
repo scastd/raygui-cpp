@@ -13,7 +13,7 @@ public:
     Line(float x, float y, float width, float height, const char *text);
     Line(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~Line();
+    ~Line() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

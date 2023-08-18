@@ -16,11 +16,6 @@ Spinner::Spinner(::Vector2 position, ::Vector2 size, const char *text, int *valu
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
       maxValue(maxValue), editMode(editMode) {}
 
-Spinner::~Spinner() {
-    delete text;
-    delete value;
-}
-
 ::Rectangle Spinner::GetBounds() const {
     return bounds;
 }

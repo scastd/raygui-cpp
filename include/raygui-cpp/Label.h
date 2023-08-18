@@ -13,7 +13,7 @@ public:
     Label(float x, float y, float width, float height, const char *text);
     Label(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~Label();
+    ~Label() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

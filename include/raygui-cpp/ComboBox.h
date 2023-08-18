@@ -13,7 +13,7 @@ public:
     ComboBox(float x, float y, float width, float height, const char *text, int active);
     ComboBox(::Vector2 position, ::Vector2 size, const char *text, int active);
 
-    ~ComboBox();
+    ~ComboBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

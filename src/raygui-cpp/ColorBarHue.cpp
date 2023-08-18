@@ -12,10 +12,6 @@ ColorBarHue::ColorBarHue(float x, float y, float width, float height, const char
 ColorBarHue::ColorBarHue(::Vector2 position, ::Vector2 size, const char *text, float value)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value) {}
 
-ColorBarHue::~ColorBarHue() {
-    delete text;
-}
-
 ::Rectangle ColorBarHue::GetBounds() const {
     return bounds;
 }

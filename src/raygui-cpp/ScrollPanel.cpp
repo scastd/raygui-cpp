@@ -14,11 +14,6 @@ ScrollPanel::ScrollPanel(float x, float y, float width, float height, const char
 ScrollPanel::ScrollPanel(::Vector2 position, ::Vector2 size, const char *text, ::Rectangle content, ::Vector2 *scroll)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), content(content), scroll(scroll) {}
 
-ScrollPanel::~ScrollPanel() {
-    delete text;
-    delete scroll;
-}
-
 ::Rectangle ScrollPanel::GetBounds() const {
     return bounds;
 }

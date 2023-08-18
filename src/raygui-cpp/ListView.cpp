@@ -13,11 +13,6 @@ ListView::ListView(float x, float y, float width, float height, const char *text
 ListView::ListView(::Vector2 position, ::Vector2 size, const char *text, int *scrollIndex, int active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), scrollIndex(scrollIndex), active(active) {}
 
-ListView::~ListView() {
-    delete text;
-    delete scrollIndex;
-}
-
 ::Rectangle ListView::GetBounds() const {
     return bounds;
 }

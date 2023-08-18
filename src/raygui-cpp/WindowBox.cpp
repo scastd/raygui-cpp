@@ -12,10 +12,6 @@ WindowBox::WindowBox(float x, float y, float width, float height, const char *ti
 WindowBox::WindowBox(::Vector2 position, ::Vector2 size, const char *title)
     : bounds({ position.x, position.y, size.x, size.y }), title(title) {}
 
-WindowBox::~WindowBox() {
-    delete title;
-}
-
 ::Rectangle WindowBox::GetBounds() const {
     return bounds;
 }

@@ -18,11 +18,6 @@ SliderBar::SliderBar(::Vector2 position, ::Vector2 size, const char *textLeft, c
                                                        textLeft(textLeft), textRight(textRight), value(value),
                                                        minValue(minValue), maxValue(maxValue) {}
 
-SliderBar::~SliderBar() {
-    delete textLeft;
-    delete textRight;
-}
-
 ::Rectangle SliderBar::GetBounds() const {
     return bounds;
 }

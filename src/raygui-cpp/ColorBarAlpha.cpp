@@ -12,10 +12,6 @@ ColorBarAlpha::ColorBarAlpha(float x, float y, float width, float height, const 
 ColorBarAlpha::ColorBarAlpha(::Vector2 position, ::Vector2 size, const char *text, float alpha)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), alpha(alpha) {}
 
-ColorBarAlpha::~ColorBarAlpha() {
-    delete text;
-}
-
 ::Rectangle ColorBarAlpha::GetBounds() const {
     return bounds;
 }

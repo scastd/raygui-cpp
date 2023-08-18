@@ -18,12 +18,6 @@ ListViewEx::ListViewEx(::Vector2 position, ::Vector2 size, const char **text, in
     : bounds({ position.x, position.y, size.x, size.y }), text(text), count(count), focus(focus),
       scrollIndex(scrollIndex), active(active) {}
 
-ListViewEx::~ListViewEx() {
-    delete text;
-    delete focus;
-    delete scrollIndex;
-}
-
 ::Rectangle ListViewEx::GetBounds() const {
     return bounds;
 }

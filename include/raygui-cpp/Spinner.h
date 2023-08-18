@@ -15,7 +15,7 @@ public:
     Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
             bool editMode);
 
-    ~Spinner();
+    ~Spinner() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

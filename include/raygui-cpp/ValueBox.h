@@ -15,7 +15,7 @@ public:
     ValueBox(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
              bool editMode);
 
-    ~ValueBox();
+    ~ValueBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

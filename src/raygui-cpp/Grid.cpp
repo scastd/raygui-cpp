@@ -13,10 +13,6 @@ Grid::Grid(float x, float y, float width, float height, const char *text, float 
 Grid::Grid(::Vector2 position, ::Vector2 size, const char *text, float spacing, int subdivisions)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), spacing(spacing), subdivisions(subdivisions) {}
 
-Grid::~Grid() {
-    delete text;
-}
-
 ::Rectangle Grid::GetBounds() const {
     return bounds;
 }

@@ -13,7 +13,7 @@ public:
     ColorBarAlpha(float x, float y, float width, float height, const char *text, float alpha);
     ColorBarAlpha(::Vector2 position, ::Vector2 size, const char *text, float alpha);
 
-    ~ColorBarAlpha();
+    ~ColorBarAlpha() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

@@ -13,7 +13,7 @@ public:
     ScrollPanel(float x, float y, float width, float height, const char *text, ::Rectangle content, ::Vector2 *scroll);
     ScrollPanel(::Vector2 position, ::Vector2 size, const char *text, ::Rectangle content, ::Vector2 *scroll);
 
-    ~ScrollPanel();
+    ~ScrollPanel() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

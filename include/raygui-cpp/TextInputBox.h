@@ -16,7 +16,7 @@ public:
     TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons,
                  char *text, int textMaxSize, int *secretViewActive);
 
-    ~TextInputBox();
+    ~TextInputBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

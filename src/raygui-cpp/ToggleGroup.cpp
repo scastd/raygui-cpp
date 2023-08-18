@@ -13,10 +13,6 @@ ToggleGroup::ToggleGroup(float x, float y, float width, float height, const char
 ToggleGroup::ToggleGroup(::Vector2 position, ::Vector2 size, const char *text, int active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active) {}
 
-ToggleGroup::~ToggleGroup() {
-    delete text;
-}
-
 ::Rectangle ToggleGroup::GetBounds() const {
     return bounds;
 }

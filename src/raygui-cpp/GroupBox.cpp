@@ -12,10 +12,6 @@ GroupBox::GroupBox(float x, float y, float width, float height, const char *text
 GroupBox::GroupBox(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-GroupBox::~GroupBox() {
-    delete text;
-}
-
 ::Rectangle GroupBox::GetBounds() const {
     return bounds;
 }

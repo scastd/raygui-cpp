@@ -13,7 +13,7 @@ public:
     GroupBox(float x, float y, float width, float height, const char *text);
     GroupBox(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~GroupBox();
+    ~GroupBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

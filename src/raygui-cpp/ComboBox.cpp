@@ -12,10 +12,6 @@ ComboBox::ComboBox(float x, float y, float width, float height, const char *text
 ComboBox::ComboBox(::Vector2 position, ::Vector2 size, const char *text, int active)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active) {}
 
-ComboBox::~ComboBox() {
-    delete text;
-}
-
 ::Rectangle ComboBox::GetBounds() const {
     return bounds;
 }

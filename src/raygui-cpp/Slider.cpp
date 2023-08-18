@@ -17,11 +17,6 @@ Slider::Slider(::Vector2 position, ::Vector2 size, const char *textLeft, const c
                float minValue, float maxValue) : bounds({position.x, position.y, size.x, size.y}), textLeft(textLeft),
                                   textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
-Slider::~Slider() {
-    delete textLeft;
-    delete textRight;
-}
-
 ::Rectangle Slider::GetBounds() const {
     return bounds;
 }

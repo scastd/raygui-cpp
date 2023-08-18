@@ -13,7 +13,7 @@ public:
     MessageBox(float x, float y, float width, float height, const char *title, const char *message, const char *buttons);
     MessageBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons);
 
-    ~MessageBox();
+    ~MessageBox() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

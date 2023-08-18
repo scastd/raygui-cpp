@@ -13,11 +13,6 @@ DropdownBox::DropdownBox(float x, float y, float width, float height, const char
 DropdownBox::DropdownBox(::Vector2 position, ::Vector2 size, const char *text, int *active, bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active), editMode(editMode) {}
 
-DropdownBox::~DropdownBox() {
-    delete text;
-    delete active;
-}
-
 ::Rectangle DropdownBox::GetBounds() const {
     return bounds;
 }

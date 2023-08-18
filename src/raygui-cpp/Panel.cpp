@@ -12,10 +12,6 @@ Panel::Panel(float x, float y, float width, float height, const char *text)
 Panel::Panel(::Vector2 position, ::Vector2 size, const char *text)
     : bounds({ position.x, position.y, size.x, size.y }), text(text) {}
 
-Panel::~Panel() {
-    delete text;
-}
-
 ::Rectangle Panel::GetBounds() const {
     return bounds;
 }

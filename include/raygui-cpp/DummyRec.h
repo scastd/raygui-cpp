@@ -13,7 +13,7 @@ public:
     DummyRec(float x, float y, float width, float height, const char *text);
     DummyRec(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~DummyRec();
+    ~DummyRec() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);

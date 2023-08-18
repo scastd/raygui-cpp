@@ -13,7 +13,7 @@ public:
     StatusBar(float x, float y, float width, float height, const char *text);
     StatusBar(::Vector2 position, ::Vector2 size, const char *text);
 
-    ~StatusBar();
+    ~StatusBar() = default;
 
     RAYGUI_NODISCARD ::Rectangle GetBounds() const;
     void SetBounds(::Rectangle newBounds);
