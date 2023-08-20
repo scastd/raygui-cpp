@@ -3,8 +3,8 @@
 RAYGUI_CPP_BEGIN_NAMESPACE
 
 TextInputBox::TextInputBox()
-    : bounds({ 0, 0, 0, 0 }), title(""), message(""), buttons(""), text(""), textMaxSize(0), secretViewActive(nullptr) {
-}
+    : bounds({ 0, 0, 0, 0 }), title(""), message(""), buttons(""), text(nullptr), textMaxSize(0),
+      secretViewActive(nullptr) {}
 
 TextInputBox::TextInputBox(::Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
                            int textMaxSize, int *secretViewActive)
