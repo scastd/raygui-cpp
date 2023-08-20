@@ -11,8 +11,7 @@ TextBox::TextBox(float x, float y, float width, float height, char *text, int te
     : bounds({ x, y, width, height }), text(text), textSize(textSize), editMode(editMode) {}
 
 TextBox::TextBox(::Vector2 position, ::Vector2 size, char *text, int textSize, bool editMode)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), textSize(textSize),
-      editMode(editMode) {}
+    : bounds({ position.x, position.y, size.x, size.y }), text(text), textSize(textSize), editMode(editMode) {}
 
 ::Rectangle TextBox::GetBounds() const {
     return bounds;

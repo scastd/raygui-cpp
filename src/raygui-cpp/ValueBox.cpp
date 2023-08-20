@@ -12,9 +12,10 @@ ValueBox::ValueBox(float x, float y, float width, float height, const char *text
     : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
       editMode(editMode) {}
 
-ValueBox::ValueBox(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue, bool editMode)
+ValueBox::ValueBox(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
+                   bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
-        maxValue(maxValue), editMode(editMode) {}
+      maxValue(maxValue), editMode(editMode) {}
 
 ::Rectangle ValueBox::GetBounds() const {
     return bounds;

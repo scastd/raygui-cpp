@@ -17,11 +17,9 @@ TextInputBox::TextInputBox(float x, float y, float width, float height, const ch
       textMaxSize(textMaxSize), secretViewActive(secretViewActive) {}
 
 TextInputBox::TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message,
-                           const char *buttons, char *text, int textMaxSize, int *secretViewActive) : bounds({ position.x, position.y, size.x, size.y }),
-                                                                                title(title), message(message),
-                                                                                buttons(buttons), text(text),
-                                                                                textMaxSize(textMaxSize),
-                                                                                secretViewActive(secretViewActive) {}
+                           const char *buttons, char *text, int textMaxSize, int *secretViewActive)
+    : bounds({ position.x, position.y, size.x, size.y }), title(title), message(message), buttons(buttons), text(text),
+      textMaxSize(textMaxSize), secretViewActive(secretViewActive) {}
 
 ::Rectangle TextInputBox::GetBounds() const {
     return bounds;

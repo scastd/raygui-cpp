@@ -28,6 +28,7 @@ public:
     void SetEditMode(bool newEditMode);
 
     RAYGUI_NODISCARD bool Show() const;
+
 private:
     ::Rectangle bounds;
     char *text;

@@ -12,7 +12,8 @@ Spinner::Spinner(float x, float y, float width, float height, const char *text, 
     : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
       editMode(editMode) {}
 
-Spinner::Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue, bool editMode)
+Spinner::Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
+                 bool editMode)
     : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
       maxValue(maxValue), editMode(editMode) {}
 

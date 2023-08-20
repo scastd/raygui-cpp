@@ -11,7 +11,8 @@ public:
     ProgressBar();
     ProgressBar(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
                 float maxValue);
-    ProgressBar(float x, float y, float width, float height, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
+    ProgressBar(float x, float y, float width, float height, const char *textLeft, const char *textRight, float value,
+                float minValue, float maxValue);
     ProgressBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
                 float minValue, float maxValue);
 

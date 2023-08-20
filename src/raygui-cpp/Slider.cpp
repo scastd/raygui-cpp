@@ -2,20 +2,21 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Slider::Slider() : bounds({0, 0, 0, 0}), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
+Slider::Slider() : bounds({ 0, 0, 0, 0 }), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
 
 Slider::Slider(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
-               float maxValue) : bounds(bounds), textLeft(textLeft), textRight(textRight), value(value),
-                                  minValue(minValue), maxValue(maxValue) {}
+               float maxValue)
+    : bounds(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 Slider::Slider(float x, float y, float width, float height, const char *textLeft, const char *textRight, float value,
-               float minValue, float maxValue) : bounds({x, y, width, height}), textLeft(textLeft),
-                                                  textRight(textRight), value(value), minValue(minValue),
-                                                  maxValue(maxValue) {}
+               float minValue, float maxValue)
+    : bounds({ x, y, width, height }), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
+      maxValue(maxValue) {}
 
 Slider::Slider(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
-               float minValue, float maxValue) : bounds({position.x, position.y, size.x, size.y}), textLeft(textLeft),
-                                  textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
+               float minValue, float maxValue)
+    : bounds({ position.x, position.y, size.x, size.y }), textLeft(textLeft), textRight(textRight), value(value),
+      minValue(minValue), maxValue(maxValue) {}
 
 ::Rectangle Slider::GetBounds() const {
     return bounds;
