@@ -36,7 +36,7 @@ void ComboBox::SetActive(int newActive) {
     this->active = newActive;
 }
 
-bool ComboBox::Show() const {
+int ComboBox::Show() const {
     return ::GuiComboBox(bounds, text, active);
 }
 

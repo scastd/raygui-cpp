@@ -37,7 +37,7 @@ void ToggleGroup::SetActive(int newActive) {
     this->active = newActive;
 }
 
-bool ToggleGroup::Show() const {
+int ToggleGroup::Show() const {
     return ::GuiToggleGroup(bounds, text, active);
 }
 

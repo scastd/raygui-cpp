@@ -24,7 +24,7 @@ public:
     RAYGUI_NODISCARD int GetActive() const;
     void SetActive(int newActive);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD int Show() const;
 
 private:
     ::Rectangle bounds;
