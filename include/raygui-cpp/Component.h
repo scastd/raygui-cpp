@@ -41,21 +41,23 @@ public:
             parentBounds = Bounds(0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()));
         }
 
+        Style::Margin margin = style.GetMargin();
+
         switch (style.GetPosition()) {
             case Style::Position::TOP_LEFT:
-                bounds.SetX(parentBounds.GetX());
-                bounds.SetY(parentBounds.GetY());
+                bounds.SetX(parentBounds.GetX() + margin.left);
+                bounds.SetY(parentBounds.GetY() + margin.top);
                 break;
             case Style::Position::TOP_CENTER:
                 bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() / 2 - bounds.GetWidth() / 2);
-                bounds.SetY(parentBounds.GetY());
+                bounds.SetY(parentBounds.GetY() + margin.top);
                 break;
             case Style::Position::TOP_RIGHT:
-                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth());
-                bounds.SetY(parentBounds.GetY());
+                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth() - margin.right);
+                bounds.SetY(parentBounds.GetY() + margin.top);
                 break;
             case Style::Position::CENTER_LEFT:
-                bounds.SetX(parentBounds.GetX());
+                bounds.SetX(parentBounds.GetX() + margin.left);
                 bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - bounds.GetHeight() / 2);
                 break;
             case Style::Position::CENTER:
@@ -63,28 +65,22 @@ public:
                 bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - bounds.GetHeight() / 2);
                 break;
             case Style::Position::CENTER_RIGHT:
-                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth());
+                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth() - margin.right);
                 bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - bounds.GetHeight() / 2);
                 break;
             case Style::Position::BOTTOM_LEFT:
-                bounds.SetX(parentBounds.GetX());
-                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight());
+                bounds.SetX(parentBounds.GetX() + margin.left);
+                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight() - margin.bottom);
                 break;
             case Style::Position::BOTTOM_CENTER:
                 bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() / 2 - bounds.GetWidth() / 2);
-                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight());
+                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight() - margin.bottom);
                 break;
             case Style::Position::BOTTOM_RIGHT:
-                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth());
-                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight());
+                bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - bounds.GetWidth() - margin.right);
+                bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - bounds.GetHeight() - margin.bottom);
                 break;
         }
-
-        Style::Margin margin = style.GetMargin();
-        bounds.SetX(bounds.GetX() + margin.left);
-        bounds.SetY(bounds.GetY() + margin.top);
-        // bounds.SetWidth(bounds.GetWidth() - margin.left - margin.right);
-        // bounds.SetHeight(bounds.GetHeight() - margin.top - margin.bottom);
     }
 
 private:

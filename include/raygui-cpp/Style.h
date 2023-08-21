@@ -26,6 +26,7 @@ public:
         float left;
     };
 
+    Style(Position position);
     Style(Position position, Margin margin);
     Style(Position position, float margin);
     Style(Position position, float horizontalMargin, float verticalMargin);
