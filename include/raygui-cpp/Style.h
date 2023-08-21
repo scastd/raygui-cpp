@@ -26,7 +26,7 @@ public:
         float left;
     };
 
-    Style(Position position);
+    explicit Style(Position position);
     Style(Position position, Margin margin);
     Style(Position position, float margin);
     Style(Position position, float horizontalMargin, float verticalMargin);
@@ -37,8 +37,8 @@ public:
     RAYGUI_NODISCARD Margin GetMargin() const;
 
 private:
-    const Position m_position;
-    const Margin m_margin;
+    Position m_position;
+    Margin m_margin;
 };
 
 RAYGUI_CPP_END_NAMESPACE
