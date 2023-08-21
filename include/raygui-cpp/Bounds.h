@@ -9,12 +9,12 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Bounds {
 public:
     Bounds();
-    Bounds(::Rectangle bounds);
+    explicit Bounds(::Rectangle rectangle);
     Bounds(float x, float y, float width, float height);
     Bounds(::Vector2 position, ::Vector2 size);
 
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    RAYGUI_NODISCARD ::Rectangle GetRectangle() const;
+    void SetRectangle(::Rectangle newRectangle);
 
     RAYGUI_NODISCARD float GetX() const;
     void SetX(float newX);
@@ -29,7 +29,7 @@ public:
     void SetHeight(float newHeight);
 
 private:
-    ::Rectangle m_bounds;
+    ::Rectangle m_rectangle;
 };
 
 RAYGUI_CPP_END_NAMESPACE

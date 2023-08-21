@@ -2,52 +2,52 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Bounds::Bounds() : m_bounds({ 0, 0, 0, 0 }) {}
+Bounds::Bounds() : m_rectangle({ 0, 0, 0, 0 }) {}
 
-Bounds::Bounds(::Rectangle bounds) : m_bounds(bounds) {}
+Bounds::Bounds(::Rectangle rectangle) : m_rectangle(rectangle) {}
 
-Bounds::Bounds(float x, float y, float width, float height) : m_bounds({ x, y, width, height }) {}
+Bounds::Bounds(float x, float y, float width, float height) : m_rectangle({ x, y, width, height }) {}
 
-Bounds::Bounds(::Vector2 position, ::Vector2 size) : m_bounds({ position.x, position.y, size.x, size.y }) {}
+Bounds::Bounds(::Vector2 position, ::Vector2 size) : m_rectangle({ position.x, position.y, size.x, size.y }) {}
 
-::Rectangle Bounds::GetBounds() const {
-    return m_bounds;
+::Rectangle Bounds::GetRectangle() const {
+    return m_rectangle;
 }
 
-void Bounds::SetBounds(::Rectangle newBounds) {
-    m_bounds = newBounds;
+void Bounds::SetRectangle(::Rectangle newRectangle) {
+    m_rectangle = newRectangle;
 }
 
 float Bounds::GetX() const {
-    return m_bounds.x;
+    return m_rectangle.x;
 }
 
 void Bounds::SetX(float newX) {
-    m_bounds.x = newX;
+    m_rectangle.x = newX;
 }
 
 float Bounds::GetY() const {
-    return m_bounds.y;
+    return m_rectangle.y;
 }
 
 void Bounds::SetY(float newY) {
-    m_bounds.y = newY;
+    m_rectangle.y = newY;
 }
 
 float Bounds::GetWidth() const {
-    return m_bounds.width;
+    return m_rectangle.width;
 }
 
 void Bounds::SetWidth(float newWidth) {
-    m_bounds.width = newWidth;
+    m_rectangle.width = newWidth;
 }
 
 float Bounds::GetHeight() const {
-    return m_bounds.height;
+    return m_rectangle.height;
 }
 
 void Bounds::SetHeight(float newHeight) {
-    m_bounds.height = newHeight;
+    m_rectangle.height = newHeight;
 }
 
 RAYGUI_CPP_END_NAMESPACE

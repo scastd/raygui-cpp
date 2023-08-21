@@ -10,15 +10,17 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 template<typename T>
 class Component {
 public:
+    explicit Component(Bounds bounds) : bounds(bounds) {}
+
     virtual ~Component() = default;
 
     virtual T Show() const = 0;
 
-    RAYGUI_NODISCARD Bounds GetRectBounds() const {
+    RAYGUI_NODISCARD Bounds GetBounds() const {
         return bounds;
     }
 
-    void SetRectBounds(Bounds newBounds) {
+    void SetBounds(Bounds newBounds) {
         bounds = newBounds;
     }
 
@@ -34,7 +36,7 @@ public:
         Bounds parentBounds;
 
         if (parent != nullptr) {
-            parentBounds = parent->GetRectBounds();
+            parentBounds = parent->GetBounds();
         } else {
             parentBounds = Bounds(0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()));
         }
