@@ -42,6 +42,7 @@ set(RAYGUI_CPP_SOURCE_FILES
         src/raygui-cpp/ValueBox.cpp
         src/raygui-cpp/WindowBox.cpp
         src/raygui-cpp/Bounds.cpp
+        src/raygui-cpp/Style.cpp
 )
 
 set(RAYGUI_CPP_HEADER_FILES
@@ -83,7 +84,9 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/ValueBox.h
         include/raygui-cpp/WindowBox.h
         include/raygui-cpp.h
+        include/raygui-cpp/Component.h
         include/raygui-cpp/Bounds.h
+        include/raygui-cpp/Style.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
