@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorBarAlpha::ColorBarAlpha() : Component<float>({}), text(""), alpha(0) {}
+ColorBarAlpha::ColorBarAlpha() : Component<float>(), text(""), alpha(0) {}
 
 ColorBarAlpha::ColorBarAlpha(Bounds bounds, const char *text, float alpha)
     : Component<float>(bounds), text(text), alpha(alpha) {}

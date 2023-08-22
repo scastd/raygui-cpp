@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-DropdownBox::DropdownBox() : Component<bool>({}), text(""), active(nullptr), editMode(false) {}
+DropdownBox::DropdownBox() : Component<bool>(), text(""), active(nullptr), editMode(false) {}
 
 DropdownBox::DropdownBox(Bounds bounds, const char *text, int *active, bool editMode)
     : Component<bool>(bounds), text(text), active(active), editMode(editMode) {}

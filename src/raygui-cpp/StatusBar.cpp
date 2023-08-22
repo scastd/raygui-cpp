@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-StatusBar::StatusBar() : Component<void>({}), text(nullptr) {}
+StatusBar::StatusBar() : Component<void>(), text(nullptr) {}
 
 StatusBar::StatusBar(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

@@ -20,17 +20,15 @@ public:
     };
 
     struct Margin {
-        float top;
-        float right;
-        float bottom;
-        float left;
+        float h; // Horizontal
+        float v; // Vertical
     };
 
+    Style();
     explicit Style(Position position);
     Style(Position position, Margin margin);
     Style(Position position, float margin);
     Style(Position position, float horizontalMargin, float verticalMargin);
-    Style(Position position, float top, float right, float bottom, float left);
 
     RAYGUI_NODISCARD Position GetPosition() const;
 

@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-CheckBox::CheckBox() : Component<bool>({}), text(""), checked(false) {}
+CheckBox::CheckBox() : Component<bool>(), text(""), checked(false) {}
 
 CheckBox::CheckBox(Bounds bounds, const char *text, bool checked)
     : Component<bool>(bounds), text(text), checked(checked) {}

@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Panel::Panel() : Component<void>({}), text("") {}
+Panel::Panel() : Component<void>(), text("") {}
 
 Panel::Panel(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

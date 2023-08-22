@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-TabBar::TabBar() : Component<int>({}), text(nullptr), count(0), active(nullptr) {}
+TabBar::TabBar() : Component<int>(), text(nullptr), count(0), active(nullptr) {}
 
 TabBar::TabBar(Bounds bounds, const char **text, int count, int *active)
     : Component<int>(bounds), text(text), count(count), active(active) {}

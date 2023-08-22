@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ComboBox::ComboBox() : Component<int>({}), text(""), active(0) {}
+ComboBox::ComboBox() : Component<int>(), text(""), active(0) {}
 
 ComboBox::ComboBox(Bounds bounds, const char *text, int active) : Component<int>(bounds), text(text), active(active) {}
 

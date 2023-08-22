@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-GroupBox::GroupBox() : Component<void>({}), text("") {}
+GroupBox::GroupBox() : Component<void>(), text("") {}
 
 GroupBox::GroupBox(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-WindowBox::WindowBox() : Component<bool>({}), title(nullptr) {}
+WindowBox::WindowBox() : Component<bool>(), title(nullptr) {}
 
 WindowBox::WindowBox(Bounds bounds, const char *title) : Component<bool>(bounds), title(title) {}
 

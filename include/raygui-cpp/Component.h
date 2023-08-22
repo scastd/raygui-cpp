@@ -10,6 +10,8 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 template<typename T>
 class Component {
 public:
+    Component() : m_bounds(0, 0, 0, 0) {}
+
     explicit Component(Bounds bounds) : m_bounds(bounds) {}
 
     virtual ~Component() = default;
@@ -33,52 +35,52 @@ public:
     }
 
     void Update() {
-        Bounds parentBounds;
+        Bounds bounds;
 
         if (m_parent != nullptr) {
-            parentBounds = m_parent->GetBounds();
+            bounds = m_parent->GetBounds();
         } else {
-            parentBounds = Bounds(0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()));
+            bounds = m_bounds; // Todo: is this correct?
         }
 
         Style::Margin margin = m_style.GetMargin();
 
         switch (m_style.GetPosition()) {
             case Style::Position::TOP_LEFT:
-                m_bounds.SetX(parentBounds.GetX() + margin.left);
-                m_bounds.SetY(parentBounds.GetY() + margin.top);
+                m_bounds.SetX(bounds.GetX() + margin.h + margin.h);
+                m_bounds.SetY(bounds.GetY() + margin.v + margin.v);
                 break;
             case Style::Position::TOP_CENTER:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() / 2 - m_bounds.GetWidth() / 2);
-                m_bounds.SetY(parentBounds.GetY() + margin.top);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
+                m_bounds.SetY(bounds.GetY() + margin.v);
                 break;
             case Style::Position::TOP_RIGHT:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - m_bounds.GetWidth() - margin.right);
-                m_bounds.SetY(parentBounds.GetY() + margin.top);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
+                m_bounds.SetY(bounds.GetY() + margin.v);
                 break;
             case Style::Position::CENTER_LEFT:
-                m_bounds.SetX(parentBounds.GetX() + margin.left);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - m_bounds.GetHeight() / 2);
+                m_bounds.SetX(bounds.GetX() + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
                 break;
             case Style::Position::CENTER:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() / 2 - m_bounds.GetWidth() / 2);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - m_bounds.GetHeight() / 2);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
                 break;
             case Style::Position::CENTER_RIGHT:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - m_bounds.GetWidth() - margin.right);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() / 2 - m_bounds.GetHeight() / 2);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
                 break;
             case Style::Position::BOTTOM_LEFT:
-                m_bounds.SetX(parentBounds.GetX() + margin.left);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - m_bounds.GetHeight() - margin.bottom);
+                m_bounds.SetX(bounds.GetX() + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
                 break;
             case Style::Position::BOTTOM_CENTER:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() / 2 - m_bounds.GetWidth() / 2);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - m_bounds.GetHeight() - margin.bottom);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
                 break;
             case Style::Position::BOTTOM_RIGHT:
-                m_bounds.SetX(parentBounds.GetX() + parentBounds.GetWidth() - m_bounds.GetWidth() - margin.right);
-                m_bounds.SetY(parentBounds.GetY() + parentBounds.GetHeight() - m_bounds.GetHeight() - margin.bottom);
+                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
+                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
                 break;
         }
     }

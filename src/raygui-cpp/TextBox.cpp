@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-TextBox::TextBox() : Component<bool>({}), text(nullptr), textSize(0), editMode(false) {}
+TextBox::TextBox() : Component<bool>(), text(nullptr), textSize(0), editMode(false) {}
 
 TextBox::TextBox(Bounds bounds, char *text, int textSize, bool editMode)
     : Component<bool>(bounds), text(text), textSize(textSize), editMode(editMode) {}

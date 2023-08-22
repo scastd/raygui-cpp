@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-LabelButton::LabelButton() : Component<bool>({}), text("") {}
+LabelButton::LabelButton() : Component<bool>(), text("") {}
 
 LabelButton::LabelButton(Bounds bounds, const char *text) : Component<bool>(bounds), text(text) {}
 

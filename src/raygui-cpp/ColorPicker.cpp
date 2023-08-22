@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorPicker::ColorPicker() : Component<::Color>({}), text(""), color({ 0, 0, 0, 0 }) {}
+ColorPicker::ColorPicker() : Component<::Color>(), text(""), color({ 0, 0, 0, 0 }) {}
 
 ColorPicker::ColorPicker(Bounds bounds, const char *text, ::Color color)
     : Component<::Color>(bounds), text(text), color(color) {}

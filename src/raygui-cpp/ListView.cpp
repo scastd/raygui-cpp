@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ListView::ListView() : Component<int>({}), text(""), scrollIndex(nullptr), active(0) {}
+ListView::ListView() : Component<int>(), text(""), scrollIndex(nullptr), active(0) {}
 
 ListView::ListView(Bounds bounds, const char *text, int *scrollIndex, int active)
     : Component<int>(bounds), text(text), scrollIndex(scrollIndex), active(active) {}

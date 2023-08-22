@@ -2,7 +2,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorPanel::ColorPanel() : Component<::Color>({}), text(""), color({ 0, 0, 0, 0 }) {}
+ColorPanel::ColorPanel() : Component<::Color>(), text(""), color({ 0, 0, 0, 0 }) {}
 
 ColorPanel::ColorPanel(Bounds bounds, const char *text, ::Color color)
     : Component<::Color>(bounds), text(text), color(color) {}
