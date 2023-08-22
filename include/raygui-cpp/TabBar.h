@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class TabBar : public Component<int> {
 public:
     TabBar();
+    TabBar(const char **text, int count, int *active);
     TabBar(Bounds bounds, const char **text, int count, int *active);
 
     RAYGUI_NODISCARD const char **GetText() const;

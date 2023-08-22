@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class DropdownBox : public Component<bool> {
 public:
     DropdownBox();
+    DropdownBox(const char *text, int *active, bool editMode);
     DropdownBox(Bounds bounds, const char *text, int *active, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;

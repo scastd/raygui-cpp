@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class TextBox : public Component<bool> {
 public:
     TextBox();
+    TextBox(char *text, int textSize, bool editMode);
     TextBox(Bounds bounds, char *text, int textSize, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;

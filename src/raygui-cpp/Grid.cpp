@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Grid::Grid() : Component<::Vector2>(), text(nullptr), spacing(0), subdivisions(0) {}
+Grid::Grid() : text(nullptr), spacing(0), subdivisions(0) {}
+
+Grid::Grid(const char *text, float spacing, int subdivisions)
+    : text(text), spacing(spacing), subdivisions(subdivisions) {}
 
 Grid::Grid(Bounds bounds, const char *text, float spacing, int subdivisions)
     : Component<::Vector2>(bounds), text(text), spacing(spacing), subdivisions(subdivisions) {}

@@ -2,8 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ProgressBar::ProgressBar()
-    : Component<float>(), textLeft(nullptr), textRight(nullptr), value(0), minValue(0), maxValue(0) {}
+ProgressBar::ProgressBar() : textLeft(nullptr), textRight(nullptr), value(0), minValue(0), maxValue(0) {}
+
+ProgressBar::ProgressBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue)
+    : textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 ProgressBar::ProgressBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue,
                          float maxValue)

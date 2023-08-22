@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Spinner::Spinner() : Component<bool>(), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
+Spinner::Spinner() : text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
+
+Spinner::Spinner(const char *text, int *value, int minValue, int maxValue, bool editMode)
+    : text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
 
 Spinner::Spinner(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
     : Component<bool>(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}

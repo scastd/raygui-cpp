@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Panel : public Component<void> {
 public:
     Panel();
+    explicit Panel(const char *text);
     Panel(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

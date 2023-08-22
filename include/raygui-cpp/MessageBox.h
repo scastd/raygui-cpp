@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class MessageBox : public Component<int> {
 public:
     MessageBox();
+    MessageBox(const char *title, const char *message, const char *buttons);
     MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons);
 
     RAYGUI_NODISCARD const char *GetTitle() const;

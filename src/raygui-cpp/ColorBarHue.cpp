@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorBarHue::ColorBarHue() : Component<float>(), text(""), value(0) {}
+ColorBarHue::ColorBarHue() : text(""), value(0) {}
+
+ColorBarHue::ColorBarHue(const char *text, float value) : text(text), value(value) {}
 
 ColorBarHue::ColorBarHue(Bounds bounds, const char *text, float value)
     : Component<float>(bounds), text(text), value(value) {}

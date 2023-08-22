@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class DummyRec : public Component<void> {
 public:
     DummyRec();
+    explicit DummyRec(const char *text);
     DummyRec(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

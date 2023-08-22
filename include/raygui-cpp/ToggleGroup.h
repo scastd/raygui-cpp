@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ToggleGroup : public Component<int> {
 public:
     ToggleGroup();
+    ToggleGroup(const char *text, int active);
     ToggleGroup(Bounds bounds, const char *text, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;

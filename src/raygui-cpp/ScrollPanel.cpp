@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ScrollPanel::ScrollPanel() : Component<::Rectangle>(), text(""), content({ 0, 0, 0, 0 }), scroll(new ::Vector2()) {}
+ScrollPanel::ScrollPanel() : text(""), content({ 0, 0, 0, 0 }), scroll(new ::Vector2()) {}
+
+ScrollPanel::ScrollPanel(const char *text, ::Rectangle content, ::Vector2 *scroll)
+    : text(text), content(content), scroll(scroll) {}
 
 ScrollPanel::ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 *scroll)
     : Component<::Rectangle>(bounds), text(text), content(content), scroll(scroll) {}

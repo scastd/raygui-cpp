@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ValueBox : public Component<bool> {
 public:
     ValueBox();
+    ValueBox(const char *text, int *value, int minValue, int maxValue, bool editMode);
     ValueBox(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;

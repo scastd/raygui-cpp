@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-DummyRec::DummyRec() : Component<void>(), text(nullptr) {}
+DummyRec::DummyRec() : text(nullptr) {}
+
+DummyRec::DummyRec(const char *text) : text(text) {}
 
 DummyRec::DummyRec(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

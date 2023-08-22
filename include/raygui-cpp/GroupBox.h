@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class GroupBox : public Component<void> {
 public:
     GroupBox();
+    explicit GroupBox(const char *text);
     GroupBox(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

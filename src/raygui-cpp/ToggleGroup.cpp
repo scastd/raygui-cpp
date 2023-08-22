@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ToggleGroup::ToggleGroup() : Component<int>(), text(""), active(0) {}
+ToggleGroup::ToggleGroup() : text(""), active(0) {}
+
+ToggleGroup::ToggleGroup(const char *text, int active) : text(text), active(active) {}
 
 ToggleGroup::ToggleGroup(Bounds bounds, const char *text, int active)
     : Component<int>(bounds), text(text), active(active) {}

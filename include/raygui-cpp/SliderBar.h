@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class SliderBar : public Component<float> {
 public:
     SliderBar();
+    SliderBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
     SliderBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
 
     RAYGUI_NODISCARD const char *GetTextLeft() const;

@@ -3,7 +3,12 @@
 RAYGUI_CPP_BEGIN_NAMESPACE
 
 TextInputBox::TextInputBox()
-    : Component<int>(), title(""), message(""), buttons(""), text(nullptr), textMaxSize(0), secretViewActive(nullptr) {}
+    : title(""), message(""), buttons(""), text(nullptr), textMaxSize(0), secretViewActive(nullptr) {}
+
+TextInputBox::TextInputBox(const char *title, const char *message, const char *buttons, char *text, int textMaxSize,
+                           int *secretViewActive)
+    : title(title), message(message), buttons(buttons), text(text), textMaxSize(textMaxSize),
+      secretViewActive(secretViewActive) {}
 
 TextInputBox::TextInputBox(Bounds bounds, const char *title, const char *message, const char *buttons, char *text,
                            int textMaxSize, int *secretViewActive)

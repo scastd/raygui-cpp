@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Line : public Component<void> {
 public:
     Line();
+    explicit Line(const char *text);
     Line(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Toggle::Toggle() : Component<bool>(), text(""), active(false) {}
+Toggle::Toggle() : text(""), active(false) {}
+
+Toggle::Toggle(const char *text, bool active) : text(text), active(active) {}
 
 Toggle::Toggle(Bounds bounds, const char *text, bool active) : Component<bool>(bounds), text(text), active(active) {}
 

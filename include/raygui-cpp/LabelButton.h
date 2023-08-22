@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class LabelButton : public Component<bool> {
 public:
     LabelButton();
+    explicit LabelButton(const char *text);
     LabelButton(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

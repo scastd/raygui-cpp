@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Spinner : public Component<bool> {
 public:
     Spinner();
+    Spinner(const char *text, int *value, int minValue, int maxValue, bool editMode);
     Spinner(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;

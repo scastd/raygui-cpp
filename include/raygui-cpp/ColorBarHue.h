@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ColorBarHue : public Component<float> {
 public:
     ColorBarHue();
+    ColorBarHue(const char *text, float value);
     ColorBarHue(Bounds bounds, const char *text, float value);
 
     RAYGUI_NODISCARD const char *GetText() const;

@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-SliderBar::SliderBar() : Component<float>(), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
+SliderBar::SliderBar() : textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
+
+SliderBar::SliderBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue)
+    : textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 SliderBar::SliderBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue,
                      float maxValue)

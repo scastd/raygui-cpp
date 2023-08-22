@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class StatusBar : public Component<void> {
 public:
     StatusBar();
+    explicit StatusBar(const char *text);
     StatusBar(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

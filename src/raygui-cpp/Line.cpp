@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Line::Line() : Component<void>(), text(nullptr) {}
+Line::Line() : text(nullptr) {}
+
+Line::Line(const char *text) : text(text) {}
 
 Line::Line(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

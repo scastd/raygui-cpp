@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ProgressBar : public Component<float> {
 public:
     ProgressBar();
+    ProgressBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
     ProgressBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue,
                 float maxValue);
 

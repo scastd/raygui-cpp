@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ScrollPanel : public Component<::Rectangle> {
 public:
     ScrollPanel();
+    ScrollPanel(const char *text, ::Rectangle content, ::Vector2 *scroll);
     ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 *scroll);
 
     RAYGUI_NODISCARD const char *GetText() const;

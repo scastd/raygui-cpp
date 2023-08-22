@@ -2,7 +2,9 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Label::Label() : Component<void>(), text("") {}
+Label::Label() : text("") {}
+
+Label::Label(const char *text) : text(text) {}
 
 Label::Label(Bounds bounds, const char *text) : Component<void>(bounds), text(text) {}
 

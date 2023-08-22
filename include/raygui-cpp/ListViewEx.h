@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ListViewEx : public Component<int> {
 public:
     ListViewEx();
+    ListViewEx(const char **text, int count, int *focus, int *scrollIndex, int active);
     ListViewEx(Bounds bounds, const char **text, int count, int *focus, int *scrollIndex, int active);
 
     RAYGUI_NODISCARD const char **GetText() const;

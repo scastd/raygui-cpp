@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-MessageBox::MessageBox() : Component<int>(), title(""), message(""), buttons("") {}
+MessageBox::MessageBox() : title(""), message(""), buttons("") {}
+
+MessageBox::MessageBox(const char *title, const char *message, const char *buttons)
+    : title(title), message(message), buttons(buttons) {}
 
 MessageBox::MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons)
     : Component<int>(bounds), title(title), message(message), buttons(buttons) {}

@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Grid : public Component<::Vector2> {
 public:
     Grid();
+    Grid(const char *text, float spacing, int subdivisions);
     Grid(Bounds bounds, const char *text, float spacing, int subdivisions);
 
     RAYGUI_NODISCARD const char *GetText() const;

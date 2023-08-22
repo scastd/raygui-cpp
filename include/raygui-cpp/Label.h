@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Label : public Component<void> {
 public:
     Label();
+    explicit Label(const char *text);
     Label(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

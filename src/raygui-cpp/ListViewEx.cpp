@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ListViewEx::ListViewEx() : Component<int>(), text(nullptr), count(0), focus(nullptr), scrollIndex(nullptr), active(0) {}
+ListViewEx::ListViewEx() : text(nullptr), count(0), focus(nullptr), scrollIndex(nullptr), active(0) {}
+
+ListViewEx::ListViewEx(const char **text, int count, int *focus, int *scrollIndex, int active)
+    : text(text), count(count), focus(focus), scrollIndex(scrollIndex), active(active) {}
 
 ListViewEx::ListViewEx(Bounds bounds, const char **text, int count, int *focus, int *scrollIndex, int active)
     : Component<int>(bounds), text(text), count(count), focus(focus), scrollIndex(scrollIndex), active(active) {}

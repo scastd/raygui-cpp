@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Button : public Component<bool> {
 public:
     Button();
+    explicit Button(const char *text);
     Button(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;

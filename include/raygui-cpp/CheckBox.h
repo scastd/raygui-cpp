@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class CheckBox : public Component<bool> {
 public:
     CheckBox();
+    CheckBox(const char *text, bool checked);
     CheckBox(Bounds bounds, const char *text, bool checked = false);
 
     RAYGUI_NODISCARD const char *GetText() const;

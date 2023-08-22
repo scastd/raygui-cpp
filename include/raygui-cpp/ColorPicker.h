@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ColorPicker : public Component<::Color> {
 public:
     ColorPicker();
+    ColorPicker(const char *text, ::Color color = ::BLACK);
     ColorPicker(Bounds bounds, const char *text, ::Color color = ::BLACK);
 
     RAYGUI_NODISCARD const char *GetText() const;

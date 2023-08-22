@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class WindowBox : public Component<bool> {
 public:
     WindowBox();
+    explicit WindowBox(const char *title);
     WindowBox(Bounds bounds, const char *title);
 
     RAYGUI_NODISCARD const char *GetTitle() const;

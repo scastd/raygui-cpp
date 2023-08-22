@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class Toggle : public Component<bool> {
 public:
     Toggle();
+    Toggle(const char *text, bool active = false);
     Toggle(Bounds bounds, const char *text, bool active = false);
 
     RAYGUI_NODISCARD const char *GetText() const;

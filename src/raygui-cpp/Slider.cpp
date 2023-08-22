@@ -2,7 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Slider::Slider() : Component<float>(), textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
+Slider::Slider() : textLeft(""), textRight(""), value(0), minValue(0), maxValue(0) {}
+
+Slider::Slider(const char *textLeft, const char *textRight, float value, float minValue, float maxValue)
+    : textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 Slider::Slider(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue, float maxValue)
     : Component<float>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),

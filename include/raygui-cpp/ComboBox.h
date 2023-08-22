@@ -10,6 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ComboBox : public Component<int> {
 public:
     ComboBox();
+    ComboBox(const char *text, int active);
     ComboBox(Bounds bounds, const char *text, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;
