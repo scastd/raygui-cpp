@@ -1,30 +1,23 @@
 #ifndef RAYGUI_CPP_LABEL_BUTTON_H
 #define RAYGUI_CPP_LABEL_BUTTON_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class LabelButton {
+class LabelButton : public Component<bool> {
 public:
     LabelButton();
-    LabelButton(::Rectangle bounds, const char *text);
-    LabelButton(float x, float y, float width, float height, const char *text);
-    LabelButton(::Vector2 position, ::Vector2 size, const char *text);
-
-    ~LabelButton() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    LabelButton(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD bool Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
 };
 

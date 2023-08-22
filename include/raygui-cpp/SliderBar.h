@@ -1,25 +1,16 @@
 #ifndef RAYGUI_CPP_SLIDER_BAR_H
 #define RAYGUI_CPP_SLIDER_BAR_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class SliderBar {
+class SliderBar : public Component<float> {
 public:
     SliderBar();
-    SliderBar(::Rectangle bounds, const char *textLeft, const char *textRight, float value, float minValue,
-              float maxValue);
-    SliderBar(float x, float y, float width, float height, const char *textLeft, const char *textRight, float value,
-              float minValue, float maxValue);
-    SliderBar(::Vector2 position, ::Vector2 size, const char *textLeft, const char *textRight, float value,
-              float minValue, float maxValue);
-
-    ~SliderBar() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    SliderBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
 
     RAYGUI_NODISCARD const char *GetTextLeft() const;
     void SetTextLeft(const char *newTextLeft);
@@ -36,10 +27,9 @@ public:
     RAYGUI_NODISCARD float GetMaxValue() const;
     void SetMaxValue(float newMaxValue);
 
-    RAYGUI_NODISCARD float Show() const;
+    RAYGUI_NODISCARD float Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *textLeft;
     const char *textRight;
     float value;

@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_COLOR_PANEL_H
 #define RAYGUI_CPP_COLOR_PANEL_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ColorPanel {
+class ColorPanel : public Component<::Color> {
 public:
     ColorPanel();
-    ColorPanel(::Rectangle bounds, const char *text, ::Color color);
-    ColorPanel(float x, float y, float width, float height, const char *text, ::Color color);
-    ColorPanel(::Vector2 position, ::Vector2 size, const char *text, ::Color color);
-
-    ~ColorPanel() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ColorPanel(Bounds bounds, const char *text, ::Color color);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ public:
     RAYGUI_NODISCARD ::Color GetColor() const;
     void SetColor(::Color newColor);
 
-    RAYGUI_NODISCARD ::Color Show() const;
+    RAYGUI_NODISCARD ::Color Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     ::Color color;
 };

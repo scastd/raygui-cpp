@@ -1,30 +1,23 @@
 #ifndef RAYGUI_CPP_STATUS_BAR_H
 #define RAYGUI_CPP_STATUS_BAR_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class StatusBar {
+class StatusBar : public Component<void> {
 public:
     StatusBar();
-    StatusBar(::Rectangle bounds, const char *text);
-    StatusBar(float x, float y, float width, float height, const char *text);
-    StatusBar(::Vector2 position, ::Vector2 size, const char *text);
-
-    ~StatusBar() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    StatusBar(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    void Show() const;
+    void Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
 };
 

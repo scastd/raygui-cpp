@@ -1,24 +1,16 @@
 #ifndef RAYGUI_CPP_SPINNER_H
 #define RAYGUI_CPP_SPINNER_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Spinner {
+class Spinner : public Component<bool> {
 public:
     Spinner();
-    Spinner(::Rectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
-    Spinner(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
-            bool editMode);
-    Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
-            bool editMode);
-
-    ~Spinner() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    Spinner(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -35,10 +27,9 @@ public:
     RAYGUI_NODISCARD bool IsEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD bool Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     int *value;
     int minValue;

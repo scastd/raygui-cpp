@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_TEXT_BOX_H
 #define RAYGUI_CPP_TEXT_BOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class TextBox {
+class TextBox : public Component<bool> {
 public:
     TextBox();
-    TextBox(::Rectangle bounds, char *text, int textSize, bool editMode);
-    TextBox(float x, float y, float width, float height, char *text, int textSize, bool editMode);
-    TextBox(::Vector2 position, ::Vector2 size, char *text, int textSize, bool editMode);
-
-    ~TextBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    TextBox(Bounds bounds, char *text, int textSize, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(char *newText);
@@ -27,10 +21,9 @@ public:
     RAYGUI_NODISCARD bool GetEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD bool Show() const override;
 
 private:
-    ::Rectangle bounds;
     char *text;
     int textSize;
     bool editMode;

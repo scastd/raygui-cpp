@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-DropdownBox::DropdownBox() : bounds({ 0, 0, 0, 0 }), text(""), active(nullptr), editMode(false) {}
+DropdownBox::DropdownBox() : Component<bool>({}), text(""), active(nullptr), editMode(false) {}
 
-DropdownBox::DropdownBox(::Rectangle bounds, const char *text, int *active, bool editMode)
-    : bounds(bounds), text(text), active(active), editMode(editMode) {}
-
-DropdownBox::DropdownBox(float x, float y, float width, float height, const char *text, int *active, bool editMode)
-    : bounds({ x, y, width, height }), text(text), active(active), editMode(editMode) {}
-
-DropdownBox::DropdownBox(::Vector2 position, ::Vector2 size, const char *text, int *active, bool editMode)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active), editMode(editMode) {}
-
-::Rectangle DropdownBox::GetBounds() const {
-    return bounds;
-}
-
-void DropdownBox::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+DropdownBox::DropdownBox(Bounds bounds, const char *text, int *active, bool editMode)
+    : Component<bool>(bounds), text(text), active(active), editMode(editMode) {}
 
 const char *DropdownBox::GetText() const {
     return text;
@@ -46,7 +32,7 @@ void DropdownBox::SetEditMode(bool newEditMode) {
 }
 
 bool DropdownBox::Show() const {
-    return ::GuiDropdownBox(bounds, text, active, editMode);
+    return ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode);
 }
 
 RAYGUI_CPP_END_NAMESPACE

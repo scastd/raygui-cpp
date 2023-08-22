@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorBarHue::ColorBarHue() : bounds({ 0, 0, 0, 0 }), text(""), value(0) {}
+ColorBarHue::ColorBarHue() : Component<float>({}), text(""), value(0) {}
 
-ColorBarHue::ColorBarHue(::Rectangle bounds, const char *text, float value)
-    : bounds(bounds), text(text), value(value) {}
-
-ColorBarHue::ColorBarHue(float x, float y, float width, float height, const char *text, float value)
-    : bounds({ x, y, width, height }), text(text), value(value) {}
-
-ColorBarHue::ColorBarHue(::Vector2 position, ::Vector2 size, const char *text, float value)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value) {}
-
-::Rectangle ColorBarHue::GetBounds() const {
-    return bounds;
-}
-
-void ColorBarHue::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ColorBarHue::ColorBarHue(Bounds bounds, const char *text, float value)
+    : Component<float>(bounds), text(text), value(value) {}
 
 const char *ColorBarHue::GetText() const {
     return text;
@@ -38,7 +24,7 @@ void ColorBarHue::SetValue(float newValue) {
 }
 
 float ColorBarHue::Show() const {
-    return ::GuiColorBarHue(bounds, text, value);
+    return ::GuiColorBarHue(GetBounds().GetRectangle(), text, value);
 }
 
 RAYGUI_CPP_END_NAMESPACE

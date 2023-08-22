@@ -1,25 +1,17 @@
 #ifndef RAYGUI_CPP_TEXT_INPUT_BOX_H
 #define RAYGUI_CPP_TEXT_INPUT_BOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class TextInputBox {
+class TextInputBox : public Component<int> {
 public:
     TextInputBox();
-    TextInputBox(::Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
+    TextInputBox(Bounds bounds, const char *title, const char *message, const char *buttons, char *text,
                  int textMaxSize, int *secretViewActive);
-    TextInputBox(float x, float y, float width, float height, const char *title, const char *message,
-                 const char *buttons, char *text, int textMaxSize, int *secretViewActive);
-    TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons,
-                 char *text, int textMaxSize, int *secretViewActive);
-
-    ~TextInputBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -39,10 +31,9 @@ public:
     RAYGUI_NODISCARD int *GetSecretViewActive() const;
     void SetSecretViewActive(int *newSecretViewActive);
 
-    RAYGUI_NODISCARD int Show() const;
+    RAYGUI_NODISCARD int Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *title;
     const char *message;
     const char *buttons;

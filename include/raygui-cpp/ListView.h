@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_LIST_VIEW_H
 #define RAYGUI_CPP_LIST_VIEW_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ListView {
+class ListView : public Component<int> {
 public:
     ListView();
-    ListView(::Rectangle bounds, const char *text, int *scrollIndex, int active);
-    ListView(float x, float y, float width, float height, const char *text, int *scrollIndex, int active);
-    ListView(::Vector2 position, ::Vector2 size, const char *text, int *scrollIndex, int active);
-
-    ~ListView() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ListView(Bounds bounds, const char *text, int *scrollIndex, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -27,10 +21,9 @@ public:
     RAYGUI_NODISCARD int GetActive() const;
     void SetActive(int newActive);
 
-    RAYGUI_NODISCARD int Show() const;
+    RAYGUI_NODISCARD int Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     int *scrollIndex;
     int active;

@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ToggleGroup::ToggleGroup() : bounds({ 0, 0, 0, 0 }), text(""), active(0) {}
+ToggleGroup::ToggleGroup() : Component<int>({}), text(""), active(0) {}
 
-ToggleGroup::ToggleGroup(::Rectangle bounds, const char *text, int active)
-    : bounds(bounds), text(text), active(active) {}
-
-ToggleGroup::ToggleGroup(float x, float y, float width, float height, const char *text, int active)
-    : bounds({ x, y, width, height }), text(text), active(active) {}
-
-ToggleGroup::ToggleGroup(::Vector2 position, ::Vector2 size, const char *text, int active)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), active(active) {}
-
-::Rectangle ToggleGroup::GetBounds() const {
-    return bounds;
-}
-
-void ToggleGroup::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ToggleGroup::ToggleGroup(Bounds bounds, const char *text, int active)
+    : Component<int>(bounds), text(text), active(active) {}
 
 const char *ToggleGroup::GetText() const {
     return text;
@@ -38,7 +24,7 @@ void ToggleGroup::SetActive(int newActive) {
 }
 
 int ToggleGroup::Show() const {
-    return ::GuiToggleGroup(bounds, text, active);
+    return ::GuiToggleGroup(GetBounds().GetRectangle(), text, active);
 }
 
 RAYGUI_CPP_END_NAMESPACE

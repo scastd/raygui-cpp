@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_COLOR_BAR_HUE_H
 #define RAYGUI_CPP_COLOR_BAR_HUE_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ColorBarHue {
+class ColorBarHue : public Component<float> {
 public:
     ColorBarHue();
-    ColorBarHue(::Rectangle bounds, const char *text, float value);
-    ColorBarHue(float x, float y, float width, float height, const char *text, float value);
-    ColorBarHue(::Vector2 position, ::Vector2 size, const char *text, float value);
-
-    ~ColorBarHue() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ColorBarHue(Bounds bounds, const char *text, float value);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ public:
     RAYGUI_NODISCARD float GetValue() const;
     void SetValue(float newValue);
 
-    RAYGUI_NODISCARD float Show() const;
+    RAYGUI_NODISCARD float Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     float value;
 };

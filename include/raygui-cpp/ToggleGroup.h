@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_TOGGLE_GROUP_H
 #define RAYGUI_CPP_TOGGLE_GROUP_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ToggleGroup {
-private:
+class ToggleGroup : public Component<int> {
+public:
     ToggleGroup();
-    ToggleGroup(::Rectangle bounds, const char *text, int active);
-    ToggleGroup(float x, float y, float width, float height, const char *text, int active);
-    ToggleGroup(::Vector2 position, ::Vector2 size, const char *text, int active);
-
-    ~ToggleGroup() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ToggleGroup(Bounds bounds, const char *text, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ private:
     RAYGUI_NODISCARD int GetActive() const;
     void SetActive(int newActive);
 
-    RAYGUI_NODISCARD int Show() const;
+    RAYGUI_NODISCARD int Show() const override;
 
-public:
-    ::Rectangle bounds;
+private:
     const char *text;
     int active;
 };

@@ -2,25 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-MessageBox::MessageBox() : bounds({ 0, 0, 0, 0 }), title(""), message(""), buttons("") {}
+MessageBox::MessageBox() : Component<int>({}), title(""), message(""), buttons("") {}
 
-MessageBox::MessageBox(::Rectangle bounds, const char *title, const char *message, const char *buttons)
-    : bounds(bounds), title(title), message(message), buttons(buttons) {}
-
-MessageBox::MessageBox(float x, float y, float width, float height, const char *title, const char *message,
-                       const char *buttons)
-    : bounds({ x, y, width, height }), title(title), message(message), buttons(buttons) {}
-
-MessageBox::MessageBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons)
-    : bounds({ position.x, position.y, size.x, size.y }), title(title), message(message), buttons(buttons) {}
-
-::Rectangle MessageBox::GetBounds() const {
-    return bounds;
-}
-
-void MessageBox::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+MessageBox::MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons)
+    : Component<int>(bounds), title(title), message(message), buttons(buttons) {}
 
 const char *MessageBox::GetTitle() const {
     return title;
@@ -47,7 +32,7 @@ void MessageBox::SetButtons(const char *newButtons) {
 }
 
 int MessageBox::Show() const {
-    return ::GuiMessageBox(bounds, title, message, buttons);
+    return ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons);
 }
 
 RAYGUI_CPP_END_NAMESPACE

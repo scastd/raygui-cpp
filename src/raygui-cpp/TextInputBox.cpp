@@ -3,31 +3,13 @@
 RAYGUI_CPP_BEGIN_NAMESPACE
 
 TextInputBox::TextInputBox()
-    : bounds({ 0, 0, 0, 0 }), title(""), message(""), buttons(""), text(nullptr), textMaxSize(0),
+    : Component<int>({}), title(""), message(""), buttons(""), text(nullptr), textMaxSize(0),
       secretViewActive(nullptr) {}
 
-TextInputBox::TextInputBox(::Rectangle bounds, const char *title, const char *message, const char *buttons, char *text,
+TextInputBox::TextInputBox(Bounds bounds, const char *title, const char *message, const char *buttons, char *text,
                            int textMaxSize, int *secretViewActive)
-    : bounds(bounds), title(title), message(message), buttons(buttons), text(text), textMaxSize(textMaxSize),
+    : Component<int>(bounds), title(title), message(message), buttons(buttons), text(text), textMaxSize(textMaxSize),
       secretViewActive(secretViewActive) {}
-
-TextInputBox::TextInputBox(float x, float y, float width, float height, const char *title, const char *message,
-                           const char *buttons, char *text, int textMaxSize, int *secretViewActive)
-    : bounds({ x, y, width, height }), title(title), message(message), buttons(buttons), text(text),
-      textMaxSize(textMaxSize), secretViewActive(secretViewActive) {}
-
-TextInputBox::TextInputBox(::Vector2 position, ::Vector2 size, const char *title, const char *message,
-                           const char *buttons, char *text, int textMaxSize, int *secretViewActive)
-    : bounds({ position.x, position.y, size.x, size.y }), title(title), message(message), buttons(buttons), text(text),
-      textMaxSize(textMaxSize), secretViewActive(secretViewActive) {}
-
-::Rectangle TextInputBox::GetBounds() const {
-    return bounds;
-}
-
-void TextInputBox::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
 
 const char *TextInputBox::GetTitle() const {
     return title;
@@ -78,7 +60,7 @@ void TextInputBox::SetSecretViewActive(int *newSecretViewActive) {
 }
 
 int TextInputBox::Show() const {
-    return ::GuiTextInputBox(bounds, title, message, buttons, text, textMaxSize, secretViewActive);
+    return ::GuiTextInputBox(GetBounds().GetRectangle(), title, message, buttons, text, textMaxSize, secretViewActive);
 }
 
 RAYGUI_CPP_END_NAMESPACE

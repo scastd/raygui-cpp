@@ -1,23 +1,16 @@
 #ifndef RAYGUI_CPP_MESSAGE_BOX_H
 #define RAYGUI_CPP_MESSAGE_BOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class MessageBox {
+class MessageBox : public Component<int> {
 public:
     MessageBox();
-    MessageBox(::Rectangle bounds, const char *title, const char *message, const char *buttons);
-    MessageBox(float x, float y, float width, float height, const char *title, const char *message,
-               const char *buttons);
-    MessageBox(::Vector2 position, ::Vector2 size, const char *title, const char *message, const char *buttons);
-
-    ~MessageBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -28,10 +21,9 @@ public:
     RAYGUI_NODISCARD const char *GetButtons() const;
     void SetButtons(const char *newButtons);
 
-    RAYGUI_NODISCARD int Show() const;
+    RAYGUI_NODISCARD int Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *title;
     const char *message;
     const char *buttons;

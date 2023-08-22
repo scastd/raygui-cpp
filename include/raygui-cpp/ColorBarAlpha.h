@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_COLOR_BAR_ALPHA_H
 #define RAYGUI_CPP_COLOR_BAR_ALPHA_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ColorBarAlpha {
+class ColorBarAlpha : public Component<float> {
 public:
     ColorBarAlpha();
-    ColorBarAlpha(::Rectangle bounds, const char *text, float alpha);
-    ColorBarAlpha(float x, float y, float width, float height, const char *text, float alpha);
-    ColorBarAlpha(::Vector2 position, ::Vector2 size, const char *text, float alpha);
-
-    ~ColorBarAlpha() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ColorBarAlpha(Bounds bounds, const char *text, float alpha);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ public:
     RAYGUI_NODISCARD float GetAlpha() const;
     void SetAlpha(float newAlpha);
 
-    RAYGUI_NODISCARD float Show() const;
+    RAYGUI_NODISCARD float Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     float alpha;
 };

@@ -1,30 +1,23 @@
 #ifndef RAYGUI_CPP_GROUPBOX_H
 #define RAYGUI_CPP_GROUPBOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class GroupBox {
+class GroupBox : public Component<void> {
 public:
     GroupBox();
-    GroupBox(::Rectangle bounds, const char *text);
-    GroupBox(float x, float y, float width, float height, const char *text);
-    GroupBox(::Vector2 position, ::Vector2 size, const char *text);
-
-    ~GroupBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    GroupBox(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    void Show() const;
+    void Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
 };
 

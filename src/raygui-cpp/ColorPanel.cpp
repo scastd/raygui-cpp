@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorPanel::ColorPanel() : bounds({ 0, 0, 0, 0 }), text(""), color({ 0, 0, 0, 0 }) {}
+ColorPanel::ColorPanel() : Component<::Color>({}), text(""), color({ 0, 0, 0, 0 }) {}
 
-ColorPanel::ColorPanel(::Rectangle bounds, const char *text, ::Color color)
-    : bounds(bounds), text(text), color(color) {}
-
-ColorPanel::ColorPanel(float x, float y, float width, float height, const char *text, ::Color color)
-    : bounds({ x, y, width, height }), text(text), color(color) {}
-
-ColorPanel::ColorPanel(::Vector2 position, ::Vector2 size, const char *text, ::Color color)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), color(color) {}
-
-::Rectangle ColorPanel::GetBounds() const {
-    return bounds;
-}
-
-void ColorPanel::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ColorPanel::ColorPanel(Bounds bounds, const char *text, ::Color color)
+    : Component<::Color>(bounds), text(text), color(color) {}
 
 const char *ColorPanel::GetText() const {
     return text;
@@ -38,7 +24,7 @@ void ColorPanel::SetColor(::Color newColor) {
 }
 
 ::Color ColorPanel::Show() const {
-    return ::GuiColorPanel(bounds, text, color);
+    return ::GuiColorPanel(GetBounds().GetRectangle(), text, color);
 }
 
 RAYGUI_CPP_END_NAMESPACE

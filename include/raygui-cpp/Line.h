@@ -1,30 +1,23 @@
 #ifndef RAYGUI_CPP_LINE_H
 #define RAYGUI_CPP_LINE_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Line {
+class Line : public Component<void> {
 public:
     Line();
-    Line(::Rectangle bounds, const char *text);
-    Line(float x, float y, float width, float height, const char *text);
-    Line(::Vector2 position, ::Vector2 size, const char *text);
-
-    ~Line() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    Line(Bounds bounds, const char *text);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    void Show() const;
+    void Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
 };
 

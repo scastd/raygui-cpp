@@ -2,28 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Spinner::Spinner() : bounds({ 0, 0, 0, 0 }), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
+Spinner::Spinner() : Component<bool>({}), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
 
-Spinner::Spinner(::Rectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
-    : bounds(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
-
-Spinner::Spinner(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
-                 bool editMode)
-    : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
-      editMode(editMode) {}
-
-Spinner::Spinner(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
-                 bool editMode)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
-      maxValue(maxValue), editMode(editMode) {}
-
-::Rectangle Spinner::GetBounds() const {
-    return bounds;
-}
-
-void Spinner::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+Spinner::Spinner(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
+    : Component<bool>(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
 
 const char *Spinner::GetText() const {
     return text;
@@ -66,7 +48,7 @@ void Spinner::SetEditMode(bool newEditMode) {
 }
 
 bool Spinner::Show() const {
-    return ::GuiSpinner(bounds, text, value, minValue, maxValue, editMode);
+    return ::GuiSpinner(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode);
 }
 
 RAYGUI_CPP_END_NAMESPACE

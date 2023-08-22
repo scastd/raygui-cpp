@@ -2,28 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ValueBox::ValueBox() : bounds({ 0, 0, 0, 0 }), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
+ValueBox::ValueBox() : Component<bool>({}), text(""), value(nullptr), minValue(0), maxValue(0), editMode(false) {}
 
-ValueBox::ValueBox(::Rectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
-    : bounds(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
-
-ValueBox::ValueBox(float x, float y, float width, float height, const char *text, int *value, int minValue,
-                   int maxValue, bool editMode)
-    : bounds({ x, y, width, height }), text(text), value(value), minValue(minValue), maxValue(maxValue),
-      editMode(editMode) {}
-
-ValueBox::ValueBox(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
-                   bool editMode)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), value(value), minValue(minValue),
-      maxValue(maxValue), editMode(editMode) {}
-
-::Rectangle ValueBox::GetBounds() const {
-    return bounds;
-}
-
-void ValueBox::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ValueBox::ValueBox(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode)
+    : Component<bool>(bounds), text(text), value(value), minValue(minValue), maxValue(maxValue), editMode(editMode) {}
 
 const char *ValueBox::GetText() const {
     return text;
@@ -66,7 +48,7 @@ void ValueBox::SetEditMode(bool newEditMode) {
 }
 
 bool ValueBox::Show() const {
-    return ::GuiValueBox(bounds, text, value, minValue, maxValue, editMode);
+    return ::GuiValueBox(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode);
 }
 
 RAYGUI_CPP_END_NAMESPACE

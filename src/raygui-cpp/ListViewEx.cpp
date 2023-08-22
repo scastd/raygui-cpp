@@ -3,28 +3,10 @@
 RAYGUI_CPP_BEGIN_NAMESPACE
 
 ListViewEx::ListViewEx()
-    : bounds({ 0, 0, 0, 0 }), text(nullptr), count(0), focus(nullptr), scrollIndex(nullptr), active(0) {}
+    : Component<int>({}), text(nullptr), count(0), focus(nullptr), scrollIndex(nullptr), active(0) {}
 
-ListViewEx::ListViewEx(::Rectangle bounds, const char **text, int count, int *focus, int *scrollIndex, int active)
-    : bounds(bounds), text(text), count(count), focus(focus), scrollIndex(scrollIndex), active(active) {}
-
-ListViewEx::ListViewEx(float x, float y, float width, float height, const char **text, int count, int *focus,
-                       int *scrollIndex, int active)
-    : bounds({ x, y, width, height }), text(text), count(count), focus(focus), scrollIndex(scrollIndex),
-      active(active) {}
-
-ListViewEx::ListViewEx(::Vector2 position, ::Vector2 size, const char **text, int count, int *focus, int *scrollIndex,
-                       int active)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), count(count), focus(focus),
-      scrollIndex(scrollIndex), active(active) {}
-
-::Rectangle ListViewEx::GetBounds() const {
-    return bounds;
-}
-
-void ListViewEx::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ListViewEx::ListViewEx(Bounds bounds, const char **text, int count, int *focus, int *scrollIndex, int active)
+    : Component<int>(bounds), text(text), count(count), focus(focus), scrollIndex(scrollIndex), active(active) {}
 
 const char **ListViewEx::GetText() const {
     return text;
@@ -67,7 +49,7 @@ void ListViewEx::SetActive(int newActive) {
 }
 
 int ListViewEx::Show() const {
-    return ::GuiListViewEx(bounds, text, count, focus, scrollIndex, active);
+    return ::GuiListViewEx(GetBounds().GetRectangle(), text, count, focus, scrollIndex, active);
 }
 
 RAYGUI_CPP_END_NAMESPACE

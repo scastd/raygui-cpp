@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Grid::Grid() : bounds({ 0, 0, 0, 0 }), text(nullptr), spacing(0), subdivisions(0) {}
+Grid::Grid() : Component<::Vector2>({}), text(nullptr), spacing(0), subdivisions(0) {}
 
-Grid::Grid(::Rectangle bounds, const char *text, float spacing, int subdivisions)
-    : bounds(bounds), text(text), spacing(spacing), subdivisions(subdivisions) {}
-
-Grid::Grid(float x, float y, float width, float height, const char *text, float spacing, int subdivisions)
-    : bounds({ x, y, width, height }), text(text), spacing(spacing), subdivisions(subdivisions) {}
-
-Grid::Grid(::Vector2 position, ::Vector2 size, const char *text, float spacing, int subdivisions)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), spacing(spacing), subdivisions(subdivisions) {}
-
-::Rectangle Grid::GetBounds() const {
-    return bounds;
-}
-
-void Grid::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+Grid::Grid(Bounds bounds, const char *text, float spacing, int subdivisions)
+    : Component<::Vector2>(bounds), text(text), spacing(spacing), subdivisions(subdivisions) {}
 
 const char *Grid::GetText() const {
     return text;
@@ -46,7 +32,7 @@ void Grid::SetSubdivisions(int newSubdivisions) {
 }
 
 ::Vector2 Grid::Show() const {
-    return ::GuiGrid(bounds, text, spacing, subdivisions);
+    return ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions);
 }
 
 RAYGUI_CPP_END_NAMESPACE

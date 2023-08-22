@@ -1,24 +1,16 @@
 #ifndef RAYGUI_CPP_VALUE_BOX_H
 #define RAYGUI_CPP_VALUE_BOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ValueBox {
+class ValueBox : public Component<bool> {
 public:
     ValueBox();
-    ValueBox(::Rectangle bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
-    ValueBox(float x, float y, float width, float height, const char *text, int *value, int minValue, int maxValue,
-             bool editMode);
-    ValueBox(::Vector2 position, ::Vector2 size, const char *text, int *value, int minValue, int maxValue,
-             bool editMode);
-
-    ~ValueBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ValueBox(Bounds bounds, const char *text, int *value, int minValue, int maxValue, bool editMode);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -35,10 +27,9 @@ public:
     RAYGUI_NODISCARD bool IsEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD bool Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     int *value;
     int minValue;

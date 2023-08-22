@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-TabBar::TabBar() : bounds({ 0, 0, 0, 0 }), text(nullptr), count(0), active(nullptr) {}
+TabBar::TabBar() : Component<int>({}), text(nullptr), count(0), active(nullptr) {}
 
-TabBar::TabBar(::Rectangle bounds, const char **text, int count, int *active)
-    : bounds(bounds), text(text), count(count), active(active) {}
-
-TabBar::TabBar(float x, float y, float width, float height, const char **text, int count, int *active)
-    : bounds({ x, y, width, height }), text(text), count(count), active(active) {}
-
-TabBar::TabBar(::Vector2 position, ::Vector2 size, const char **text, int count, int *active)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), count(count), active(active) {}
-
-::Rectangle TabBar::GetBounds() const {
-    return bounds;
-}
-
-void TabBar::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+TabBar::TabBar(Bounds bounds, const char **text, int count, int *active)
+    : Component<int>(bounds), text(text), count(count), active(active) {}
 
 const char **TabBar::GetText() const {
     return text;
@@ -46,7 +32,7 @@ void TabBar::SetActive(int *newActive) {
 }
 
 int TabBar::Show() const {
-    return ::GuiTabBar(bounds, text, count, active);
+    return ::GuiTabBar(GetBounds().GetRectangle(), text, count, active);
 }
 
 RAYGUI_CPP_END_NAMESPACE

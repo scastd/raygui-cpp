@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_TOGGLE_H
 #define RAYGUI_CPP_TOGGLE_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Toggle {
+class Toggle : public Component<bool> {
 public:
     Toggle();
-    Toggle(::Rectangle bounds, const char *text, bool active);
-    Toggle(float x, float y, float width, float height, const char *text, bool active);
-    Toggle(::Vector2 position, ::Vector2 size, const char *text, bool active);
-
-    ~Toggle() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    Toggle(Bounds bounds, const char *text, bool active);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ public:
     RAYGUI_NODISCARD bool IsActive() const;
     void SetActive(bool newActive);
 
-    RAYGUI_NODISCARD bool Show() const;
+    RAYGUI_NODISCARD bool Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     bool active; // Checked
 };

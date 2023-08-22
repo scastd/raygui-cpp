@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ColorBarAlpha::ColorBarAlpha() : bounds({ 0, 0, 0, 0 }), text(""), alpha(0) {}
+ColorBarAlpha::ColorBarAlpha() : Component<float>({}), text(""), alpha(0) {}
 
-ColorBarAlpha::ColorBarAlpha(::Rectangle bounds, const char *text, float alpha)
-    : bounds(bounds), text(text), alpha(alpha) {}
-
-ColorBarAlpha::ColorBarAlpha(float x, float y, float width, float height, const char *text, float alpha)
-    : bounds({ x, y, width, height }), text(text), alpha(alpha) {}
-
-ColorBarAlpha::ColorBarAlpha(::Vector2 position, ::Vector2 size, const char *text, float alpha)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), alpha(alpha) {}
-
-::Rectangle ColorBarAlpha::GetBounds() const {
-    return bounds;
-}
-
-void ColorBarAlpha::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+ColorBarAlpha::ColorBarAlpha(Bounds bounds, const char *text, float alpha)
+    : Component<float>(bounds), text(text), alpha(alpha) {}
 
 const char *ColorBarAlpha::GetText() const {
     return text;
@@ -38,7 +24,7 @@ void ColorBarAlpha::SetAlpha(float newAlpha) {
 }
 
 float ColorBarAlpha::Show() const {
-    return ::GuiColorBarAlpha(bounds, text, alpha);
+    return ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, alpha);
 }
 
 RAYGUI_CPP_END_NAMESPACE

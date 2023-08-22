@@ -1,22 +1,16 @@
 #ifndef RAYGUI_CPP_COMBO_BOX_H
 #define RAYGUI_CPP_COMBO_BOX_H
 
+#include "Component.h"
 #include "Directives.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ComboBox {
+class ComboBox : public Component<int> {
 public:
     ComboBox();
-    ComboBox(::Rectangle bounds, const char *text, int active);
-    ComboBox(float x, float y, float width, float height, const char *text, int active);
-    ComboBox(::Vector2 position, ::Vector2 size, const char *text, int active);
-
-    ~ComboBox() = default;
-
-    RAYGUI_NODISCARD ::Rectangle GetBounds() const;
-    void SetBounds(::Rectangle newBounds);
+    ComboBox(Bounds bounds, const char *text, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -24,10 +18,9 @@ public:
     RAYGUI_NODISCARD int GetActive() const;
     void SetActive(int newActive);
 
-    RAYGUI_NODISCARD int Show() const;
+    RAYGUI_NODISCARD int Show() const override;
 
 private:
-    ::Rectangle bounds;
     const char *text;
     int active;
 };

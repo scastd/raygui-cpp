@@ -2,24 +2,10 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-TextBox::TextBox() : bounds({ 0, 0, 0, 0 }), text(nullptr), textSize(0), editMode(false) {}
+TextBox::TextBox() : Component<bool>({}), text(nullptr), textSize(0), editMode(false) {}
 
-TextBox::TextBox(::Rectangle bounds, char *text, int textSize, bool editMode)
-    : bounds(bounds), text(text), textSize(textSize), editMode(editMode) {}
-
-TextBox::TextBox(float x, float y, float width, float height, char *text, int textSize, bool editMode)
-    : bounds({ x, y, width, height }), text(text), textSize(textSize), editMode(editMode) {}
-
-TextBox::TextBox(::Vector2 position, ::Vector2 size, char *text, int textSize, bool editMode)
-    : bounds({ position.x, position.y, size.x, size.y }), text(text), textSize(textSize), editMode(editMode) {}
-
-::Rectangle TextBox::GetBounds() const {
-    return bounds;
-}
-
-void TextBox::SetBounds(::Rectangle newBounds) {
-    this->bounds = newBounds;
-}
+TextBox::TextBox(Bounds bounds, char *text, int textSize, bool editMode)
+    : Component<bool>(bounds), text(text), textSize(textSize), editMode(editMode) {}
 
 const char *TextBox::GetText() const {
     return text;
@@ -46,7 +32,7 @@ void TextBox::SetEditMode(bool newEditMode) {
 }
 
 bool TextBox::Show() const {
-    return ::GuiTextBox(bounds, text, textSize, editMode);
+    return ::GuiTextBox(GetBounds().GetRectangle(), text, textSize, editMode);
 }
 
 RAYGUI_CPP_END_NAMESPACE
