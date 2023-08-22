@@ -28,6 +28,8 @@ public:
     RAYGUI_NODISCARD float GetHeight() const;
     void SetHeight(float newHeight);
 
+    RAYGUI_NODISCARD static Bounds WindowBounds();
+
 private:
     ::Rectangle m_rectangle;
 };

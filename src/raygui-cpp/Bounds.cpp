@@ -50,4 +50,8 @@ void Bounds::SetHeight(float newHeight) {
     m_rectangle.height = newHeight;
 }
 
+Bounds Bounds::WindowBounds() {
+    return { 0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()) };
+}
+
 RAYGUI_CPP_END_NAMESPACE

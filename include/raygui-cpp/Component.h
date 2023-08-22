@@ -40,7 +40,7 @@ public:
         if (m_parent != nullptr) {
             bounds = m_parent->GetBounds();
         } else {
-            bounds = m_bounds; // Todo: is this correct?
+            bounds = Bounds::WindowBounds();
         }
 
         Style::Margin margin = m_style.GetMargin();
