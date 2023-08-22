@@ -30,6 +30,17 @@ public:
 
     RAYGUI_NODISCARD static Bounds WindowBounds();
 
+    /**
+     * @brief Creates a Bounds object with the given width and height,
+     * and with the position set to (0, 0).
+     *
+     * @param width The width of the Bounds object.
+     * @param height The height of the Bounds object.
+     *
+     * @return A Bounds object with the given width and height.
+     */
+    RAYGUI_NODISCARD static Bounds OfSize(float width, float height);
+
 private:
     ::Rectangle m_rectangle;
 };

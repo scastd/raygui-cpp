@@ -54,4 +54,8 @@ Bounds Bounds::WindowBounds() {
     return { 0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()) };
 }
 
+Bounds Bounds::OfSize(float width, float height) {
+    return { 0, 0, width, height };
+}
+
 RAYGUI_CPP_END_NAMESPACE
