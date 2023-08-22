@@ -10,7 +10,7 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class ColorPanel : public Component<::Color> {
 public:
     ColorPanel();
-    ColorPanel(Bounds bounds, const char *text, ::Color color);
+    ColorPanel(Bounds bounds, const char *text, ::Color color = ::BLACK);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
