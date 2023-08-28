@@ -47,8 +47,8 @@ public:
 
         switch (m_style.GetPosition()) {
             case Style::Position::TOP_LEFT:
-                m_bounds.SetX(bounds.GetX() + margin.h + margin.h);
-                m_bounds.SetY(bounds.GetY() + margin.v + margin.v);
+                m_bounds.SetX(bounds.GetX() + margin.h);
+                m_bounds.SetY(bounds.GetY() + margin.v);
                 break;
             case Style::Position::TOP_CENTER:
                 m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
