@@ -17,7 +17,7 @@ Style::Position Style::GetPosition() const {
     return m_position;
 }
 
-Style::Margin Style::GetMargin() const {
+Margin Style::GetMargin() const {
     return m_margin;
 }
 

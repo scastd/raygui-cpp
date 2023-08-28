@@ -2,6 +2,7 @@
 #define RAYGUI_CPP_STYLE_H
 
 #include "Directives.h"
+#include "Margin.h"
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
@@ -17,11 +18,6 @@ public:
         BOTTOM_LEFT,
         BOTTOM_CENTER,
         BOTTOM_RIGHT
-    };
-
-    struct Margin {
-        float h; // Horizontal
-        float v; // Vertical
     };
 
     Style();

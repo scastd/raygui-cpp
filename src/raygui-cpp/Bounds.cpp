@@ -58,4 +58,17 @@ Bounds Bounds::OfSize(float width, float height) {
     return { 0, 0, width, height };
 }
 
+Bounds Bounds::WithText(const char *text) {
+    return WithText(text, GuiGetStyle(DEFAULT, TEXT_SIZE));
+}
+
+Bounds Bounds::WithText(const char *text, int fontSize) {
+    return { 0, 0, static_cast<float>(MeasureText(text, fontSize)), static_cast<float>(fontSize) };
+}
+
+Bounds Bounds::WithText(const char *text, int fontSize, Margin textMargins) {
+    return { 0, 0, static_cast<float>(MeasureText(text, fontSize)) + textMargins.h,
+             static_cast<float>(fontSize) + textMargins.v };
+}
+
 RAYGUI_CPP_END_NAMESPACE

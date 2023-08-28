@@ -43,7 +43,7 @@ public:
             bounds = Bounds::WindowBounds();
         }
 
-        Style::Margin margin = m_style.GetMargin();
+        Margin margin = m_style.GetMargin();
 
         switch (m_style.GetPosition()) {
             case Style::Position::TOP_LEFT:

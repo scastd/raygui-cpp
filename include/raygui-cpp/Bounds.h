@@ -2,6 +2,8 @@
 #define RAYGUI_CPP_BOUNDS_H
 
 #include "Directives.h"
+#include "Margin.h"
+#include "raygui.h"
 #include "raylib.h"
 
 RAYGUI_CPP_BEGIN_NAMESPACE
@@ -40,6 +42,12 @@ public:
      * @return A Bounds object with the given width and height.
      */
     RAYGUI_NODISCARD static Bounds OfSize(float width, float height);
+
+    RAYGUI_NODISCARD static Bounds WithText(const char *text);
+
+    RAYGUI_NODISCARD static Bounds WithText(const char *text, int fontSize);
+
+    RAYGUI_NODISCARD static Bounds WithText(const char *text, int fontSize, Margin textMargins);
 
 private:
     ::Rectangle m_rectangle;

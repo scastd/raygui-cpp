@@ -87,6 +87,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/Component.h
         include/raygui-cpp/Bounds.h
         include/raygui-cpp/Style.h
+        include/raygui-cpp/Margin.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
