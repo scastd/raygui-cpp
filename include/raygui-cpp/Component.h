@@ -4,6 +4,7 @@
 #include "Bounds.h"
 #include "Directives.h"
 #include "Style.h"
+#include <any>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
@@ -93,10 +94,19 @@ public:
         m_style = newStyle;
     }
 
+    RAYGUI_NODISCARD std::any GetData() const {
+        return m_data;
+    }
+
+    void SetData(std::any newData) {
+        m_data = std::move(newData);
+    }
+
 private:
     Bounds m_bounds;
     Component *m_parent = nullptr;
     Style m_style = Style(Style::Position::TOP_LEFT);
+    std::any m_data = nullptr;
 };
 
 RAYGUI_CPP_END_NAMESPACE
