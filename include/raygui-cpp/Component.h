@@ -3,6 +3,7 @@
 
 #include "Bounds.h"
 #include "Directives.h"
+#include "Globals.h"
 #include "Style.h"
 #include <any>
 
@@ -100,6 +101,13 @@ public:
 
     void SetData(std::any newData) {
         m_data = std::move(newData);
+    }
+
+    T ShowAndEnableOnCondition(bool condition) const {
+        Globals::GuiSetState(condition ? STATE_NORMAL : STATE_DISABLED);
+        T result = Show();
+        Globals::GuiSetState(STATE_NORMAL);
+        return result;
     }
 
 private:
