@@ -11,9 +11,9 @@ class TextInputBox : public Component<int> {
 public:
     TextInputBox();
     TextInputBox(const char *title, const char *message, const char *buttons, char *text, int textMaxSize,
-                 int *secretViewActive);
+                 bool secretViewActive);
     TextInputBox(Bounds bounds, const char *title, const char *message, const char *buttons, char *text,
-                 int textMaxSize, int *secretViewActive);
+                 int textMaxSize, bool secretViewActive);
 
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -30,10 +30,10 @@ public:
     RAYGUI_NODISCARD int GetTextMaxSize() const;
     void SetTextMaxSize(int newTextMaxSize);
 
-    RAYGUI_NODISCARD int *GetSecretViewActive() const;
-    void SetSecretViewActive(int *newSecretViewActive);
+    RAYGUI_NODISCARD bool GetSecretViewActive() const;
+    void SetSecretViewActive(bool newSecretViewActive);
 
-    RAYGUI_NODISCARD int Show() const override;
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *title;
@@ -41,7 +41,7 @@ private:
     const char *buttons;
     char *text;
     int textMaxSize;
-    int *secretViewActive;
+    bool secretViewActive;
 };
 
 RAYGUI_CPP_END_NAMESPACE

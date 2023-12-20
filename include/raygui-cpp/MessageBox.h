@@ -22,7 +22,7 @@ public:
     RAYGUI_NODISCARD const char *GetButtons() const;
     void SetButtons(const char *newButtons);
 
-    RAYGUI_NODISCARD int Show() const override;
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *title;

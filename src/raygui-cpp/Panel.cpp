@@ -16,7 +16,7 @@ void Panel::SetText(const char *newText) {
     this->text = newText;
 }
 
-void Panel::Show() const {
+void Panel::Show() {
     ::GuiPanel(GetBounds().GetRectangle(), text);
 }
 

@@ -16,7 +16,7 @@ void StatusBar::SetText(const char *newText) {
     this->text = newText;
 }
 
-void StatusBar::Show() const {
+void StatusBar::Show() {
     ::GuiStatusBar(GetBounds().GetRectangle(), text);
 }
 

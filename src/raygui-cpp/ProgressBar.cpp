@@ -9,7 +9,7 @@ ProgressBar::ProgressBar(const char *textLeft, const char *textRight, float valu
 
 ProgressBar::ProgressBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue,
                          float maxValue)
-    : Component<float>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
+    : Component<int>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
       maxValue(maxValue) {}
 
 const char *ProgressBar::GetTextLeft() const {
@@ -52,8 +52,8 @@ void ProgressBar::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-float ProgressBar::Show() const {
-    return ::GuiProgressBar(GetBounds().GetRectangle(), textLeft, textRight, value, minValue, maxValue);
+int ProgressBar::Show() {
+    return ::GuiProgressBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
 }
 
 RAYGUI_CPP_END_NAMESPACE

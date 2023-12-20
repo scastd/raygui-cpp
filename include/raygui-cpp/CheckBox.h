@@ -19,7 +19,7 @@ public:
     RAYGUI_NODISCARD bool IsChecked() const;
     void SetChecked(bool newChecked);
 
-    RAYGUI_NODISCARD bool Show() const override;
+    RAYGUI_NODISCARD bool Show() override;
 
 private:
     const char *text;

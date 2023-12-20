@@ -16,7 +16,7 @@ void GroupBox::SetText(const char *newText) {
     this->text = newText;
 }
 
-void GroupBox::Show() const {
+void GroupBox::Show() {
     ::GuiGroupBox(GetBounds().GetRectangle(), text);
 }
 

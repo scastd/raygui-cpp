@@ -33,7 +33,7 @@ void TabBar::SetActive(int *newActive) {
     this->active = newActive;
 }
 
-int TabBar::Show() const {
+int TabBar::Show() {
     return ::GuiTabBar(GetBounds().GetRectangle(), text, count, active);
 }
 

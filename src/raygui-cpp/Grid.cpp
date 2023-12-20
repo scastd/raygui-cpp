@@ -2,13 +2,13 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-Grid::Grid() : text(nullptr), spacing(0), subdivisions(0) {}
+Grid::Grid() : text(nullptr), spacing(0), subdivisions(0), mouseCell({}) {}
 
-Grid::Grid(const char *text, float spacing, int subdivisions)
-    : text(text), spacing(spacing), subdivisions(subdivisions) {}
+Grid::Grid(const char *text, float spacing, int subdivisions, Vector2 mouseCell)
+    : text(text), spacing(spacing), subdivisions(subdivisions), mouseCell(mouseCell) {}
 
-Grid::Grid(Bounds bounds, const char *text, float spacing, int subdivisions)
-    : Component<::Vector2>(bounds), text(text), spacing(spacing), subdivisions(subdivisions) {}
+Grid::Grid(Bounds bounds, const char *text, float spacing, int subdivisions, Vector2 mouseCell)
+    : Component<int>(bounds), text(text), spacing(spacing), subdivisions(subdivisions), mouseCell(mouseCell) {}
 
 const char *Grid::GetText() const {
     return text;
@@ -34,8 +34,16 @@ void Grid::SetSubdivisions(int newSubdivisions) {
     this->subdivisions = newSubdivisions;
 }
 
-::Vector2 Grid::Show() const {
-    return ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions);
+Vector2 Grid::GetMouseCell() const {
+    return mouseCell;
+}
+
+void Grid::SetMouseCell(Vector2 newMouseCell) {
+    this->mouseCell = newMouseCell;
+}
+
+int Grid::Show() {
+    return ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions, &mouseCell);
 }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -16,7 +16,7 @@ void Line::SetText(const char *newText) {
     text = newText;
 }
 
-void Line::Show() const {
+void Line::Show() {
     ::GuiLine(GetBounds().GetRectangle(), text);
 }
 

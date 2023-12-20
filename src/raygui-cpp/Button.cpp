@@ -16,7 +16,7 @@ void Button::SetText(const char *newText) {
     this->text = newText;
 }
 
-bool Button::Show() const {
+bool Button::Show() {
     return ::GuiButton(GetBounds().GetRectangle(), text);
 }
 

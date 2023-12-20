@@ -34,7 +34,7 @@ void DropdownBox::SetEditMode(bool newEditMode) {
     this->editMode = newEditMode;
 }
 
-bool DropdownBox::Show() const {
+bool DropdownBox::Show() {
     return ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode);
 }
 

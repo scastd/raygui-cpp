@@ -22,8 +22,8 @@ bool Globals::GuiIsLocked() {
     return ::GuiIsLocked();
 }
 
-void Globals::GuiFade(float alpha) {
-    ::GuiFade(alpha);
+void Globals::GuiSetAlpha(float alpha) {
+    ::GuiSetAlpha(alpha);
 }
 
 void Globals::GuiSetState(int state) {

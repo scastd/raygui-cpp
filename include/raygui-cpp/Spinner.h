@@ -28,7 +28,7 @@ public:
     RAYGUI_NODISCARD bool IsEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() const override;
+    RAYGUI_NODISCARD bool Show() override;
 
 private:
     const char *text;

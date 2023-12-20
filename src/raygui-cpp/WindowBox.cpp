@@ -16,7 +16,7 @@ void WindowBox::SetTitle(const char *newTitle) {
     this->title = newTitle;
 }
 
-bool WindowBox::Show() const {
+bool WindowBox::Show() {
     return ::GuiWindowBox(GetBounds().GetRectangle(), title);
 }
 

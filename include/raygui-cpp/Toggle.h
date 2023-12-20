@@ -19,7 +19,7 @@ public:
     RAYGUI_NODISCARD bool IsActive() const;
     void SetActive(bool newActive);
 
-    RAYGUI_NODISCARD bool Show() const override;
+    RAYGUI_NODISCARD bool Show() override;
 
 private:
     const char *text;

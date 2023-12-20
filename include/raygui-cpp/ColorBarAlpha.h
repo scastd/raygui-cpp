@@ -7,7 +7,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ColorBarAlpha : public Component<float> {
+class ColorBarAlpha : public Component<int> {
 public:
     ColorBarAlpha();
     ColorBarAlpha(const char *text, float alpha = 1.0f);
@@ -19,7 +19,7 @@ public:
     RAYGUI_NODISCARD float GetAlpha() const;
     void SetAlpha(float newAlpha);
 
-    RAYGUI_NODISCARD float Show() const override;
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *text;

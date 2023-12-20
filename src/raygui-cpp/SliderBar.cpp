@@ -9,7 +9,7 @@ SliderBar::SliderBar(const char *textLeft, const char *textRight, float value, f
 
 SliderBar::SliderBar(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue,
                      float maxValue)
-    : Component<float>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
+    : Component<int>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
       maxValue(maxValue) {}
 
 const char *SliderBar::GetTextLeft() const {
@@ -52,8 +52,8 @@ void SliderBar::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-float SliderBar::Show() const {
-    return ::GuiSliderBar(GetBounds().GetRectangle(), textLeft, textRight, value, minValue, maxValue);
+int SliderBar::Show() {
+    return ::GuiSliderBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
 }
 
 RAYGUI_CPP_END_NAMESPACE

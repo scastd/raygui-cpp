@@ -7,7 +7,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ProgressBar : public Component<float> {
+class ProgressBar : public Component<int> {
 public:
     ProgressBar();
     ProgressBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
@@ -29,7 +29,7 @@ public:
     RAYGUI_NODISCARD float GetMaxValue() const;
     void SetMaxValue(float newMaxValue);
 
-    RAYGUI_NODISCARD float Show() const override;
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *textLeft;

@@ -7,11 +7,11 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ScrollPanel : public Component<::Rectangle> {
+class ScrollPanel : public Component<int> {
 public:
     ScrollPanel();
-    ScrollPanel(const char *text, ::Rectangle content, ::Vector2 *scroll);
-    ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 *scroll);
+    ScrollPanel(const char *text, ::Rectangle content, ::Vector2 scroll, ::Rectangle view);
+    ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 scroll, ::Rectangle view);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -19,15 +19,19 @@ public:
     RAYGUI_NODISCARD ::Rectangle GetContent() const;
     void SetContent(::Rectangle newContent);
 
-    RAYGUI_NODISCARD ::Vector2 *GetScroll() const;
-    void SetScroll(::Vector2 *newScroll);
+    RAYGUI_NODISCARD ::Vector2 GetScroll() const;
+    void SetScroll(::Vector2 newScroll);
 
-    RAYGUI_NODISCARD ::Rectangle Show() const override;
+    RAYGUI_NODISCARD ::Rectangle GetView() const;
+    void SetView(::Rectangle newView);
+
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *text;
     ::Rectangle content;
-    ::Vector2 *scroll;
+    ::Vector2 scroll;
+    ::Rectangle view;
 };
 
 RAYGUI_CPP_END_NAMESPACE

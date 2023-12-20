@@ -7,7 +7,7 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class SliderBar : public Component<float> {
+class SliderBar : public Component<int> {
 public:
     SliderBar();
     SliderBar(const char *textLeft, const char *textRight, float value, float minValue, float maxValue);
@@ -28,7 +28,7 @@ public:
     RAYGUI_NODISCARD float GetMaxValue() const;
     void SetMaxValue(float newMaxValue);
 
-    RAYGUI_NODISCARD float Show() const override;
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *textLeft;

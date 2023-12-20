@@ -7,7 +7,7 @@ ColorPicker::ColorPicker() : text(""), color({ 0, 0, 0, 0 }) {}
 ColorPicker::ColorPicker(const char *text, ::Color color) : text(text), color(color) {}
 
 ColorPicker::ColorPicker(Bounds bounds, const char *text, ::Color color)
-    : Component<::Color>(bounds), text(text), color(color) {}
+    : Component<int>(bounds), text(text), color(color) {}
 
 const char *ColorPicker::GetText() const {
     return text;
@@ -25,8 +25,8 @@ void ColorPicker::SetColor(::Color newColor) {
     this->color = newColor;
 }
 
-::Color ColorPicker::Show() const {
-    return ::GuiColorPicker(GetBounds().GetRectangle(), text, color);
+int ColorPicker::Show() {
+    return ::GuiColorPicker(GetBounds().GetRectangle(), text, &color);
 }
 
 RAYGUI_CPP_END_NAMESPACE

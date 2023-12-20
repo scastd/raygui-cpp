@@ -16,7 +16,7 @@ public:
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    void Show() const override;
+    void Show() override;
 
 private:
     const char *text;

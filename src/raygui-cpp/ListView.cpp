@@ -34,8 +34,8 @@ void ListView::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ListView::Show() const {
-    return ::GuiListView(GetBounds().GetRectangle(), text, scrollIndex, active);
+int ListView::Show() {
+    return ::GuiListView(GetBounds().GetRectangle(), text, scrollIndex, &active);
 }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -1,5 +1,5 @@
-#ifndef RAYGUI_CPP_TOGGLE_GROUP_H
-#define RAYGUI_CPP_TOGGLE_GROUP_H
+#ifndef RAYGUI_CPP_TOGGLE_SLIDER_H
+#define RAYGUI_CPP_TOGGLE_SLIDER_H
 
 #include "Component.h"
 #include "Directives.h"
@@ -7,11 +7,11 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class ToggleGroup : public Component<int> {
+class ToggleSlider : public Component<int> {
 public:
-    ToggleGroup();
-    ToggleGroup(const char *text, int active);
-    ToggleGroup(Bounds bounds, const char *text, int active);
+    ToggleSlider();
+    ToggleSlider(const char *text, int active);
+    ToggleSlider(Bounds bounds, const char *text, int active);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -28,4 +28,4 @@ private:
 
 RAYGUI_CPP_END_NAMESPACE
 
-#endif // RAYGUI_CPP_TOGGLE_GROUP_H
+#endif // RAYGUI_CPP_TOGGLE_SLIDER_H

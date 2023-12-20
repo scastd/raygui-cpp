@@ -50,7 +50,7 @@ void Spinner::SetEditMode(bool newEditMode) {
     this->editMode = newEditMode;
 }
 
-bool Spinner::Show() const {
+bool Spinner::Show() {
     return ::GuiSpinner(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode);
 }
 

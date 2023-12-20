@@ -7,7 +7,7 @@ ColorBarAlpha::ColorBarAlpha() : text(""), alpha(0) {}
 ColorBarAlpha::ColorBarAlpha(const char *text, float alpha) : text(text), alpha(alpha) {}
 
 ColorBarAlpha::ColorBarAlpha(Bounds bounds, const char *text, float alpha)
-    : Component<float>(bounds), text(text), alpha(alpha) {}
+    : Component<int>(bounds), text(text), alpha(alpha) {}
 
 const char *ColorBarAlpha::GetText() const {
     return text;
@@ -25,8 +25,8 @@ void ColorBarAlpha::SetAlpha(float newAlpha) {
     this->alpha = newAlpha;
 }
 
-float ColorBarAlpha::Show() const {
-    return ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, alpha);
+int ColorBarAlpha::Show() {
+    return ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, &alpha);
 }
 
 RAYGUI_CPP_END_NAMESPACE

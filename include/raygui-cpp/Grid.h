@@ -7,11 +7,11 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Grid : public Component<::Vector2> {
+class Grid : public Component<int> {
 public:
     Grid();
-    Grid(const char *text, float spacing, int subdivisions);
-    Grid(Bounds bounds, const char *text, float spacing, int subdivisions);
+    Grid(const char *text, float spacing, int subdivisions, Vector2 mouseCell);
+    Grid(Bounds bounds, const char *text, float spacing, int subdivisions, Vector2 mouseCell);
 
     RAYGUI_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
@@ -22,12 +22,16 @@ public:
     RAYGUI_NODISCARD int GetSubdivisions() const;
     void SetSubdivisions(int newSubdivisions);
 
-    RAYGUI_NODISCARD ::Vector2 Show() const override;
+    RAYGUI_NODISCARD ::Vector2 GetMouseCell() const;
+    void SetMouseCell(::Vector2 newMouseCell);
+
+    RAYGUI_NODISCARD int Show() override;
 
 private:
     const char *text;
     float spacing;
     int subdivisions;
+    Vector2 mouseCell;
 };
 
 RAYGUI_CPP_END_NAMESPACE

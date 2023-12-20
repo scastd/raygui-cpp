@@ -2,13 +2,13 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-ScrollPanel::ScrollPanel() : text(""), content({ 0, 0, 0, 0 }), scroll(new ::Vector2()) {}
+ScrollPanel::ScrollPanel() : text(""), content({ 0, 0, 0, 0 }), scroll({}), view({}) {}
 
-ScrollPanel::ScrollPanel(const char *text, ::Rectangle content, ::Vector2 *scroll)
-    : text(text), content(content), scroll(scroll) {}
+ScrollPanel::ScrollPanel(const char *text, ::Rectangle content, ::Vector2 scroll, ::Rectangle view)
+    : text(text), content(content), scroll(scroll), view(view) {}
 
-ScrollPanel::ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 *scroll)
-    : Component<::Rectangle>(bounds), text(text), content(content), scroll(scroll) {}
+ScrollPanel::ScrollPanel(Bounds bounds, const char *text, ::Rectangle content, ::Vector2 scroll, ::Rectangle view)
+    : Component<int>(bounds), text(text), content(content), scroll(scroll), view(view) {}
 
 const char *ScrollPanel::GetText() const {
     return text;
@@ -26,16 +26,24 @@ void ScrollPanel::SetContent(::Rectangle newContent) {
     this->content = newContent;
 }
 
-::Vector2 *ScrollPanel::GetScroll() const {
+::Vector2 ScrollPanel::GetScroll() const {
     return scroll;
 }
 
-void ScrollPanel::SetScroll(::Vector2 *newScroll) {
+void ScrollPanel::SetScroll(::Vector2 newScroll) {
     this->scroll = newScroll;
 }
 
-::Rectangle ScrollPanel::Show() const {
-    return ::GuiScrollPanel(GetBounds().GetRectangle(), text, content, scroll);
+::Rectangle ScrollPanel::GetView() const {
+    return view;
+}
+
+void ScrollPanel::SetView(::Rectangle newView) {
+    this->view = newView;
+}
+
+int ScrollPanel::Show() {
+    return ::GuiScrollPanel(GetBounds().GetRectangle(), text, content, &scroll, &view);
 }
 
 RAYGUI_CPP_END_NAMESPACE

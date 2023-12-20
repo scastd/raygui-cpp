@@ -7,7 +7,7 @@ ColorBarHue::ColorBarHue() : text(""), value(0) {}
 ColorBarHue::ColorBarHue(const char *text, float value) : text(text), value(value) {}
 
 ColorBarHue::ColorBarHue(Bounds bounds, const char *text, float value)
-    : Component<float>(bounds), text(text), value(value) {}
+    : Component<int>(bounds), text(text), value(value) {}
 
 const char *ColorBarHue::GetText() const {
     return text;
@@ -25,8 +25,8 @@ void ColorBarHue::SetValue(float newValue) {
     this->value = newValue;
 }
 
-float ColorBarHue::Show() const {
-    return ::GuiColorBarHue(GetBounds().GetRectangle(), text, value);
+int ColorBarHue::Show() {
+    return ::GuiColorBarHue(GetBounds().GetRectangle(), text, &value);
 }
 
 RAYGUI_CPP_END_NAMESPACE

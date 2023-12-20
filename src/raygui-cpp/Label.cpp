@@ -16,7 +16,7 @@ void Label::SetText(const char *newText) {
     this->text = newText;
 }
 
-void Label::Show() const {
+void Label::Show() {
     ::GuiLabel(GetBounds().GetRectangle(), text);
 }
 

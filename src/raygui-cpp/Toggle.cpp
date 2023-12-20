@@ -24,8 +24,8 @@ void Toggle::SetActive(bool newActive) {
     this->active = newActive;
 }
 
-bool Toggle::Show() const {
-    return ::GuiToggle(GetBounds().GetRectangle(), text, active);
+bool Toggle::Show() {
+    return ::GuiToggle(GetBounds().GetRectangle(), text, &active);
 }
 
 RAYGUI_CPP_END_NAMESPACE

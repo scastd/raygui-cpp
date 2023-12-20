@@ -16,7 +16,7 @@ void DummyRec::SetText(const char *newText) {
     this->text = newText;
 }
 
-void DummyRec::Show() const {
+void DummyRec::Show() {
     ::GuiDummyRec(GetBounds().GetRectangle(), text);
 }
 

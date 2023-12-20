@@ -16,7 +16,7 @@ public:
     RAYGUI_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
 
-    RAYGUI_NODISCARD bool Show() const override;
+    RAYGUI_NODISCARD bool Show() override;
 
 private:
     const char *title;

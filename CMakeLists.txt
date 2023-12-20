@@ -6,8 +6,6 @@ project(raygui_cpp
 
 # Add dependencies
 set(RAYGUI_CPP_SOURCE_FILES
-        # C files
-        dependencies/raylib/src/raygui.c
         # C++ files
         src/raygui-cpp/Button.cpp
         src/raygui-cpp/CheckBox.cpp
@@ -43,6 +41,9 @@ set(RAYGUI_CPP_SOURCE_FILES
         src/raygui-cpp/WindowBox.cpp
         src/raygui-cpp/Bounds.cpp
         src/raygui-cpp/Style.cpp
+        src/raygui-cpp/ToggleSlider.cpp
+        src/raygui-cpp/ColorPickerHSV.cpp
+        src/raygui-cpp/ColorPanelHSV.cpp
 )
 
 set(RAYGUI_CPP_HEADER_FILES
@@ -88,6 +89,9 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/Bounds.h
         include/raygui-cpp/Style.h
         include/raygui-cpp/Margin.h
+        include/raygui-cpp/ToggleSlider.h
+        include/raygui-cpp/ColorPickerHSV.h
+        include/raygui-cpp/ColorPanelHSV.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)

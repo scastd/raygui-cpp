@@ -8,7 +8,7 @@ Slider::Slider(const char *textLeft, const char *textRight, float value, float m
     : textLeft(textLeft), textRight(textRight), value(value), minValue(minValue), maxValue(maxValue) {}
 
 Slider::Slider(Bounds bounds, const char *textLeft, const char *textRight, float value, float minValue, float maxValue)
-    : Component<float>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
+    : Component<int>(bounds), textLeft(textLeft), textRight(textRight), value(value), minValue(minValue),
       maxValue(maxValue) {}
 
 const char *Slider::GetTextLeft() const {
@@ -51,8 +51,8 @@ void Slider::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-float Slider::Show() const {
-    return ::GuiSlider(GetBounds().GetRectangle(), textLeft, textRight, value, minValue, maxValue);
+int Slider::Show() {
+    return ::GuiSlider(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
 }
 
 RAYGUI_CPP_END_NAMESPACE

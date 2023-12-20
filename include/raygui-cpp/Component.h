@@ -18,7 +18,7 @@ public:
 
     virtual ~Component() = default;
 
-    virtual T Show() const = 0;
+    virtual T Show() = 0;
 
     RAYGUI_NODISCARD Bounds GetBounds() const {
         return m_bounds;
