@@ -106,7 +106,7 @@ endif ()
 
 target_include_directories(raygui_cpp
         PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/raylib/src
+        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/raylib/src
 )
 
 set_target_properties(raygui_cpp PROPERTIES

@@ -103,7 +103,7 @@ public:
         m_data = std::move(newData);
     }
 
-    T ShowAndEnableOnCondition(bool condition) const {
+    T ShowAndEnableOnCondition(bool condition) {
         Globals::GuiSetState(condition ? STATE_NORMAL : STATE_DISABLED);
         T result = Show();
         Globals::GuiSetState(STATE_NORMAL);
