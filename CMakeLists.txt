@@ -48,7 +48,6 @@ set(RAYGUI_CPP_SOURCE_FILES
 
 set(RAYGUI_CPP_HEADER_FILES
         # C files
-        dependencies/raylib/src/raylib.h
         dependencies/raylib/src/raygui.h
         # C++ files
         include/raygui-cpp/Button.h
@@ -104,10 +103,17 @@ else ()
     add_library(raygui_cpp STATIC ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
 endif ()
 
-target_include_directories(raygui_cpp
-        PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-        PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/raylib/src
-)
+if (raylib_FOUND)
+    target_link_libraries(raygui_cpp PUBLIC raylib)
+    target_include_directories(raygui_cpp
+            PRIVATE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    )
+else ()
+    target_include_directories(raygui_cpp
+            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+            PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/raylib/src
+    )
+endif ()
 
 set_target_properties(raygui_cpp PROPERTIES
         CXX_STANDARD 17

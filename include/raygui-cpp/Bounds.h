@@ -4,7 +4,6 @@
 #include "Directives.h"
 #include "Margin.h"
 #include "raygui.h"
-#include "raylib.h"
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
