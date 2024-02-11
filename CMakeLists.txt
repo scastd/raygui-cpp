@@ -124,3 +124,11 @@ set_target_properties(raygui_cpp PROPERTIES
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
 )
+
+# Examples
+option(BUILD_RAYGUI_EXAMPLES "Build examples" ON)
+
+if (BUILD_RAYGUI_EXAMPLES)
+    message(STATUS "Building raygui examples")
+    add_subdirectory(examples)
+endif ()
