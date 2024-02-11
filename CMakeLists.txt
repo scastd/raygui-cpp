@@ -4,6 +4,8 @@ project(raygui_cpp
         VERSION 0.1.0
         DESCRIPTION "C++ wrapper for raygui")
 
+set(CMAKE_CXX_STANDARD 17)
+
 # Add dependencies
 set(RAYGUI_CPP_SOURCE_FILES
         # C++ files
