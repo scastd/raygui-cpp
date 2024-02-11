@@ -50,7 +50,6 @@ set(RAYGUI_CPP_SOURCE_FILES
 
 set(RAYGUI_CPP_HEADER_FILES
         # C files
-        dependencies/raylib/src/raylib.h
         dependencies/raylib/src/raygui.h
         # C++ files
         include/raygui-cpp/Button.h
@@ -105,6 +104,13 @@ else ()
     message(STATUS "Building raygui_cpp as static library")
     add_library(raygui_cpp STATIC ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
 endif ()
+
+include(cmake/CPM.cmake)
+CPMAddPackage("gh:raysan5/raylib#5.0")
+
+target_link_libraries(raygui_cpp
+        PUBLIC raylib
+)
 
 target_include_directories(raygui_cpp
         PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
