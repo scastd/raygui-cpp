@@ -4,6 +4,8 @@ project(raygui_cpp
         VERSION 0.1.0
         DESCRIPTION "C++ wrapper for raygui")
 
+set(CMAKE_CXX_STANDARD 17)
+
 # Add dependencies
 set(RAYGUI_CPP_SOURCE_FILES
         # C++ files
@@ -48,7 +50,6 @@ set(RAYGUI_CPP_SOURCE_FILES
 
 set(RAYGUI_CPP_HEADER_FILES
         # C files
-        dependencies/raylib/src/raylib.h
         dependencies/raylib/src/raygui.h
         # C++ files
         include/raygui-cpp/Button.h
@@ -92,6 +93,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/ToggleSlider.h
         include/raygui-cpp/ColorPickerHSV.h
         include/raygui-cpp/ColorPanelHSV.h
+        include/raygui-cpp/Utils.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
@@ -103,6 +105,13 @@ else ()
     message(STATUS "Building raygui_cpp as static library")
     add_library(raygui_cpp STATIC ${RAYGUI_CPP_SOURCE_FILES} ${RAYGUI_CPP_HEADER_FILES})
 endif ()
+
+include(cmake/CPM.cmake)
+CPMAddPackage("gh:raysan5/raylib#5.0")
+
+target_link_libraries(raygui_cpp
+        PUBLIC raylib
+)
 
 target_include_directories(raygui_cpp
         PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -116,3 +125,11 @@ set_target_properties(raygui_cpp PROPERTIES
         VERSION ${PROJECT_VERSION}
         SOVERSION ${PROJECT_VERSION_MAJOR}
 )
+
+# Examples
+option(BUILD_RAYGUI_EXAMPLES "Build examples" ON)
+
+if (BUILD_RAYGUI_EXAMPLES)
+    message(STATUS "Building raygui examples")
+    add_subdirectory(examples)
+endif ()

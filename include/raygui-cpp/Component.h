@@ -5,7 +5,9 @@
 #include "Directives.h"
 #include "Globals.h"
 #include "Style.h"
+
 #include <any>
+#include <list>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
@@ -85,6 +87,11 @@ public:
                 m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
                 break;
         }
+
+        // Update children
+        for (auto &child: children) {
+            child->Update();
+        }
     }
 
     RAYGUI_NODISCARD Style GetStyle() const {
@@ -110,10 +117,47 @@ public:
         return result;
     }
 
+    /**
+     * @brief Adds a child to the component.
+     *
+     * @param child The child to add.
+     *
+     * @note This method must be implemented by the derived class that supports children.
+     */
+    virtual void AddChild(Component *child) {
+        (void) child;
+    }
+
+    void RemoveChild(Component *child) {
+        if (children.empty()) {
+            return;
+        }
+
+        children.remove(child);
+        child->SetParent(nullptr);
+    }
+
+    void ClearChildren() {
+        children.clear();
+    }
+
+protected:
+    void AddChildInternal(Component *child) {
+        children.push_back(child);
+        child->SetParent(this);
+    }
+
+    void ShowChildren() {
+        for (auto &child: children) {
+            child->Show();
+        }
+    }
+
 private:
     Bounds m_bounds;
     Component *m_parent = nullptr;
     Style m_style = Style(Style::Position::TOP_LEFT);
+    std::list<Component *> children;
     std::any m_data = nullptr;
 };
 

@@ -18,6 +18,8 @@ public:
 
     RAYGUI_NODISCARD bool Show() override;
 
+    void AddChild(Component *child) override;
+
 private:
     const char *title;
 };
