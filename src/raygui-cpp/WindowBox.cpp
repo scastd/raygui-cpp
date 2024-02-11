@@ -17,7 +17,15 @@ void WindowBox::SetTitle(const char *newTitle) {
 }
 
 bool WindowBox::Show() {
-    return ::GuiWindowBox(GetBounds().GetRectangle(), title);
+    int ret = ::GuiWindowBox(GetBounds().GetRectangle(), title);
+
+    this->ShowChildren();
+
+    return ret;
+}
+
+void WindowBox::AddChild(Component *child) {
+    this->AddChildInternal(child);
 }
 
 RAYGUI_CPP_END_NAMESPACE
