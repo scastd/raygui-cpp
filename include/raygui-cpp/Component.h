@@ -134,6 +134,7 @@ public:
         }
 
         children.remove(child);
+        child->SetParent(nullptr);
     }
 
     void ClearChildren() {
@@ -143,6 +144,7 @@ public:
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
+        child->SetParent(this);
     }
 
     void ShowChildren() {

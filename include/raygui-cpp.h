@@ -48,4 +48,6 @@
 #include "raygui-cpp/ValueBox.h"
 #include "raygui-cpp/WindowBox.h"
 
+#include "raygui-cpp/Utils.h"
+
 #endif // RAYGUI_CPP_RAYGUI_CPP_H

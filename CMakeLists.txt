@@ -93,6 +93,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/ToggleSlider.h
         include/raygui-cpp/ColorPickerHSV.h
         include/raygui-cpp/ColorPanelHSV.h
+        include/raygui-cpp/Utils.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)
