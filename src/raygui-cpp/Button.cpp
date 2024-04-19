@@ -17,7 +17,21 @@ void Button::SetText(const char *newText) {
 }
 
 bool Button::Show() {
-    return ::GuiButton(GetBounds().GetRectangle(), text);
+    int buttonClicked = ::GuiButton(GetBounds().GetRectangle(), text);
+
+    if (buttonClicked && GetOnClick()) {
+        CallOnClick();
+    }
+
+    return buttonClicked;
+}
+
+void Button::OnClick(const Component::Callback &onClick) {
+    SetOnClick(onClick);
+}
+
+void Button::OnUpdate(const Component::Callback &onUpdate) {
+    SetOnUpdate(onUpdate);
 }
 
 RAYGUI_CPP_END_NAMESPACE

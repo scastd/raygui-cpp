@@ -1,6 +1,7 @@
 set(TEST_SOURCES
         ButtonPlacement.cpp
         ChildComponents.cpp
+        ButtonCallbacks.cpp
 )
 
 foreach (source ${TEST_SOURCES})

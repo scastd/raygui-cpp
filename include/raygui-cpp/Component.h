@@ -7,6 +7,7 @@
 #include "Style.h"
 
 #include <any>
+#include <functional>
 #include <list>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
@@ -14,6 +15,8 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 template<typename T>
 class Component {
 public:
+    using Callback = std::function<void()>;
+
     Component() : m_bounds(0, 0, 0, 0) {}
 
     explicit Component(Bounds bounds) : m_bounds(bounds) {}
@@ -48,50 +51,62 @@ public:
         }
 
         Margin margin = m_style.GetMargin();
+        float boundsX = bounds.GetX();
+        float boundsY = bounds.GetY();
+        float boundsWidth = bounds.GetWidth();
+        float boundsHeight = bounds.GetHeight();
+        float mBoundsWidth = m_bounds.GetWidth();
+        float mBoundsHeight = m_bounds.GetHeight();
+        float newX;
+        float newY;
 
         switch (m_style.GetPosition()) {
             case Style::Position::TOP_LEFT:
-                m_bounds.SetX(bounds.GetX() + margin.h);
-                m_bounds.SetY(bounds.GetY() + margin.v);
+                newX = boundsX + margin.h;
+                newY = boundsY + margin.v;
                 break;
             case Style::Position::TOP_CENTER:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
-                m_bounds.SetY(bounds.GetY() + margin.v);
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + margin.v;
                 break;
             case Style::Position::TOP_RIGHT:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
-                m_bounds.SetY(bounds.GetY() + margin.v);
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + margin.v;
                 break;
             case Style::Position::CENTER_LEFT:
-                m_bounds.SetX(bounds.GetX() + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
+                newX = boundsX + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
                 break;
             case Style::Position::CENTER:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
                 break;
             case Style::Position::CENTER_RIGHT:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() / 2 - m_bounds.GetHeight() / 2 + margin.v);
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
                 break;
             case Style::Position::BOTTOM_LEFT:
-                m_bounds.SetX(bounds.GetX() + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
+                newX = boundsX + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
                 break;
             case Style::Position::BOTTOM_CENTER:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() / 2 - m_bounds.GetWidth() / 2 + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
                 break;
             case Style::Position::BOTTOM_RIGHT:
-                m_bounds.SetX(bounds.GetX() + bounds.GetWidth() - m_bounds.GetWidth() + margin.h);
-                m_bounds.SetY(bounds.GetY() + bounds.GetHeight() - m_bounds.GetHeight() + margin.v);
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
                 break;
         }
+
+        m_bounds.Set(newX, newY);
 
         // Update children
         for (auto &child: children) {
             child->Update();
         }
+
+        CallOnUpdate();
     }
 
     RAYGUI_NODISCARD Style GetStyle() const {
@@ -141,6 +156,14 @@ public:
         children.clear();
     }
 
+    virtual void OnClick(const Callback &onClick) {
+        // Noop here. Should be overridden.
+    }
+
+    virtual void OnUpdate(const Callback &onUpdate) {
+        // Noop here. Should be overridden.
+    }
+
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
@@ -153,12 +176,43 @@ protected:
         }
     }
 
+    RAYGUI_NODISCARD Callback *GetOnClick() {
+        return &m_onClick;
+    }
+
+    void SetOnClick(Callback onClick) {
+        m_onClick = std::move(onClick);
+    }
+
+    RAYGUI_NODISCARD Callback *GetOnUpdate() {
+        return &m_onUpdate;
+    }
+
+    void SetOnUpdate(Callback onUpdate) {
+        m_onUpdate = std::move(onUpdate);
+    }
+
+    void CallOnClick() const {
+        if (m_onClick) {
+            m_onClick();
+        }
+    }
+
+    void CallOnUpdate() const {
+        if (m_onUpdate) {
+            m_onUpdate();
+        }
+    }
+
 private:
     Bounds m_bounds;
     Component *m_parent = nullptr;
     Style m_style = Style(Style::Position::TOP_LEFT);
     std::list<Component *> children;
     std::any m_data = nullptr;
+
+    Callback m_onClick;
+    Callback m_onUpdate;
 };
 
 RAYGUI_CPP_END_NAMESPACE
