@@ -18,6 +18,20 @@ void Bounds::SetRectangle(::Rectangle newRectangle) {
     m_rectangle = newRectangle;
 }
 
+::Vector2 Bounds::GetPosition() const {
+    return { m_rectangle.x, m_rectangle.y };
+}
+
+void Bounds::SetPosition(::Vector2 newPosition) {
+    SetX(newPosition.x);
+    SetY(newPosition.y);
+}
+
+void Bounds::Set(float x, float y) {
+    SetX(x);
+    SetY(y);
+}
+
 float Bounds::GetX() const {
     return m_rectangle.x;
 }

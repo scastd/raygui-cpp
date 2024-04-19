@@ -17,6 +17,10 @@ public:
     RAYGUI_NODISCARD ::Rectangle GetRectangle() const;
     void SetRectangle(::Rectangle newRectangle);
 
+    RAYGUI_NODISCARD ::Vector2 GetPosition() const;
+    void SetPosition(::Vector2 newPosition);
+    void Set(float x, float y);
+
     RAYGUI_NODISCARD float GetX() const;
     void SetX(float newX);
 
