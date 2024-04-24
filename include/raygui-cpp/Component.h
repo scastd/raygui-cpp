@@ -176,16 +176,16 @@ protected:
         }
     }
 
-    RAYGUI_NODISCARD Callback *GetOnClick() {
-        return &m_onClick;
+    RAYGUI_NODISCARD bool HasOnClick() const {
+        return m_onClick != nullptr;
     }
 
     void SetOnClick(Callback onClick) {
         m_onClick = std::move(onClick);
     }
 
-    RAYGUI_NODISCARD Callback *GetOnUpdate() {
-        return &m_onUpdate;
+    RAYGUI_NODISCARD bool HasOnUpdate() const {
+        return m_onUpdate != nullptr;
     }
 
     void SetOnUpdate(Callback onUpdate) {

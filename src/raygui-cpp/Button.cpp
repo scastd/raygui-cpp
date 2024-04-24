@@ -19,7 +19,7 @@ void Button::SetText(const char *newText) {
 bool Button::Show() {
     int buttonClicked = ::GuiButton(GetBounds().GetRectangle(), text);
 
-    if (buttonClicked && GetOnClick()) {
+    if (buttonClicked && HasOnClick()) {
         CallOnClick();
     }
 
