@@ -35,7 +35,21 @@ void DropdownBox::SetEditMode(bool newEditMode) {
 }
 
 bool DropdownBox::Show() {
-    return ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode);
+    int dropDownClicked = ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode);
+
+    if (dropDownClicked && HasOnClick()) {
+        CallOnClick();
+    }
+
+    return dropDownClicked;
+}
+
+void DropdownBox::OnClick(const Component::Callback &onClick) {
+    SetOnClick(onClick);
+}
+
+void DropdownBox::OnUpdate(const Component::Callback &onUpdate) {
+    SetOnUpdate(onUpdate);
 }
 
 RAYGUI_CPP_END_NAMESPACE

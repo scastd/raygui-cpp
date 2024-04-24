@@ -24,6 +24,9 @@ public:
 
     RAYGUI_NODISCARD bool Show() override;
 
+    void OnClick(const Callback &onClick) override;
+    void OnUpdate(const Callback &onUpdate) override;
+
 private:
     const char *text;
     int *active;
