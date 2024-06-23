@@ -65,8 +65,7 @@ void Bounds::SetHeight(float newHeight) {
 }
 
 Bounds Bounds::WindowBounds() {
-    static Bounds windowBounds = { 0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()) };
-    return windowBounds;
+    return { 0, 0, static_cast<float>(GetScreenWidth()), static_cast<float>(GetScreenHeight()) };
 }
 
 Bounds Bounds::OfSize(float width, float height) {
