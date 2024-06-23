@@ -26,7 +26,8 @@ void ToggleSlider::SetActive(int newActive) {
 }
 
 int ToggleSlider::Show() {
-    return ::GuiToggleSlider(GetBounds().GetRectangle(), text, &active);
+    WITH_STATE_RENDER(int ret = ::GuiToggleSlider(GetBounds().GetRectangle(), text, &active))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

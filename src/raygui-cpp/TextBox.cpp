@@ -34,7 +34,8 @@ void TextBox::SetEditMode(bool newEditMode) {
 }
 
 bool TextBox::Show() {
-    return ::GuiTextBox(GetBounds().GetRectangle(), text, textSize, editMode);
+    WITH_STATE_RENDER(int ret = ::GuiTextBox(GetBounds().GetRectangle(), text, textSize, editMode))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

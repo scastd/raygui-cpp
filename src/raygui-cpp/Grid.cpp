@@ -43,7 +43,8 @@ void Grid::SetMouseCell(Vector2 newMouseCell) {
 }
 
 int Grid::Show() {
-    return ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions, &mouseCell);
+    WITH_STATE_RENDER(int ret = ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions, &mouseCell))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

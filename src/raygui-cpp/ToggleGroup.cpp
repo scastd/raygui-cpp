@@ -26,7 +26,8 @@ void ToggleGroup::SetActive(int newActive) {
 }
 
 int ToggleGroup::Show() {
-    return ::GuiToggleGroup(GetBounds().GetRectangle(), text, &active);
+    WITH_STATE_RENDER(int ret = ::GuiToggleGroup(GetBounds().GetRectangle(), text, &active))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

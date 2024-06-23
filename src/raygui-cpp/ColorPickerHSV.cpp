@@ -26,7 +26,8 @@ void ColorPickerHSV::SetColorHsv(::Vector3 newColorHsv) {
 }
 
 int ColorPickerHSV::Show() {
-    return ::GuiColorPickerHSV(GetBounds().GetRectangle(), text, &colorHsv);
+    WITH_STATE_RENDER(int ret = ::GuiColorPickerHSV(GetBounds().GetRectangle(), text, &colorHsv))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

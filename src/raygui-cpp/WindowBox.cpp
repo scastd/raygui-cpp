@@ -17,7 +17,7 @@ void WindowBox::SetTitle(const char *newTitle) {
 }
 
 bool WindowBox::Show() {
-    int ret = ::GuiWindowBox(GetBounds().GetRectangle(), title);
+    WITH_STATE_RENDER(int ret = ::GuiWindowBox(GetBounds().GetRectangle(), title))
 
     this->ShowChildren();
 

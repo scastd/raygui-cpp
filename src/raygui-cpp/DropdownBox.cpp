@@ -35,7 +35,7 @@ void DropdownBox::SetEditMode(bool newEditMode) {
 }
 
 bool DropdownBox::Show() {
-    int dropDownClicked = ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode);
+    WITH_STATE_RENDER(int dropDownClicked = ::GuiDropdownBox(GetBounds().GetRectangle(), text, active, editMode))
 
     if (dropDownClicked && HasOnClick()) {
         CallOnClick();

@@ -35,7 +35,8 @@ void ListView::SetActive(int newActive) {
 }
 
 int ListView::Show() {
-    return ::GuiListView(GetBounds().GetRectangle(), text, scrollIndex, &active);
+    WITH_STATE_RENDER(int ret = ::GuiListView(GetBounds().GetRectangle(), text, scrollIndex, &active))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

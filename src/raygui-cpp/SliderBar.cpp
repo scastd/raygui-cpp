@@ -53,7 +53,9 @@ void SliderBar::SetMaxValue(float newMaxValue) {
 }
 
 int SliderBar::Show() {
-    return ::GuiSliderBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
+    WITH_STATE_RENDER(
+            int ret = ::GuiSliderBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

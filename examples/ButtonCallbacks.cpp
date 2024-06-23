@@ -14,11 +14,25 @@ int main() {
 
     // Load resources / Initialize variables at this point
     const char *buttonText = "Click me!";
-    auto button = rgc::Button(rgc::Bounds::WithText(buttonText, 22, { 15, 15 }), buttonText);
-    button.SetStyle(rgc::Style(rgc::Style::Position::CENTER, { 0, 0 }));
-    button.OnClick([]() {
-        TraceLog(LOG_INFO, "Button clicked!");
+    auto button1 = rgc::Button(rgc::Bounds::WithText(buttonText, 22, { 15, 15 }), buttonText);
+    button1.SetStyle(rgc::Style(rgc::Style::Position::CENTER, { -100, 0 }));
+
+    auto button2 = rgc::Button(rgc::Bounds::WithText(buttonText, 22, { 15, 15 }), buttonText);
+    button2.SetStyle(rgc::Style(rgc::Style::Position::CENTER, { 100, 0 }));
+
+    button1.OnClick([&button1, &button2]() {
+        TraceLog(LOG_INFO, "Button 1 clicked!");
+        button1.Disable();
+        button2.Enable();
     });
+    button2.OnClick([&button1, &button2]() {
+        TraceLog(LOG_INFO, "Button 2 clicked!");
+        button1.Enable();
+        button2.Disable();
+    });
+
+    button1.Enable();
+    button2.Disable();
     // NOTE: the update callback is commented out because it outputs a message every frame, and it's annoying.
     // button.OnUpdate([]() {
     //     TraceLog(LOG_INFO, "Button updated!");
@@ -42,8 +56,10 @@ int main() {
         ClearBackground(RAYWHITE);
 
         // Draw everything that requires to be drawn at this point:
-        button.Update();
-        button.Show();
+        button1.Update();
+        button1.Show();
+        button2.Update();
+        button2.Show();
 
         EndDrawing();
         //----------------------------------------------------------------------------------

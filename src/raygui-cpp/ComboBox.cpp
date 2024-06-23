@@ -25,7 +25,8 @@ void ComboBox::SetActive(int newActive) {
 }
 
 int ComboBox::Show() {
-    return ::GuiComboBox(GetBounds().GetRectangle(), text, &active);
+    WITH_STATE_RENDER(int ret = ::GuiComboBox(GetBounds().GetRectangle(), text, &active))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

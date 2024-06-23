@@ -43,7 +43,8 @@ void ScrollPanel::SetView(::Rectangle newView) {
 }
 
 int ScrollPanel::Show() {
-    return ::GuiScrollPanel(GetBounds().GetRectangle(), text, content, &scroll, &view);
+    WITH_STATE_RENDER(int ret = ::GuiScrollPanel(GetBounds().GetRectangle(), text, content, &scroll, &view))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

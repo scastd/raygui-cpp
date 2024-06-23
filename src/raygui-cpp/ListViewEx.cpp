@@ -51,7 +51,8 @@ void ListViewEx::SetActive(int newActive) {
 }
 
 int ListViewEx::Show() {
-    return ::GuiListViewEx(GetBounds().GetRectangle(), text, count, scrollIndex, &active, focus);
+    WITH_STATE_RENDER(int ret = ::GuiListViewEx(GetBounds().GetRectangle(), text, count, scrollIndex, &active, focus))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

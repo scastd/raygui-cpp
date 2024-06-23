@@ -26,7 +26,8 @@ void ColorPanelHSV::SetColorHsv(::Vector3 newColorHsv) {
 }
 
 int ColorPanelHSV::Show() {
-    return ::GuiColorPanelHSV(GetBounds().GetRectangle(), text, &colorHsv);
+    WITH_STATE_RENDER(int ret = ::GuiColorPanelHSV(GetBounds().GetRectangle(), text, &colorHsv))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -35,7 +35,8 @@ void MessageBox::SetButtons(const char *newButtons) {
 }
 
 int MessageBox::Show() {
-    return ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons);
+    WITH_STATE_RENDER(int ret = ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -26,7 +26,8 @@ void ColorBarAlpha::SetAlpha(float newAlpha) {
 }
 
 int ColorBarAlpha::Show() {
-    return ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, &alpha);
+    WITH_STATE_RENDER(int ret = ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, &alpha))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

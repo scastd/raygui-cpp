@@ -16,8 +16,6 @@ void Label::SetText(const char *newText) {
     this->text = newText;
 }
 
-void Label::Show() {
-    ::GuiLabel(GetBounds().GetRectangle(), text);
-}
+void Label::Show() { WITH_STATE_RENDER(::GuiLabel(GetBounds().GetRectangle(), text)) }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -26,7 +26,8 @@ void CheckBox::SetChecked(bool newChecked) {
 }
 
 bool CheckBox::Show() {
-    return ::GuiCheckBox(GetBounds().GetRectangle(), text, &checked);
+    WITH_STATE_RENDER(int ret = ::GuiCheckBox(GetBounds().GetRectangle(), text, &checked))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

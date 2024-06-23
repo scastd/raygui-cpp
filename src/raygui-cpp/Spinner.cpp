@@ -51,7 +51,8 @@ void Spinner::SetEditMode(bool newEditMode) {
 }
 
 bool Spinner::Show() {
-    return ::GuiSpinner(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode);
+    WITH_STATE_RENDER(int ret = ::GuiSpinner(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

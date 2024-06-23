@@ -34,7 +34,8 @@ void TabBar::SetActive(int *newActive) {
 }
 
 int TabBar::Show() {
-    return ::GuiTabBar(GetBounds().GetRectangle(), text, count, active);
+    WITH_STATE_RENDER(int ret = ::GuiTabBar(GetBounds().GetRectangle(), text, count, active))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

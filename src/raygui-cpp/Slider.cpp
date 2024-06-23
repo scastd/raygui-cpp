@@ -52,7 +52,9 @@ void Slider::SetMaxValue(float newMaxValue) {
 }
 
 int Slider::Show() {
-    return ::GuiSlider(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
+    WITH_STATE_RENDER(int ret =
+                              ::GuiSlider(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

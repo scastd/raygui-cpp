@@ -26,7 +26,8 @@ void ColorPicker::SetColor(::Color newColor) {
 }
 
 int ColorPicker::Show() {
-    return ::GuiColorPicker(GetBounds().GetRectangle(), text, &color);
+    WITH_STATE_RENDER(int ret = ::GuiColorPicker(GetBounds().GetRectangle(), text, &color))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

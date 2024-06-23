@@ -10,6 +10,11 @@
 #include <functional>
 #include <list>
 
+#define WITH_STATE_RENDER(__code__)                                                                                    \
+    Globals::GuiSetState(IsEnabled() ? STATE_NORMAL : STATE_DISABLED);                                                 \
+    __code__;                                                                                                          \
+    Globals::GuiEnable();
+
 RAYGUI_CPP_BEGIN_NAMESPACE
 
 template<typename T>
@@ -164,6 +169,18 @@ public:
         // Noop here. Should be overridden.
     }
 
+    RAYGUI_NODISCARD bool IsEnabled() const {
+        return m_enabled;
+    }
+
+    void Enable() {
+        m_enabled = true;
+    }
+
+    void Disable() {
+        m_enabled = false;
+    }
+
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
@@ -193,7 +210,7 @@ protected:
     }
 
     void CallOnClick() const {
-        if (m_onClick) {
+        if (m_onClick && m_enabled) {
             m_onClick();
         }
     }
@@ -210,6 +227,7 @@ private:
     Style m_style = Style(Style::Position::TOP_LEFT);
     std::list<Component *> children;
     std::any m_data = nullptr;
+    bool m_enabled = true;
 
     Callback m_onClick;
     Callback m_onUpdate;

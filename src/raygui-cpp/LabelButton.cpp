@@ -17,7 +17,8 @@ void LabelButton::SetText(const char *newText) {
 }
 
 bool LabelButton::Show() {
-    return ::GuiLabelButton(GetBounds().GetRectangle(), text);
+    WITH_STATE_RENDER(int ret = ::GuiLabelButton(GetBounds().GetRectangle(), text))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

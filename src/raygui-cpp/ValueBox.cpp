@@ -51,7 +51,8 @@ void ValueBox::SetEditMode(bool newEditMode) {
 }
 
 bool ValueBox::Show() {
-    return ::GuiValueBox(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode);
+    WITH_STATE_RENDER(int ret = ::GuiValueBox(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

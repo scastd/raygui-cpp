@@ -53,7 +53,9 @@ void ProgressBar::SetMaxValue(float newMaxValue) {
 }
 
 int ProgressBar::Show() {
-    return ::GuiProgressBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue);
+    WITH_STATE_RENDER(
+            int ret = ::GuiProgressBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

@@ -17,7 +17,7 @@ void Button::SetText(const char *newText) {
 }
 
 bool Button::Show() {
-    int buttonClicked = ::GuiButton(GetBounds().GetRectangle(), text);
+    WITH_STATE_RENDER(int buttonClicked = ::GuiButton(GetBounds().GetRectangle(), text))
 
     if (buttonClicked && HasOnClick()) {
         CallOnClick();

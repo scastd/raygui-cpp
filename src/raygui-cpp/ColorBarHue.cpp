@@ -26,7 +26,8 @@ void ColorBarHue::SetValue(float newValue) {
 }
 
 int ColorBarHue::Show() {
-    return ::GuiColorBarHue(GetBounds().GetRectangle(), text, &value);
+    WITH_STATE_RENDER(int ret = ::GuiColorBarHue(GetBounds().GetRectangle(), text, &value))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

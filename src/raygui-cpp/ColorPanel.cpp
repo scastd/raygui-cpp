@@ -26,7 +26,8 @@ void ColorPanel::SetColor(::Color newColor) {
 }
 
 int ColorPanel::Show() {
-    return ::GuiColorPanel(GetBounds().GetRectangle(), text, &color);
+    WITH_STATE_RENDER(int ret = ::GuiColorPanel(GetBounds().GetRectangle(), text, &color))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

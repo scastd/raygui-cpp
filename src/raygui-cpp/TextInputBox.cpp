@@ -64,7 +64,9 @@ void TextInputBox::SetSecretViewActive(bool newSecretViewActive) {
 }
 
 int TextInputBox::Show() {
-    return ::GuiTextInputBox(GetBounds().GetRectangle(), title, message, buttons, text, textMaxSize, &secretViewActive);
+    WITH_STATE_RENDER(int ret = ::GuiTextInputBox(GetBounds().GetRectangle(), title, message, buttons, text,
+                                                  textMaxSize, &secretViewActive))
+    return ret;
 }
 
 RAYGUI_CPP_END_NAMESPACE

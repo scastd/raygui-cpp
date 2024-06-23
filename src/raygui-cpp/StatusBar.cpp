@@ -16,8 +16,6 @@ void StatusBar::SetText(const char *newText) {
     this->text = newText;
 }
 
-void StatusBar::Show() {
-    ::GuiStatusBar(GetBounds().GetRectangle(), text);
-}
+void StatusBar::Show() { WITH_STATE_RENDER(::GuiStatusBar(GetBounds().GetRectangle(), text)) }
 
 RAYGUI_CPP_END_NAMESPACE
