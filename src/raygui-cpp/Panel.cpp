@@ -18,4 +18,8 @@ void Panel::SetText(const char *newText) {
 
 void Panel::Show() { WITH_STATE_RENDER(::GuiPanel(GetBounds().GetRectangle(), text)) }
 
+void Panel::AddChild(Component *child) {
+    this->AddChildInternal(child);
+}
+
 RAYGUI_CPP_END_NAMESPACE
