@@ -16,7 +16,11 @@ void Panel::SetText(const char *newText) {
     this->text = newText;
 }
 
-void Panel::Show() { WITH_STATE_RENDER(::GuiPanel(GetBounds().GetRectangle(), text)) }
+void Panel::Show() {
+    WITH_STATE_RENDER(::GuiPanel(GetBounds().GetRectangle(), text))
+
+    this->ShowChildren();
+}
 
 void Panel::AddChild(Component *child) {
     this->AddChildInternal(child);
