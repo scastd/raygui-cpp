@@ -13,13 +13,13 @@ public:
     CheckBox(const char *text, bool checked);
     CheckBox(Bounds bounds, const char *text, bool checked = false);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD bool IsChecked() const;
+    RAYGUI_CPP_NODISCARD bool IsChecked() const;
     void SetChecked(bool newChecked);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
 private:
     const char *text;

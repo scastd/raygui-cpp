@@ -13,7 +13,7 @@ public:
     explicit StatusBar(const char *text);
     StatusBar(Bounds bounds, const char *text);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
     void Show() override;

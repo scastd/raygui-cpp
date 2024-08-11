@@ -13,13 +13,13 @@ public:
     ColorBarHue(const char *text, float value);
     ColorBarHue(Bounds bounds, const char *text, float value);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD float GetValue() const;
+    RAYGUI_CPP_NODISCARD float GetValue() const;
     void SetValue(float newValue);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;

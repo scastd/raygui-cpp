@@ -13,13 +13,13 @@ public:
     ColorBarAlpha(const char *text, float alpha = 1.0f);
     ColorBarAlpha(Bounds bounds, const char *text, float alpha = 1.0f);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD float GetAlpha() const;
+    RAYGUI_CPP_NODISCARD float GetAlpha() const;
     void SetAlpha(float newAlpha);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;

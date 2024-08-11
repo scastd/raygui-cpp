@@ -13,16 +13,16 @@ public:
     MessageBox(const char *title, const char *message, const char *buttons);
     MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons);
 
-    RAYGUI_NODISCARD const char *GetTitle() const;
+    RAYGUI_CPP_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
 
-    RAYGUI_NODISCARD const char *GetMessage() const;
+    RAYGUI_CPP_NODISCARD const char *GetMessage() const;
     void SetMessage(const char *newMessage);
 
-    RAYGUI_NODISCARD const char *GetButtons() const;
+    RAYGUI_CPP_NODISCARD const char *GetButtons() const;
     void SetButtons(const char *newButtons);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *title;

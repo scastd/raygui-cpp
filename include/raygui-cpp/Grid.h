@@ -13,19 +13,19 @@ public:
     Grid(const char *text, float spacing, int subdivisions, Vector2 mouseCell);
     Grid(Bounds bounds, const char *text, float spacing, int subdivisions, Vector2 mouseCell);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD float GetSpacing() const;
+    RAYGUI_CPP_NODISCARD float GetSpacing() const;
     void SetSpacing(float newSpacing);
 
-    RAYGUI_NODISCARD int GetSubdivisions() const;
+    RAYGUI_CPP_NODISCARD int GetSubdivisions() const;
     void SetSubdivisions(int newSubdivisions);
 
-    RAYGUI_NODISCARD ::Vector2 GetMouseCell() const;
+    RAYGUI_CPP_NODISCARD ::Vector2 GetMouseCell() const;
     void SetMouseCell(::Vector2 newMouseCell);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;

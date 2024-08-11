@@ -13,10 +13,10 @@ public:
     explicit Button(const char *text);
     Button(Bounds bounds, const char *text);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;

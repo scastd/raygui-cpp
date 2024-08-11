@@ -13,10 +13,10 @@ public:
     explicit LabelButton(const char *text);
     LabelButton(Bounds bounds, const char *text);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
 private:
     const char *text;

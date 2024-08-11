@@ -13,16 +13,16 @@ public:
     TextBox(char *text, int textSize, bool editMode);
     TextBox(Bounds bounds, char *text, int textSize, bool editMode);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(char *newText);
 
-    RAYGUI_NODISCARD int GetTextSize() const;
+    RAYGUI_CPP_NODISCARD int GetTextSize() const;
     void SetTextSize(int newTextSize);
 
-    RAYGUI_NODISCARD bool GetEditMode() const;
+    RAYGUI_CPP_NODISCARD bool GetEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
 private:
     char *text;

@@ -26,9 +26,9 @@ public:
     Style(Position position, float margin);
     Style(Position position, float horizontalMargin, float verticalMargin);
 
-    RAYGUI_NODISCARD Position GetPosition() const;
+    RAYGUI_CPP_NODISCARD Position GetPosition() const;
 
-    RAYGUI_NODISCARD Margin GetMargin() const;
+    RAYGUI_CPP_NODISCARD Margin GetMargin() const;
 
 private:
     Position m_position;

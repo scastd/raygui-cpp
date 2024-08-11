@@ -13,13 +13,13 @@ public:
     Toggle(const char *text, bool active = false);
     Toggle(Bounds bounds, const char *text, bool active = false);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD bool IsActive() const;
+    RAYGUI_CPP_NODISCARD bool IsActive() const;
     void SetActive(bool newActive);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
 private:
     const char *text;

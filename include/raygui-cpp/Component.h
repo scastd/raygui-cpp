@@ -30,7 +30,7 @@ public:
 
     virtual T Show() = 0;
 
-    RAYGUI_NODISCARD Bounds GetBounds() const {
+    RAYGUI_CPP_NODISCARD Bounds GetBounds() const {
         return m_bounds;
     }
 
@@ -38,7 +38,7 @@ public:
         m_bounds = newBounds;
     }
 
-    RAYGUI_NODISCARD Component *GetParent() const {
+    RAYGUI_CPP_NODISCARD Component *GetParent() const {
         return m_parent;
     }
 
@@ -114,7 +114,7 @@ public:
         CallOnUpdate();
     }
 
-    RAYGUI_NODISCARD Style GetStyle() const {
+    RAYGUI_CPP_NODISCARD Style GetStyle() const {
         return m_style;
     }
 
@@ -122,7 +122,7 @@ public:
         m_style = newStyle;
     }
 
-    RAYGUI_NODISCARD std::any GetData() const {
+    RAYGUI_CPP_NODISCARD std::any GetData() const {
         return m_data;
     }
 
@@ -169,7 +169,7 @@ public:
         // Noop here. Should be overridden.
     }
 
-    RAYGUI_NODISCARD bool IsEnabled() const {
+    RAYGUI_CPP_NODISCARD bool IsEnabled() const {
         return m_enabled;
     }
 
@@ -193,7 +193,7 @@ protected:
         }
     }
 
-    RAYGUI_NODISCARD bool HasOnClick() const {
+    RAYGUI_CPP_NODISCARD bool HasOnClick() const {
         return m_onClick != nullptr;
     }
 
@@ -201,7 +201,7 @@ protected:
         m_onClick = std::move(onClick);
     }
 
-    RAYGUI_NODISCARD bool HasOnUpdate() const {
+    RAYGUI_CPP_NODISCARD bool HasOnUpdate() const {
         return m_onUpdate != nullptr;
     }
 

@@ -13,13 +13,13 @@ public:
     ColorPickerHSV(const char *text, ::Vector3 colorHsv);
     ColorPickerHSV(Bounds bounds, const char *text, ::Vector3 colorHsv);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD ::Vector3 GetColorHsv() const;
+    RAYGUI_CPP_NODISCARD ::Vector3 GetColorHsv() const;
     void SetColorHsv(::Vector3 newColorHsv);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;

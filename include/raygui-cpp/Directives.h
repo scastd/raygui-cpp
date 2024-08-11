@@ -8,7 +8,7 @@
 #define RAYGUI_CPP_BEGIN_NAMESPACE namespace RAYGUI_CPP_NAMESPACE {
 #define RAYGUI_CPP_END_NAMESPACE }
 
-#define RAYGUI_NODISCARD [[nodiscard]]
+#define RAYGUI_CPP_NODISCARD [[nodiscard]]
 
 #define RAYGUI_CPP_UNUSED(x) (void) (x)
 

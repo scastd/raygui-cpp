@@ -13,13 +13,13 @@ public:
     ColorPicker(const char *text, ::Color color = ::BLACK);
     ColorPicker(Bounds bounds, const char *text, ::Color color = ::BLACK);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD ::Color GetColor() const;
+    RAYGUI_CPP_NODISCARD ::Color GetColor() const;
     void SetColor(::Color newColor);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;

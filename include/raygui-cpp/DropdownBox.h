@@ -13,16 +13,16 @@ public:
     DropdownBox(const char *text, int *active, bool editMode);
     DropdownBox(Bounds bounds, const char *text, int *active, bool editMode);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD int *GetActive() const;
+    RAYGUI_CPP_NODISCARD int *GetActive() const;
     void SetActive(int *newActive);
 
-    RAYGUI_NODISCARD bool GetEditMode() const;
+    RAYGUI_CPP_NODISCARD bool GetEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;

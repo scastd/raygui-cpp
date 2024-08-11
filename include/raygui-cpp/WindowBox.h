@@ -13,10 +13,10 @@ public:
     explicit WindowBox(const char *title);
     WindowBox(Bounds bounds, const char *title);
 
-    RAYGUI_NODISCARD const char *GetTitle() const;
+    RAYGUI_CPP_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
 
-    RAYGUI_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show() override;
 
     void AddChild(Component *child) override;
 

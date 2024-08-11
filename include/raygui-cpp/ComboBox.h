@@ -13,13 +13,13 @@ public:
     ComboBox(const char *text, int active);
     ComboBox(Bounds bounds, const char *text, int active);
 
-    RAYGUI_NODISCARD const char *GetText() const;
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_NODISCARD int GetActive() const;
+    RAYGUI_CPP_NODISCARD int GetActive() const;
     void SetActive(int newActive);
 
-    RAYGUI_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show() override;
 
 private:
     const char *text;
