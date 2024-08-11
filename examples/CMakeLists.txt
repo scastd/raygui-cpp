@@ -2,6 +2,7 @@ set(TEST_SOURCES
         ButtonPlacement.cpp
         ChildComponents.cpp
         ButtonCallbacks.cpp
+        SimpleButton.cpp
 )
 
 foreach (source ${TEST_SOURCES})

@@ -10,4 +10,6 @@
 
 #define RAYGUI_NODISCARD [[nodiscard]]
 
+#define RAYGUI_CPP_UNUSED(x) (void) (x)
+
 #endif // RAYGUI_CPP_DIRECTIVES_H
