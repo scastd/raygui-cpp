@@ -107,7 +107,7 @@ else ()
 endif ()
 
 include(cmake/CPM.cmake)
-CPMAddPackage("gh:raysan5/raylib#5.0")
+CPMAddPackage("gh:raysan5/raylib#5.5")
 
 target_link_libraries(raygui_cpp
         PUBLIC raylib
