@@ -3,11 +3,13 @@
 
 #include "Component.h"
 #include "Directives.h"
+#include "Paintable.h"
+
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Button : public Component<bool> {
+class Button : public Component<bool>, public Paintable {
 public:
     Button();
     explicit Button(const char *text);
@@ -20,6 +22,11 @@ public:
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;
+
+    void SetBaseColor(Color color) override;
+    void SetTextColor(Color color) override;
+    void SetBorderColor(Color color) override;
+    void SetPropertyColor(GuiControlProperty property, Color color) override;
 
 private:
     const char *text;

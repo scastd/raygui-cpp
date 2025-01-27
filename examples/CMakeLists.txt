@@ -3,6 +3,7 @@ set(TEST_SOURCES
         ChildComponents.cpp
         ButtonCallbacks.cpp
         SimpleButton.cpp
+        ButtonColors.cpp
 )
 
 foreach (source ${TEST_SOURCES})
