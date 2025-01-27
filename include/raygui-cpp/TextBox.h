@@ -3,11 +3,12 @@
 
 #include "Component.h"
 #include "Directives.h"
+#include "Paintable.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class TextBox : public Component<bool> {
+class TextBox : public Component<bool>, public Paintable {
 public:
     TextBox();
     TextBox(char *text, int textSize, bool editMode);
@@ -23,6 +24,8 @@ public:
     void SetEditMode(bool newEditMode);
 
     RAYGUI_CPP_NODISCARD bool Show() override;
+
+    void SetPropertyColor(GuiControlProperty property, Color color) override;
 
 private:
     char *text;

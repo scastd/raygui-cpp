@@ -23,9 +23,6 @@ public:
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;
 
-    void SetBaseColor(Color color) override;
-    void SetTextColor(Color color) override;
-    void SetBorderColor(Color color) override;
     void SetPropertyColor(GuiControlProperty property, Color color) override;
 
 private:

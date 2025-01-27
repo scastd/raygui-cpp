@@ -13,9 +13,9 @@ public:
     Paintable() = default;
     virtual ~Paintable() = default;
 
-    virtual void SetBaseColor(Color color) = 0;
-    virtual void SetTextColor(Color color) = 0;
-    virtual void SetBorderColor(Color color) = 0;
+    void SetBaseColor(Color color);
+    void SetTextColor(Color color);
+    void SetBorderColor(Color color);
     virtual void SetPropertyColor(GuiControlProperty property, Color color) = 0;
 
 protected:

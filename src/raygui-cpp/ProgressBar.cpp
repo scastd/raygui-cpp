@@ -58,4 +58,8 @@ int ProgressBar::Show() {
     return ret;
 }
 
+void ProgressBar::SetPropertyColor(const GuiControlProperty property, const Color color) {
+    AddProperty(PROGRESSBAR, property, color);
+}
+
 RAYGUI_CPP_END_NAMESPACE

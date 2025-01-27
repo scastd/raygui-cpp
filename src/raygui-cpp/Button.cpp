@@ -36,18 +36,6 @@ void Button::OnUpdate(const Component::Callback &onUpdate) {
     SetOnUpdate(onUpdate);
 }
 
-void Button::SetBaseColor(const Color color) {
-    SetPropertyColor(BASE_COLOR_NORMAL, color);
-}
-
-void Button::SetTextColor(const Color color) {
-    SetPropertyColor(TEXT_COLOR_NORMAL, color);
-}
-
-void Button::SetBorderColor(const Color color) {
-    SetPropertyColor(BORDER_COLOR_NORMAL, color);
-}
-
 void Button::SetPropertyColor(const GuiControlProperty property, const Color color) {
     AddProperty(BUTTON, property, color);
 }

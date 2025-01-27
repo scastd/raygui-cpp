@@ -38,4 +38,8 @@ bool TextBox::Show() {
     return ret;
 }
 
+void TextBox::SetPropertyColor(const GuiControlProperty property, const Color color) {
+    AddProperty(TEXTBOX, property, color);
+}
+
 RAYGUI_CPP_END_NAMESPACE

@@ -21,4 +21,8 @@ bool LabelButton::Show() {
     return ret;
 }
 
+void LabelButton::SetPropertyColor(const GuiControlProperty property, const Color color) {
+    AddProperty(LABEL, property, color);
+}
+
 RAYGUI_CPP_END_NAMESPACE

@@ -2,6 +2,18 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
+void Paintable::SetBaseColor(const Color color) {
+    SetPropertyColor(BASE_COLOR_NORMAL, color);
+}
+
+void Paintable::SetTextColor(const Color color) {
+    SetPropertyColor(TEXT_COLOR_NORMAL, color);
+}
+
+void Paintable::SetBorderColor(const Color color) {
+    SetPropertyColor(BORDER_COLOR_NORMAL, color);
+}
+
 void Paintable::PreRender() const {
     for (auto const &[control, properties]: m_properties) {
         for (auto prop: properties) {

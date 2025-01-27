@@ -3,11 +3,12 @@
 
 #include "Component.h"
 #include "Directives.h"
+#include "Paintable.h"
 #include <raygui.h>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-class Label : public Component<void> {
+class Label : public Component<void>, public Paintable {
 public:
     Label();
     explicit Label(const char *text);
@@ -17,6 +18,8 @@ public:
     void SetText(const char *newText);
 
     void Show() override;
+
+    void SetPropertyColor(GuiControlProperty property, Color color) override;
 
 private:
     const char *text;
