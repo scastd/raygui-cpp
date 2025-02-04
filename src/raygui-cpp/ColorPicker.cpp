@@ -30,4 +30,12 @@ int ColorPicker::Show() {
     return ret;
 }
 
+void ColorPicker::OnClick(const Callback &onClick) {
+    SetOnClick(onClick);
+}
+
+void ColorPicker::OnUpdate(const Callback &onUpdate) {
+    SetOnUpdate(onUpdate);
+}
+
 RAYGUI_CPP_END_NAMESPACE

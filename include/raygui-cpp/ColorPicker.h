@@ -21,6 +21,9 @@ public:
 
     RAYGUI_CPP_NODISCARD int Show() override;
 
+    void OnClick(const Callback &onClick) override;
+    void OnUpdate(const Callback &onUpdate) override;
+
 private:
     const char *text;
     ::Color color;
