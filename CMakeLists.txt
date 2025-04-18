@@ -47,6 +47,7 @@ set(RAYGUI_CPP_SOURCE_FILES
         src/raygui-cpp/ColorPickerHSV.cpp
         src/raygui-cpp/ColorPanelHSV.cpp
         src/raygui-cpp/Paintable.cpp
+        src/raygui-cpp/extras/ImageButton.cpp
 )
 
 set(RAYGUI_CPP_HEADER_FILES
@@ -96,6 +97,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/ColorPanelHSV.h
         include/raygui-cpp/Utils.h
         include/raygui-cpp/Paintable.h
+        include/raygui-cpp/extras/ImageButton.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)

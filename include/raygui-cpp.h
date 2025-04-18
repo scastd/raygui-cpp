@@ -47,7 +47,9 @@
 #include "raygui-cpp/ToggleGroup.h"
 #include "raygui-cpp/ValueBox.h"
 #include "raygui-cpp/WindowBox.h"
-
 #include "raygui-cpp/Utils.h"
+
+// Extras
+#include "raygui-cpp/extras/ImageButton.h"
 
 #endif // RAYGUI_CPP_RAYGUI_CPP_H
