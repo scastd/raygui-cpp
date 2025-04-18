@@ -37,9 +37,7 @@ bool ImageButton::Show() {
 
     // Draw only the texture if it's valid
     if (texture.id > 0) {
-        auto [x, y, width, height] = GetBounds().GetRectangle();
-        DrawTextureRec(texture, textureSource,
-                       { x + width / 2 - textureSource.width / 2, y + height / 2 - textureSource.height / 2 }, WHITE);
+        DrawTextureRec(texture, textureSource, GetBounds().GetPosition(), WHITE);
     }
 
     if (clicked && HasOnClick()) {

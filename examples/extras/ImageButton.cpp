@@ -7,7 +7,7 @@ int main() {
     SetTargetFPS(60);
 
     const auto imageTexture = LoadTexture("assets/TestImage.png");
-    auto centerCenterButton = rgc::ImageButton(rgc::Bounds::OfSize(256, 256), imageTexture);
+    auto centerCenterButton = rgc::ImageButton(rgc::Bounds::OfSize(64, 64), imageTexture);
     centerCenterButton.SetStyle(rgc::Style(rgc::Style::Position::CENTER, { 0, 0 }));
 
     // Set the button on click event callback
