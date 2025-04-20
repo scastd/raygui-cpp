@@ -52,6 +52,13 @@ public:
 
     RAYGUI_CPP_NODISCARD static Bounds WithText(const char *text, int fontSize, Margin textMargins);
 
+    RAYGUI_CPP_NODISCARD static Bounds WithPositionAndText(float x, float y, const char *text);
+
+    RAYGUI_CPP_NODISCARD static Bounds WithPositionAndText(float x, float y, const char *text, int fontSize);
+
+    RAYGUI_CPP_NODISCARD static Bounds WithPositionAndText(float x, float y, const char *text, int fontSize,
+                                                           Margin textMargins);
+
 private:
     ::Rectangle m_rectangle;
 };

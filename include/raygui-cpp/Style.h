@@ -17,7 +17,8 @@ public:
         CENTER_RIGHT,
         BOTTOM_LEFT,
         BOTTOM_CENTER,
-        BOTTOM_RIGHT
+        BOTTOM_RIGHT,
+        NONE // To keep the component in a specific position
     };
 
     Style();

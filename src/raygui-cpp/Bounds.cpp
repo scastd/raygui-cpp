@@ -85,4 +85,22 @@ Bounds Bounds::WithText(const char *text, int fontSize, Margin textMargins) {
              static_cast<float>(fontSize) + textMargins.v };
 }
 
+Bounds Bounds::WithPositionAndText(float x, float y, const char *text) {
+    Bounds bounds = WithText(text);
+    bounds.Set(x, y);
+    return bounds;
+}
+
+Bounds Bounds::WithPositionAndText(float x, float y, const char *text, int fontSize) {
+    Bounds bounds = WithText(text, fontSize);
+    bounds.Set(x, y);
+    return bounds;
+}
+
+Bounds Bounds::WithPositionAndText(float x, float y, const char *text, int fontSize, Margin textMargins) {
+    Bounds bounds = WithText(text, fontSize, textMargins);
+    bounds.Set(x, y);
+    return bounds;
+}
+
 RAYGUI_CPP_END_NAMESPACE

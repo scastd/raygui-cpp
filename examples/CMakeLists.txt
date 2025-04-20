@@ -5,6 +5,8 @@ set(TEST_SOURCES
         SimpleButton.cpp
         ButtonColors.cpp
         extras/ImageButton.cpp
+        ButtonKeepInitialPosition.cpp
+        ButtonChangePositionOnClick.cpp
 )
 
 foreach (source ${TEST_SOURCES})

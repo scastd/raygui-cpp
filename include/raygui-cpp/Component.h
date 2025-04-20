@@ -55,59 +55,12 @@ public:
             bounds = Bounds::WindowBounds();
         }
 
-        Margin margin = m_style.GetMargin();
-        float boundsX = bounds.GetX();
-        float boundsY = bounds.GetY();
-        float boundsWidth = bounds.GetWidth();
-        float boundsHeight = bounds.GetHeight();
-        float mBoundsWidth = m_bounds.GetWidth();
-        float mBoundsHeight = m_bounds.GetHeight();
-        float newX;
-        float newY;
-
-        switch (m_style.GetPosition()) {
-            case Style::Position::TOP_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + margin.v;
-                break;
-            case Style::Position::TOP_CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + margin.v;
-                break;
-            case Style::Position::TOP_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + margin.v;
-                break;
-            case Style::Position::CENTER_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
-                break;
-            case Style::Position::CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
-                break;
-            case Style::Position::CENTER_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
-                break;
-            case Style::Position::BOTTOM_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
-                break;
-            case Style::Position::BOTTOM_CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
-                break;
-            case Style::Position::BOTTOM_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
-                break;
+        if (m_style.GetPosition() != Style::Position::NONE) {
+            UpdateBounds(bounds);
         }
 
-        m_bounds.Set(newX, newY);
-
         // Update children
-        for (auto &child: children) {
+        for (const auto &child: children) {
             child->Update();
         }
 
@@ -224,13 +177,71 @@ protected:
 private:
     Bounds m_bounds;
     Component *m_parent = nullptr;
-    Style m_style = Style(Style::Position::TOP_LEFT);
+    Style m_style = Style(Style::Position::NONE);
     std::list<Component *> children;
     std::any m_data = nullptr;
     bool m_enabled = true;
 
     Callback m_onClick;
     Callback m_onUpdate;
+
+    void UpdateBounds(Bounds bounds) {
+        Margin margin = m_style.GetMargin();
+        float boundsX = bounds.GetX();
+        float boundsY = bounds.GetY();
+        float boundsWidth = bounds.GetWidth();
+        float boundsHeight = bounds.GetHeight();
+        float mBoundsWidth = m_bounds.GetWidth();
+        float mBoundsHeight = m_bounds.GetHeight();
+        float newX;
+        float newY;
+
+        switch (m_style.GetPosition()) {
+            case Style::Position::TOP_LEFT:
+                newX = boundsX + margin.h;
+                newY = boundsY + margin.v;
+                break;
+            case Style::Position::TOP_CENTER:
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + margin.v;
+                break;
+            case Style::Position::TOP_RIGHT:
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + margin.v;
+                break;
+            case Style::Position::CENTER_LEFT:
+                newX = boundsX + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                break;
+            case Style::Position::CENTER:
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                break;
+            case Style::Position::CENTER_RIGHT:
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                break;
+            case Style::Position::BOTTOM_LEFT:
+                newX = boundsX + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                break;
+            case Style::Position::BOTTOM_CENTER:
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                break;
+            case Style::Position::BOTTOM_RIGHT:
+                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
+                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                break;
+            case Style::Position::NONE:
+            default:
+                newX = boundsX + margin.h;
+                newY = boundsY + margin.v;
+                break;
+        }
+
+        m_bounds.Set(newX, newY);
+    }
 };
 
 RAYGUI_CPP_END_NAMESPACE
