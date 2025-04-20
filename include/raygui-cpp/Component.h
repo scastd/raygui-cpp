@@ -186,61 +186,57 @@ private:
     Callback m_onUpdate;
 
     void UpdateBounds(Bounds bounds) {
-        Margin margin = m_style.GetMargin();
-        float boundsX = bounds.GetX();
-        float boundsY = bounds.GetY();
-        float boundsWidth = bounds.GetWidth();
-        float boundsHeight = bounds.GetHeight();
-        float mBoundsWidth = m_bounds.GetWidth();
-        float mBoundsHeight = m_bounds.GetHeight();
+        auto [marginH, marginV] = m_style.GetMargin();
+        auto [boundsX, boundsY, boundsWidth, boundsHeight] = bounds.GetRectangle();
+        auto [mBoundsWidth, mBoundsHeight] = m_bounds.GetSize();
         float newX;
         float newY;
 
         switch (m_style.GetPosition()) {
             case Style::Position::TOP_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + margin.v;
+                newX = boundsX + marginH;
+                newY = boundsY + marginV;
                 break;
             case Style::Position::TOP_CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + margin.v;
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + marginH;
+                newY = boundsY + marginV;
                 break;
             case Style::Position::TOP_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + margin.v;
+                newX = boundsX + boundsWidth - mBoundsWidth + marginH;
+                newY = boundsY + marginV;
                 break;
             case Style::Position::CENTER_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                newX = boundsX + marginH;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + marginV;
                 break;
             case Style::Position::CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + marginH;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + marginV;
                 break;
             case Style::Position::CENTER_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + margin.v;
+                newX = boundsX + boundsWidth - mBoundsWidth + marginH;
+                newY = boundsY + boundsHeight / 2 - mBoundsHeight / 2 + marginV;
                 break;
             case Style::Position::BOTTOM_LEFT:
-                newX = boundsX + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                newX = boundsX + marginH;
+                newY = boundsY + boundsHeight - mBoundsHeight + marginV;
                 break;
             case Style::Position::BOTTOM_CENTER:
-                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                newX = boundsX + boundsWidth / 2 - mBoundsWidth / 2 + marginH;
+                newY = boundsY + boundsHeight - mBoundsHeight + marginV;
                 break;
             case Style::Position::BOTTOM_RIGHT:
-                newX = boundsX + boundsWidth - mBoundsWidth + margin.h;
-                newY = boundsY + boundsHeight - mBoundsHeight + margin.v;
+                newX = boundsX + boundsWidth - mBoundsWidth + marginH;
+                newY = boundsY + boundsHeight - mBoundsHeight + marginV;
                 break;
             case Style::Position::NONE:
             default:
-                newX = boundsX + margin.h;
-                newY = boundsY + margin.v;
+                newX = boundsX + marginH;
+                newY = boundsY + marginV;
                 break;
         }
 
-        m_bounds.Set(newX, newY);
+        m_bounds.SetPosition(newX, newY);
     }
 };
 

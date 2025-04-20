@@ -27,9 +27,23 @@ void Bounds::SetPosition(::Vector2 newPosition) {
     SetY(newPosition.y);
 }
 
-void Bounds::Set(float x, float y) {
+void Bounds::SetPosition(float x, float y) {
     SetX(x);
     SetY(y);
+}
+
+Vector2 Bounds::GetSize() const {
+    return { m_rectangle.width, m_rectangle.height };
+}
+
+void Bounds::SetSize(Vector2 newSize) {
+    SetWidth(newSize.x);
+    SetHeight(newSize.y);
+}
+
+void Bounds::SetSize(float width, float height) {
+    SetWidth(width);
+    SetHeight(height);
 }
 
 float Bounds::GetX() const {
@@ -87,19 +101,19 @@ Bounds Bounds::WithText(const char *text, int fontSize, Margin textMargins) {
 
 Bounds Bounds::WithPositionAndText(float x, float y, const char *text) {
     Bounds bounds = WithText(text);
-    bounds.Set(x, y);
+    bounds.SetPosition(x, y);
     return bounds;
 }
 
 Bounds Bounds::WithPositionAndText(float x, float y, const char *text, int fontSize) {
     Bounds bounds = WithText(text, fontSize);
-    bounds.Set(x, y);
+    bounds.SetPosition(x, y);
     return bounds;
 }
 
 Bounds Bounds::WithPositionAndText(float x, float y, const char *text, int fontSize, Margin textMargins) {
     Bounds bounds = WithText(text, fontSize, textMargins);
-    bounds.Set(x, y);
+    bounds.SetPosition(x, y);
     return bounds;
 }
 

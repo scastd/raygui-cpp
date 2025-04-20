@@ -19,7 +19,11 @@ public:
 
     RAYGUI_CPP_NODISCARD ::Vector2 GetPosition() const;
     void SetPosition(::Vector2 newPosition);
-    void Set(float x, float y);
+    void SetPosition(float x, float y);
+
+    RAYGUI_CPP_NODISCARD ::Vector2 GetSize() const;
+    void SetSize(::Vector2 newSize);
+    void SetSize(float width, float height);
 
     RAYGUI_CPP_NODISCARD float GetX() const;
     void SetX(float newX);
