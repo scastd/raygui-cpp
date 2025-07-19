@@ -25,7 +25,7 @@ public:
     RAYGUI_CPP_NODISCARD ::Rectangle GetView() const;
     void SetView(::Rectangle newView);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
     const char *text;

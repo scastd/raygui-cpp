@@ -24,7 +24,7 @@ void Toggle::SetActive(bool newActive) {
     this->active = newActive;
 }
 
-bool Toggle::Show() {
+bool Toggle::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiToggle(GetBounds().GetRectangle(), text, &active))
     return ret;
 }

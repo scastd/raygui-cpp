@@ -20,7 +20,7 @@ int main() {
         ClearBackground(RAYWHITE);
 
         button.Update();
-        RAYGUI_CPP_UNUSED(button.Show());
+        RAYGUI_CPP_UNUSED(button.Show(true));
 
         EndDrawing();
     }

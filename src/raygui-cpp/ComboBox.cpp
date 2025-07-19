@@ -24,7 +24,7 @@ void ComboBox::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ComboBox::Show() {
+int ComboBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiComboBox(GetBounds().GetRectangle(), text, &active))
     return ret;
 }

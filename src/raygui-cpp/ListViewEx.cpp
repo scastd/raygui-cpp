@@ -50,7 +50,7 @@ void ListViewEx::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ListViewEx::Show() {
+int ListViewEx::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiListViewEx(GetBounds().GetRectangle(), text, count, scrollIndex, &active, focus))
     return ret;
 }

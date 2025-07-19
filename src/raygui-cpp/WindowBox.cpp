@@ -16,10 +16,10 @@ void WindowBox::SetTitle(const char *newTitle) {
     this->title = newTitle;
 }
 
-bool WindowBox::Show() {
+bool WindowBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiWindowBox(GetBounds().GetRectangle(), title))
 
-    this->ShowChildren();
+    this->ShowChildren(canClick);
 
     return ret;
 }

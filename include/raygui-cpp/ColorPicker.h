@@ -19,7 +19,7 @@ public:
     RAYGUI_CPP_NODISCARD ::Color GetColor() const;
     void SetColor(::Color newColor);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;

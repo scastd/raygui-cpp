@@ -16,16 +16,17 @@ void Button::SetText(const char *newText) {
     this->text = newText;
 }
 
-bool Button::Show() {
+bool Button::Show(const bool canClick) {
     PreRender();
     WITH_STATE_RENDER(const int buttonClicked = ::GuiButton(GetBounds().GetRectangle(), text))
     PostRender();
 
-    if (buttonClicked && HasOnClick()) {
+    const bool clicked = buttonClicked && canClick;
+    if (clicked && HasOnClick()) {
         CallOnClick();
     }
 
-    return buttonClicked;
+    return clicked;
 }
 
 void Button::OnClick(const Component::Callback &onClick) {

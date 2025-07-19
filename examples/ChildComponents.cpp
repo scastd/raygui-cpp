@@ -56,7 +56,7 @@ int main() {
         ClearBackground(RAYWHITE);
 
         // Draw everything that requires to be drawn at this point:
-        bigWindowBox.Show();
+        bigWindowBox.Show(true);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

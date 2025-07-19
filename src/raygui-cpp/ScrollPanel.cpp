@@ -42,7 +42,7 @@ void ScrollPanel::SetView(::Rectangle newView) {
     this->view = newView;
 }
 
-int ScrollPanel::Show() {
+int ScrollPanel::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiScrollPanel(GetBounds().GetRectangle(), text, content, &scroll, &view))
     return ret;
 }

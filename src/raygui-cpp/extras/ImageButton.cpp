@@ -14,7 +14,7 @@ void ImageButton::SetTexture(Texture2D newTexture) {
     this->texture = newTexture;
 }
 
-bool ImageButton::Show() {
+bool ImageButton::Show(const bool canClick) {
     Rectangle textureSource = { 0, 0, (float) texture.width, (float) texture.height };
 
     int state = GuiGetState();
@@ -40,11 +40,11 @@ bool ImageButton::Show() {
         DrawTexturePro(texture, textureSource, GetBounds().GetRectangle(), { 0, 0 }, 0.0f, WHITE);
     }
 
-    if (clicked && HasOnClick()) {
+    if (clicked && HasOnClick() && canClick) {
         CallOnClick();
     }
 
-    return clicked;
+    return clicked && canClick;
 }
 
 void ImageButton::OnClick(const Component::Callback &onClick) {

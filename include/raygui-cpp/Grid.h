@@ -25,7 +25,7 @@ public:
     RAYGUI_CPP_NODISCARD ::Vector2 GetMouseCell() const;
     void SetMouseCell(::Vector2 newMouseCell);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
     const char *text;

@@ -25,7 +25,7 @@ void ColorPicker::SetColor(::Color newColor) {
     this->color = newColor;
 }
 
-int ColorPicker::Show() {
+int ColorPicker::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorPicker(GetBounds().GetRectangle(), text, &color))
     return ret;
 }

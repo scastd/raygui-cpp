@@ -28,7 +28,7 @@ public:
 
     virtual ~Component() = default;
 
-    virtual T Show() = 0;
+    virtual T Show(bool canClick) = 0;
 
     RAYGUI_CPP_NODISCARD Bounds GetBounds() const {
         return m_bounds;
@@ -85,7 +85,7 @@ public:
 
     T ShowAndEnableOnCondition(bool condition) {
         Globals::GuiSetState(condition ? STATE_NORMAL : STATE_DISABLED);
-        T result = Show();
+        T result = Show(true);
         Globals::GuiSetState(STATE_NORMAL);
         return result;
     }
@@ -134,15 +134,23 @@ public:
         m_enabled = false;
     }
 
+    RAYGUI_CPP_NODISCARD bool IsAvoidClick() const {
+        return m_avoidClick;
+    }
+
+    void SetAvoidClick(const bool avoidClick) {
+        m_avoidClick = avoidClick;
+    }
+
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
         child->SetParent(this);
     }
 
-    void ShowChildren() {
+    void ShowChildren(const bool canClick) {
         for (auto &child: children) {
-            child->Show();
+            child->Show(canClick);
         }
     }
 
@@ -181,6 +189,7 @@ private:
     std::list<Component *> children;
     std::any m_data = nullptr;
     bool m_enabled = true;
+    bool m_avoidClick = false;
 
     Callback m_onClick;
     Callback m_onUpdate;

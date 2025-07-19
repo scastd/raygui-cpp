@@ -25,7 +25,7 @@ void ColorBarAlpha::SetAlpha(float newAlpha) {
     this->alpha = newAlpha;
 }
 
-int ColorBarAlpha::Show() {
+int ColorBarAlpha::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorBarAlpha(GetBounds().GetRectangle(), text, &alpha))
     return ret;
 }

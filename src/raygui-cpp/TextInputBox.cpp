@@ -63,7 +63,7 @@ void TextInputBox::SetSecretViewActive(bool newSecretViewActive) {
     this->secretViewActive = newSecretViewActive;
 }
 
-int TextInputBox::Show() {
+int TextInputBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiTextInputBox(GetBounds().GetRectangle(), title, message, buttons, text,
                                                   textMaxSize, &secretViewActive))
     return ret;

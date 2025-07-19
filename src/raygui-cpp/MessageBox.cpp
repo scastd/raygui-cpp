@@ -34,7 +34,7 @@ void MessageBox::SetButtons(const char *newButtons) {
     this->buttons = newButtons;
 }
 
-int MessageBox::Show() {
+int MessageBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons))
     return ret;
 }

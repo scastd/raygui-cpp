@@ -18,7 +18,7 @@ public:
     RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;

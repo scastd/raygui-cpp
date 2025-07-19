@@ -42,7 +42,7 @@ void Grid::SetMouseCell(Vector2 newMouseCell) {
     this->mouseCell = newMouseCell;
 }
 
-int Grid::Show() {
+int Grid::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiGrid(GetBounds().GetRectangle(), text, spacing, subdivisions, &mouseCell))
     return ret;
 }

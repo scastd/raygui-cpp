@@ -25,7 +25,7 @@ void ColorPanelHSV::SetColorHsv(::Vector3 newColorHsv) {
     this->colorHsv = newColorHsv;
 }
 
-int ColorPanelHSV::Show() {
+int ColorPanelHSV::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorPanelHSV(GetBounds().GetRectangle(), text, &colorHsv))
     return ret;
 }

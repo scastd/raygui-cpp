@@ -34,7 +34,7 @@ void ListView::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ListView::Show() {
+int ListView::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiListView(GetBounds().GetRectangle(), text, scrollIndex, &active))
     return ret;
 }

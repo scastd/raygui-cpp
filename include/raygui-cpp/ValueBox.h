@@ -28,7 +28,7 @@ public:
     RAYGUI_CPP_NODISCARD bool IsEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
 private:
     const char *text;

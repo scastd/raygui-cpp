@@ -16,7 +16,7 @@ public:
     RAYGUI_CPP_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
     void AddChild(Component *child) override;
 

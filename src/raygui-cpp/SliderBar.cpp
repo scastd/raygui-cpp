@@ -52,7 +52,7 @@ void SliderBar::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-int SliderBar::Show() {
+int SliderBar::Show(const bool canClick) {
     WITH_STATE_RENDER(
             int ret = ::GuiSliderBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
     return ret;

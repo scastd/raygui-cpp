@@ -52,7 +52,7 @@ void ProgressBar::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-int ProgressBar::Show() {
+int ProgressBar::Show(const bool canClick) {
     WITH_STATE_RENDER(
             int ret = ::GuiProgressBar(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
     return ret;

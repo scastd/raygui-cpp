@@ -50,7 +50,7 @@ void ValueBox::SetEditMode(bool newEditMode) {
     this->editMode = newEditMode;
 }
 
-bool ValueBox::Show() {
+bool ValueBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiValueBox(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode))
     return ret;
 }

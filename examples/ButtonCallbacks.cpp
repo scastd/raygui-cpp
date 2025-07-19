@@ -57,9 +57,9 @@ int main() {
 
         // Draw everything that requires to be drawn at this point:
         button1.Update();
-        button1.Show();
+        button1.Show(true);
         button2.Update();
-        button2.Show();
+        button2.Show(true);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

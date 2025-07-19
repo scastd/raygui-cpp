@@ -25,7 +25,7 @@ void CheckBox::SetChecked(bool newChecked) {
     this->checked = newChecked;
 }
 
-bool CheckBox::Show() {
+bool CheckBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiCheckBox(GetBounds().GetRectangle(), text, &checked))
     return ret;
 }

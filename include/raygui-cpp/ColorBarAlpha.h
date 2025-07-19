@@ -19,7 +19,7 @@ public:
     RAYGUI_CPP_NODISCARD float GetAlpha() const;
     void SetAlpha(float newAlpha);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
     const char *text;

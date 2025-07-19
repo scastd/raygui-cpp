@@ -51,7 +51,7 @@ void Slider::SetMaxValue(float newMaxValue) {
     this->maxValue = newMaxValue;
 }
 
-int Slider::Show() {
+int Slider::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret =
                               ::GuiSlider(GetBounds().GetRectangle(), textLeft, textRight, &value, minValue, maxValue))
     return ret;

@@ -50,7 +50,7 @@ void Spinner::SetEditMode(bool newEditMode) {
     this->editMode = newEditMode;
 }
 
-bool Spinner::Show() {
+bool Spinner::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiSpinner(GetBounds().GetRectangle(), text, value, minValue, maxValue, editMode))
     return ret;
 }

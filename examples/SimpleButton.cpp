@@ -21,7 +21,7 @@ int main() {
         ClearBackground(RAYWHITE);
 
         centerCenterButton.Update();
-        RAYGUI_CPP_UNUSED(centerCenterButton.Show());
+        RAYGUI_CPP_UNUSED(centerCenterButton.Show(true));
 
         EndDrawing();
     }

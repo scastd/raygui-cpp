@@ -25,7 +25,7 @@ void ColorPanel::SetColor(::Color newColor) {
     this->color = newColor;
 }
 
-int ColorPanel::Show() {
+int ColorPanel::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorPanel(GetBounds().GetRectangle(), text, &color))
     return ret;
 }

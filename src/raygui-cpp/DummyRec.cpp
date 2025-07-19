@@ -16,6 +16,6 @@ void DummyRec::SetText(const char *newText) {
     this->text = newText;
 }
 
-void DummyRec::Show() { WITH_STATE_RENDER(::GuiDummyRec(GetBounds().GetRectangle(), text)) }
+void DummyRec::Show(const bool canClick) { WITH_STATE_RENDER(::GuiDummyRec(GetBounds().GetRectangle(), text)) }
 
 RAYGUI_CPP_END_NAMESPACE

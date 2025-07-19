@@ -33,7 +33,7 @@ public:
     RAYGUI_CPP_NODISCARD bool GetSecretViewActive() const;
     void SetSecretViewActive(bool newSecretViewActive);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
     const char *title;

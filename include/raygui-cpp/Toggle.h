@@ -19,7 +19,7 @@ public:
     RAYGUI_CPP_NODISCARD bool IsActive() const;
     void SetActive(bool newActive);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
 private:
     const char *text;

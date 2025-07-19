@@ -16,7 +16,7 @@ void Label::SetText(const char *newText) {
     this->text = newText;
 }
 
-void Label::Show() {
+void Label::Show(const bool canClick) {
     WITH_STATE_RENDER(::GuiLabel(GetBounds().GetRectangle(), text))
 }
 

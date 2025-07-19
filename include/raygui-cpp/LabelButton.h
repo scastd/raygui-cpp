@@ -17,7 +17,7 @@ public:
     RAYGUI_CPP_NODISCARD const char *GetText() const;
     void SetText(const char *newText);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
     void SetPropertyColor(GuiControlProperty property, Color color) override;
 

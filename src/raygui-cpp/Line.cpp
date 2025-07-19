@@ -16,6 +16,6 @@ void Line::SetText(const char *newText) {
     text = newText;
 }
 
-void Line::Show() { WITH_STATE_RENDER(::GuiLine(GetBounds().GetRectangle(), text)) }
+void Line::Show(const bool canClick) { WITH_STATE_RENDER(::GuiLine(GetBounds().GetRectangle(), text)) }
 
 RAYGUI_CPP_END_NAMESPACE

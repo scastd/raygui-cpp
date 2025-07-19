@@ -25,7 +25,7 @@ void ToggleGroup::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ToggleGroup::Show() {
+int ToggleGroup::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiToggleGroup(GetBounds().GetRectangle(), text, &active))
     return ret;
 }

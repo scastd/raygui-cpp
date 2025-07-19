@@ -33,7 +33,7 @@ void TextBox::SetEditMode(bool newEditMode) {
     this->editMode = newEditMode;
 }
 
-bool TextBox::Show() {
+bool TextBox::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiTextBox(GetBounds().GetRectangle(), text, textSize, editMode))
     return ret;
 }

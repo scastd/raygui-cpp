@@ -23,7 +23,7 @@ public:
     RAYGUI_CPP_NODISCARD bool GetEditMode() const;
     void SetEditMode(bool newEditMode);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
     void SetPropertyColor(GuiControlProperty property, Color color) override;
 

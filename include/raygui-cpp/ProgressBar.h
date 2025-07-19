@@ -30,7 +30,7 @@ public:
     RAYGUI_CPP_NODISCARD float GetMaxValue() const;
     void SetMaxValue(float newMaxValue);
 
-    RAYGUI_CPP_NODISCARD int Show() override;
+    RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
     void SetPropertyColor(GuiControlProperty property, Color color) override;
 

@@ -16,6 +16,6 @@ void GroupBox::SetText(const char *newText) {
     this->text = newText;
 }
 
-void GroupBox::Show() { WITH_STATE_RENDER(::GuiGroupBox(GetBounds().GetRectangle(), text)) }
+void GroupBox::Show(const bool canClick) { WITH_STATE_RENDER(::GuiGroupBox(GetBounds().GetRectangle(), text)) }
 
 RAYGUI_CPP_END_NAMESPACE

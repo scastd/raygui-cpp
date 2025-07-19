@@ -35,8 +35,8 @@ int main() {
 
         button1.Update();
         button2.Update();
-        RAYGUI_CPP_UNUSED(button1.Show());
-        RAYGUI_CPP_UNUSED(button2.Show());
+        RAYGUI_CPP_UNUSED(button1.Show(true));
+        RAYGUI_CPP_UNUSED(button2.Show(true));
 
         EndDrawing();
     }

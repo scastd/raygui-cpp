@@ -25,7 +25,7 @@ void ColorPickerHSV::SetColorHsv(::Vector3 newColorHsv) {
     this->colorHsv = newColorHsv;
 }
 
-int ColorPickerHSV::Show() {
+int ColorPickerHSV::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorPickerHSV(GetBounds().GetRectangle(), text, &colorHsv))
     return ret;
 }

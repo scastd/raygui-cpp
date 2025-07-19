@@ -15,7 +15,7 @@ public:
     RAYGUI_CPP_NODISCARD Texture2D GetTexture() const;
     void SetTexture(Texture2D newTexture);
 
-    RAYGUI_CPP_NODISCARD bool Show() override;
+    RAYGUI_CPP_NODISCARD bool Show(bool canClick) override;
 
     void OnClick(const Callback &onClick) override;
     void OnUpdate(const Callback &onUpdate) override;

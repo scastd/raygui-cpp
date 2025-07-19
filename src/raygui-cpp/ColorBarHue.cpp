@@ -25,7 +25,7 @@ void ColorBarHue::SetValue(float newValue) {
     this->value = newValue;
 }
 
-int ColorBarHue::Show() {
+int ColorBarHue::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiColorBarHue(GetBounds().GetRectangle(), text, &value))
     return ret;
 }

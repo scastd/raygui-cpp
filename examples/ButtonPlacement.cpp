@@ -53,23 +53,23 @@ int main() {
         // Draw everything that requires to be drawn at this point:
 
         topLeftButton.Update();
-        topLeftButton.Show();
+        topLeftButton.Show(true);
         topCenterButton.Update();
-        topCenterButton.Show();
+        topCenterButton.Show(true);
         topRightButton.Update();
-        topRightButton.Show();
+        topRightButton.Show(true);
         centerLeftButton.Update();
-        centerLeftButton.Show();
+        centerLeftButton.Show(true);
         centerCenterButton.Update();
-        centerCenterButton.Show();
+        centerCenterButton.Show(true);
         centerRightButton.Update();
-        centerRightButton.Show();
+        centerRightButton.Show(true);
         bottomLeftButton.Update();
-        bottomLeftButton.Show();
+        bottomLeftButton.Show(true);
         bottomCenterButton.Update();
-        bottomCenterButton.Show();
+        bottomCenterButton.Show(true);
         bottomRightButton.Update();
-        bottomRightButton.Show();
+        bottomRightButton.Show(true);
 
         EndDrawing();
         //----------------------------------------------------------------------------------

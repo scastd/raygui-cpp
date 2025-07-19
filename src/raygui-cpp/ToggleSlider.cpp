@@ -25,7 +25,7 @@ void ToggleSlider::SetActive(int newActive) {
     this->active = newActive;
 }
 
-int ToggleSlider::Show() {
+int ToggleSlider::Show(const bool canClick) {
     WITH_STATE_RENDER(int ret = ::GuiToggleSlider(GetBounds().GetRectangle(), text, &active))
     return ret;
 }
