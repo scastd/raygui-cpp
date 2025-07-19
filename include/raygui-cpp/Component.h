@@ -134,14 +134,6 @@ public:
         m_enabled = false;
     }
 
-    RAYGUI_CPP_NODISCARD bool IsAvoidClick() const {
-        return m_avoidClick;
-    }
-
-    void SetAvoidClick(const bool avoidClick) {
-        m_avoidClick = avoidClick;
-    }
-
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
@@ -189,7 +181,6 @@ private:
     std::list<Component *> children;
     std::any m_data = nullptr;
     bool m_enabled = true;
-    bool m_avoidClick = false;
 
     Callback m_onClick;
     Callback m_onUpdate;
