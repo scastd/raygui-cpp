@@ -5,6 +5,7 @@ set(TEST_SOURCES
         SimpleButton.cpp
         ButtonColors.cpp
         extras/ImageButton.cpp
+        extras/ImageIcon.cpp
         ButtonKeepInitialPosition.cpp
         ButtonChangePositionOnClick.cpp
 )

@@ -134,6 +134,10 @@ public:
         m_enabled = false;
     }
 
+    RAYGUI_CPP_NODISCARD Component *AsComponentPtr() {
+        return this;
+    }
+
 protected:
     void AddChildInternal(Component *child) {
         children.push_back(child);
