@@ -6,6 +6,7 @@ set(TEST_SOURCES
         ButtonColors.cpp
         extras/ImageButton.cpp
         extras/ImageIcon.cpp
+        extras/AdjustedMultilineLabel.cpp
         ButtonKeepInitialPosition.cpp
         ButtonChangePositionOnClick.cpp
 )

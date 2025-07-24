@@ -49,6 +49,7 @@ set(RAYGUI_CPP_SOURCE_FILES
         src/raygui-cpp/Paintable.cpp
         src/raygui-cpp/extras/ImageButton.cpp
         src/raygui-cpp/extras/ImageIcon.cpp
+        src/raygui-cpp/extras/AdjustedMultilineLabel.cpp
 )
 
 set(RAYGUI_CPP_HEADER_FILES
@@ -100,6 +101,7 @@ set(RAYGUI_CPP_HEADER_FILES
         include/raygui-cpp/Paintable.h
         include/raygui-cpp/extras/ImageButton.h
         include/raygui-cpp/extras/ImageIcon.h
+        include/raygui-cpp/extras/AdjustedMultilineLabel.h
 )
 
 option(BUILD_SHARED_LIBS "Build raygui_cpp as shared library" OFF)

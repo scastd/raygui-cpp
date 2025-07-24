@@ -15,7 +15,7 @@ public:
     Label(Bounds bounds, const char *text);
 
     RAYGUI_CPP_NODISCARD const char *GetText() const;
-    void SetText(const char *newText);
+    virtual void SetText(const char *newText);
 
     void Show(bool canClick) override;
 
