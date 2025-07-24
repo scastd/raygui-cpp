@@ -50,6 +50,8 @@
 #include "raygui-cpp/Utils.h"
 
 // Extras
+#include "raygui-cpp/extras/AdjustedMultilineLabel.h"
 #include "raygui-cpp/extras/ImageButton.h"
+#include "raygui-cpp/extras/ImageIcon.h"
 
 #endif // RAYGUI_CPP_RAYGUI_CPP_H
