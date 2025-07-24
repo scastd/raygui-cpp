@@ -86,6 +86,10 @@ Bounds Bounds::OfSize(float width, float height) {
     return { 0, 0, width, height };
 }
 
+Bounds Bounds::OfPosition(float x, float y) {
+    return { x, y, 0, 0 };
+}
+
 Bounds Bounds::WithText(const char *text) {
     return WithText(text, GuiGetStyle(DEFAULT, TEXT_SIZE));
 }
