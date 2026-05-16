@@ -4,6 +4,7 @@
 #include "../Component.h"
 #include "../Directives.h"
 #include <raygui.h>
+#include <string>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 

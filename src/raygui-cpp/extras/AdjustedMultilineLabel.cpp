@@ -1,4 +1,5 @@
 #include "raygui-cpp/extras/AdjustedMultilineLabel.h"
+#include <cstring>
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
