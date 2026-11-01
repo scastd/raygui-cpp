@@ -2,13 +2,13 @@
 
 RAYGUI_CPP_BEGIN_NAMESPACE
 
-MessageBox::MessageBox() : title(""), message(""), buttons("") {}
+MessageBox::MessageBox() : title(""), message(""), buttons(""), btnActive(nullptr) {}
 
-MessageBox::MessageBox(const char *title, const char *message, const char *buttons)
-    : title(title), message(message), buttons(buttons) {}
+MessageBox::MessageBox(const char *title, const char *message, const char *buttons, int *btnActive)
+    : title(title), message(message), buttons(buttons), btnActive(btnActive) {}
 
-MessageBox::MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons)
-    : Component<int>(bounds), title(title), message(message), buttons(buttons) {}
+MessageBox::MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons, int *btnActive)
+    : Component<int>(bounds), title(title), message(message), buttons(buttons), btnActive(btnActive) {}
 
 const char *MessageBox::GetTitle() const {
     return title;
@@ -34,8 +34,16 @@ void MessageBox::SetButtons(const char *newButtons) {
     this->buttons = newButtons;
 }
 
+int *MessageBox::GetBtnActive() const {
+    return this->btnActive;
+}
+
+void MessageBox::SetBtnActive(int *newBtnActive) {
+    this->btnActive = newBtnActive;
+}
+
 int MessageBox::Show(const bool canClick) {
-    WITH_STATE_RENDER(int ret = ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons))
+    WITH_STATE_RENDER(int ret = ::GuiMessageBox(GetBounds().GetRectangle(), title, message, buttons, btnActive))
     return ret;
 }
 

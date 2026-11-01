@@ -10,14 +10,14 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class TabBar : public Component<int> {
 public:
     TabBar();
-    TabBar(const char **text, int count, int *active);
-    TabBar(Bounds bounds, const char **text, int count, int *active);
+    TabBar(const char *text, int *hscroll, int *active);
+    TabBar(Bounds bounds, const char *text, int *hscroll, int *active);
 
-    RAYGUI_CPP_NODISCARD const char **GetText() const;
-    void SetText(const char **newText);
+    RAYGUI_CPP_NODISCARD const char *GetText() const;
+    void SetText(const char *newText);
 
-    RAYGUI_CPP_NODISCARD int GetCount() const;
-    void SetCount(int newCount);
+    RAYGUI_CPP_NODISCARD int *GetHscroll() const;
+    void SetHscroll(int *newHscroll);
 
     RAYGUI_CPP_NODISCARD int *GetActive() const;
     void SetActive(int *newActive);
@@ -25,8 +25,8 @@ public:
     RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
-    const char **text;
-    int count;
+    const char *text;
+    int *hscroll;
     int *active;
 };
 

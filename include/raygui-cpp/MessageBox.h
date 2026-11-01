@@ -10,8 +10,8 @@ RAYGUI_CPP_BEGIN_NAMESPACE
 class MessageBox : public Component<int> {
 public:
     MessageBox();
-    MessageBox(const char *title, const char *message, const char *buttons);
-    MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons);
+    MessageBox(const char *title, const char *message, const char *buttons, int *btnActive);
+    MessageBox(Bounds bounds, const char *title, const char *message, const char *buttons, int *btnActive);
 
     RAYGUI_CPP_NODISCARD const char *GetTitle() const;
     void SetTitle(const char *newTitle);
@@ -22,12 +22,16 @@ public:
     RAYGUI_CPP_NODISCARD const char *GetButtons() const;
     void SetButtons(const char *newButtons);
 
+    RAYGUI_CPP_NODISCARD int *GetBtnActive() const;
+    void SetBtnActive(int *newBtnActive);
+
     RAYGUI_CPP_NODISCARD int Show(bool canClick) override;
 
 private:
     const char *title;
     const char *message;
     const char *buttons;
+    int *btnActive;
 };
 
 RAYGUI_CPP_END_NAMESPACE

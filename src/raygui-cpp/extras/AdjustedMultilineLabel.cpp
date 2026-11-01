@@ -42,7 +42,7 @@ Bounds AdjustedMultilineLabel::MeasureMultilineText(const char *text) {
     const int fontSize = GuiGetStyle(DEFAULT, TEXT_SIZE);
     const auto font = GuiGetFont();
     int lineCount = 0;
-    const char **lines = TextSplit(text, '\n', &lineCount);
+    char **lines = TextSplit(text, '\n', &lineCount);
     Vector2 maxSize = { 0, 0 };
 
     for (int i = 0; i < lineCount; i++) {
