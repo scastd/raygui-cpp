@@ -33,7 +33,9 @@ target_link_libraries(<your_target> raygui_cpp)
 - [x] ColorBarAlpha ([header](include/raygui-cpp/ColorBarAlpha.h), [source](src/raygui-cpp/ColorBarAlpha.cpp))
 - [x] ColorBarHue ([header](include/raygui-cpp/ColorBarHue.h), [source](src/raygui-cpp/ColorBarHue.cpp))
 - [x] ColorPanel ([header](include/raygui-cpp/ColorPanel.h), [source](src/raygui-cpp/ColorPanel.cpp))
+- [x] ColorPanelHSV ([header](include/raygui-cpp/ColorPanelHSV.h), [source](src/raygui-cpp/ColorPanelHSV.cpp))
 - [x] ColorPicker ([header](include/raygui-cpp/ColorPicker.h), [source](src/raygui-cpp/ColorPicker.cpp))
+- [x] ColorPickerHSV ([header](include/raygui-cpp/ColorPickerHSV.h), [source](src/raygui-cpp/ColorPickerHSV.cpp))
 - [x] ComboBox ([header](include/raygui-cpp/ComboBox.h), [source](src/raygui-cpp/ComboBox.cpp))
 - [x] DropdownBox ([header](include/raygui-cpp/DropdownBox.h), [source](src/raygui-cpp/DropdownBox.cpp))
 - [x] DummyRec ([header](include/raygui-cpp/DummyRec.h), [source](src/raygui-cpp/DummyRec.cpp))
@@ -58,8 +60,17 @@ target_link_libraries(<your_target> raygui_cpp)
 - [x] TextInputBox ([header](include/raygui-cpp/TextInputBox.h), [source](src/raygui-cpp/TextInputBox.cpp))
 - [x] Toggle ([header](include/raygui-cpp/Toggle.h), [source](src/raygui-cpp/Toggle.cpp))
 - [x] ToggleGroup ([header](include/raygui-cpp/ToggleGroup.h), [source](src/raygui-cpp/ToggleGroup.cpp))
+- [x] ToggleSlider ([header](include/raygui-cpp/ToggleSlider.h), [source](src/raygui-cpp/ToggleSlider.cpp))
 - [x] ValueBox ([header](include/raygui-cpp/ValueBox.h), [source](src/raygui-cpp/ValueBox.cpp))
 - [x] WindowBox ([header](include/raygui-cpp/WindowBox.h), [source](src/raygui-cpp/WindowBox.cpp))
+
+### Extras
+
+Components not present in raygui, built on top of the same component model:
+
+- [x] AdjustedMultilineLabel — label that resizes its bounds to fit multi-line text ([header](include/raygui-cpp/extras/AdjustedMultilineLabel.h), [source](src/raygui-cpp/extras/AdjustedMultilineLabel.cpp))
+- [x] ImageButton — clickable button drawn from a `Texture2D` ([header](include/raygui-cpp/extras/ImageButton.h), [source](src/raygui-cpp/extras/ImageButton.cpp))
+- [x] ImageIcon — shows a texture, loaded from a `Texture2D` or a file path ([header](include/raygui-cpp/extras/ImageIcon.h), [source](src/raygui-cpp/extras/ImageIcon.cpp))
 
 ## More info
 
