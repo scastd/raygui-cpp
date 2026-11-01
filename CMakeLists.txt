@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(raygui_cpp
         LANGUAGES C CXX
-        VERSION 0.1.0
+        VERSION 0.1
         DESCRIPTION "C++ wrapper for raygui")
 
 set(CMAKE_CXX_STANDARD 17)
