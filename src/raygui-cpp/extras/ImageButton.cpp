@@ -15,14 +15,17 @@ void ImageButton::SetTexture(Texture2D newTexture) {
 }
 
 bool ImageButton::Show(const bool canClick) {
-    Rectangle textureSource = { 0, 0, (float) texture.width, (float) texture.height };
+    return Show(canClick, GetMousePosition());
+}
+
+bool ImageButton::Show(const bool canClick, const Vector2 mousePoint) const {
+    const Rectangle textureSource = { 0, 0, static_cast<float>(texture.width), static_cast<float>(texture.height) };
 
     int state = GuiGetState();
     bool clicked = false;
 
     if (state != STATE_DISABLED) {
-        Vector2 mousePoint = GetMousePosition();
-        Rectangle bounds = GetBounds().GetRectangle();
+        const Rectangle bounds = GetBounds().GetRectangle();
 
         if (CheckCollisionPointRec(mousePoint, bounds)) {
             if (IsMouseButtonDown(MOUSE_LEFT_BUTTON)) {
