@@ -40,13 +40,15 @@ Bounds AdjustedMultilineLabel::MeasureMultilineText(const char *text) {
     }
 
     const int fontSize = GuiGetStyle(DEFAULT, TEXT_SIZE);
+    const auto textSpacing = static_cast<float>(GuiGetStyle(DEFAULT, TEXT_SPACING));
     const auto font = GuiGetFont();
     int lineCount = 0;
     char **lines = TextSplit(text, '\n', &lineCount);
     Vector2 maxSize = { 0, 0 };
 
     for (int i = 0; i < lineCount; i++) {
-        auto [x, y] = MeasureTextEx(font, lines[i], static_cast<float>(fontSize), 1.0f);
+        auto [x, y] = MeasureTextEx(font, lines[i], static_cast<float>(fontSize), textSpacing);
+        x += textSpacing; // Add the default spacing at the end of each paragraph
 
         if (x > maxSize.x) {
             maxSize.x = x;
@@ -55,7 +57,9 @@ Bounds AdjustedMultilineLabel::MeasureMultilineText(const char *text) {
 
     const int lineSpacing = GuiGetStyle(DEFAULT, TEXT_LINE_SPACING);
     maxSize.y = static_cast<float>(lineCount * fontSize + (lineCount - 1) * lineSpacing);
-    return { 0, 0, maxSize.x, maxSize.y };
+
+    const auto inset = static_cast<float>(2 * (GuiGetStyle(LABEL, BORDER_WIDTH) + GuiGetStyle(LABEL, TEXT_PADDING)));
+    return { 0, 0, std::ceil(maxSize.x) + inset + 2, maxSize.y + inset };
 }
 
 RAYGUI_CPP_END_NAMESPACE
