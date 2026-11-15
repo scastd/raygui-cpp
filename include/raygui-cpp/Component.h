@@ -46,7 +46,7 @@ public:
         m_parent = newParent;
     }
 
-    void Update() {
+    virtual void Update() {
         Bounds bounds;
 
         if (m_parent != nullptr) {
