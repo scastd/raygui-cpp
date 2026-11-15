@@ -24,7 +24,7 @@ public:
 
     Component() : m_bounds(0, 0, 0, 0) {}
 
-    explicit Component(Bounds bounds) : m_bounds(bounds) {}
+    explicit Component(const Bounds bounds) : m_bounds(bounds) {}
 
     virtual ~Component() = default;
 
@@ -34,7 +34,7 @@ public:
         return m_bounds;
     }
 
-    void SetBounds(Bounds newBounds) {
+    void SetBounds(const Bounds newBounds) {
         m_bounds = newBounds;
     }
 
@@ -71,7 +71,7 @@ public:
         return m_style;
     }
 
-    void SetStyle(Style newStyle) {
+    void SetStyle(const Style newStyle) {
         m_style = newStyle;
     }
 
@@ -83,7 +83,7 @@ public:
         m_data = std::move(newData);
     }
 
-    T ShowAndEnableOnCondition(bool condition) {
+    T ShowAndEnableOnCondition(const bool condition) {
         Globals::GuiSetState(condition ? STATE_NORMAL : STATE_DISABLED);
         T result = Show(true);
         Globals::GuiSetState(STATE_NORMAL);
@@ -189,7 +189,7 @@ private:
     Callback m_onClick;
     Callback m_onUpdate;
 
-    void UpdateBounds(Bounds bounds) {
+    void UpdateBounds(const Bounds bounds) {
         auto [marginH, marginV] = m_style.GetMargin();
         auto [boundsX, boundsY, boundsWidth, boundsHeight] = bounds.GetRectangle();
         auto [mBoundsWidth, mBoundsHeight] = m_bounds.GetSize();
